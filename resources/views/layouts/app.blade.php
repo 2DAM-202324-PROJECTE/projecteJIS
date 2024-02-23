@@ -18,7 +18,6 @@
         @livewireStyles
     </head>
     <body class="font-sans antialiased">
-    <p>Estem a resorces/views/layouts/app.blade.php</p>
         <x-banner />
 
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">

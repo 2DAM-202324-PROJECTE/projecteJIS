@@ -73,7 +73,8 @@ return [
     |
     */
 
-    'home' => '/dashboard',
+    // Aquí es canvia on redirigirà després d'iniciar sessió
+    'home' => '',
 
     /*
     |--------------------------------------------------------------------------

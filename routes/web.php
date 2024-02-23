@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+}) ->name('welcome');
 
 Route::middleware([
     'auth:sanctum',
@@ -34,9 +34,15 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::get('/categories', CategoryIndex::class);
 
-Route::get('/products', ProductsIndex::class);
+// name() es necessari per a poder fer servir les rutes a href, fent servir el nom
+Route::get('/categories', CategoryIndex::class)->name('categories');
 
-Route::get('/states', StatesIndex::class);
+Route::get('/products', ProductsIndex::class)->name('products');
+
+Route::get('/states', StatesIndex::class)->name('states');
+
+// Ruta per canviar l'idioma
+Route::get('lang/{lang}', [\App\Http\Controllers\LanguageController::class, 'swap'])->name('lang.swap');
+
 
