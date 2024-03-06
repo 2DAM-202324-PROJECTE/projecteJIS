@@ -10,12 +10,12 @@ class Products extends Model
     use HasFactory;
     protected $guarded = [];
 
-    public function categories()
+    public function category()
     {
-        return $this->belongsToMany(Category::class);
+        return $this->belongsTo(Category::class);
     }
 
-    public function estat()
+    public function state()
     {
         return $this->belongsTo(State::class);
     }

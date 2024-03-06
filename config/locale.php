@@ -15,8 +15,8 @@ return [
     'languages' => [
 
 
-        'en'    => ['en', 'en_US', false],
-        'es'    => ['es', 'es_ES', false],
-        'ca'    => ['ca', 'ca_ES', false],
+        'ENG'    => ['ENG', 'en_US', false],
+        'ESP'    => ['ESP', 'es_ES', false],
+        'CA'    => ['CA', 'ca_ES', false],
     ],
 ];

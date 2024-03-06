@@ -8,23 +8,30 @@ use Livewire\Component;
 
 class Index extends Component
 {
-    public $categories;
     public $products;
-    public $selectedCategory;
+
+    protected $listeners = [
+        'categorySelected' => 'loadProducts',
+    ];
 
     public function mount()
     {
-        $this->products = Products::all();
-        $this->categories = Category::all();
-
+        $this->loadProducts();
     }
+
+    public function loadProducts()
+    {
+        $selectedCategoryId = session('selected_category');
+        if ($selectedCategoryId) {
+            $category = Category::findOrFail($selectedCategoryId); //Fa select de la categoria seleccionada
+            $this->products = $category->products;
+        } else {
+            $this->products = Products::all();
+        }
+    }
+
     public function render()
     {
-        $categories = Category::all();
-        $products = Products::when($this->selectedCategory, function ($query) {
-            $query->where('id', $this->selectedCategory);
-        })->get();
-
-        return view('livewire.products.index', compact('categories', 'products'));
+        return view('livewire.products.index',);
     }
 }

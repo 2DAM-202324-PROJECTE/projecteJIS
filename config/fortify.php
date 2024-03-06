@@ -73,7 +73,7 @@ return [
     |
     */
 
-    // Aquí es canvia on redirigirà després d'iniciar sessió
+    // Aquí ESP canvia on redirigirà després d'iniciar sessió
     'home' => '',
 
     /*

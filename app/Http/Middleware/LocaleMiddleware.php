@@ -21,7 +21,7 @@ class LocaleMiddleware
     public function handle($request, Closure $next)
     {
         /*
-         * If esta a true el valor de la variable status que tenemos en locale.php
+         * If esta a true el valor de la variable status que tenemos ENG locale.php
          */
         if (config('locale.status')) {
             if (session()->has('locale') &&

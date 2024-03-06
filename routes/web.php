@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LanguageController;
 use App\Livewire\Category\Index as CategoryIndex;
 
 use App\Livewire\Products\Index as ProductsIndex;
@@ -7,6 +8,7 @@ use App\Livewire\Products\Index as ProductsIndex;
 
 use App\Livewire\States\Index as StatesIndex;
 
+use App\Livewire\Welcome;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,9 +22,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-}) ->name('welcome');
+//Route::get('/', function () {
+//    return view('welcome');
+//}) ->name('welcome');
 
 Route::middleware([
     'auth:sanctum',
@@ -34,15 +36,23 @@ Route::middleware([
     })->name('dashboard');
 });
 
+Route::get('/', Welcome::class)->name('welcome');
 
 // name() es necessari per a poder fer servir les rutes a href, fent servir el nom
 Route::get('/categories', CategoryIndex::class)->name('categories');
 
 Route::get('/products', ProductsIndex::class)->name('products');
+Route::get('/products/category/{category}', ProductsIndex::class)->name('products.index.category');
 
 Route::get('/states', StatesIndex::class)->name('states');
 
-// Ruta per canviar l'idioma
-Route::get('lang/{lang}', [\App\Http\Controllers\LanguageController::class, 'swap'])->name('lang.swap');
 
+Route::get('/products/{category}', \App\Livewire\Products\Index::class)
+    ->name('products.by.category');
+
+
+// Ruta per canviar l'idioma
+Route::get('lang/{lang}', [LanguageController::class, 'swap'])->name('lang.swap');
+
+Route::get('/search', [\App\Livewire\Header::class, 'search'])->name('search');
 

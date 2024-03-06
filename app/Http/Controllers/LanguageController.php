@@ -14,7 +14,7 @@ class LanguageController extends Controller
  */
     public function swap($lang)
     {
-        // Almacenar el lenguaje en la session
+        // Almacenar el lenguaje ENG la session
         session()->put('locale', $lang);
         return redirect()->back();
     }
