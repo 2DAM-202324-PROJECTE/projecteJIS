@@ -6,7 +6,7 @@ return[
     "TRIA_IDIOMA_TXT" => "Language",
     "PERFIL_TXT" => "Profile",
     "TANCAR_SESSIO_TXT" => "Logout",
-    "ENVIO_GRATIS_HEADER_TXT" => "Get free delivery on orders over $100",
+    "ENVIO_GRATIS_HEADER_TXT" => "Get free delivery on orders over 100€",
     'CATEGORIES_ARRAY_TXT' => [
         'Torres' => 'Towers',
         'Portàtils' => 'Laptops',

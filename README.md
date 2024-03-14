@@ -7,10 +7,13 @@ https://livewiredemos.com/component/tailwind-dropdown-using-alpinejs
 https://onclick.blog/blog/multi-level-dropdown-with-tailwind-css-and-alpine-js
 
 
-## PAgines amb molts de components tailwind:
+## Pàgines amb molts de components tailwind:
 
 https://blog.nubecolectiva.com/5-paginas-web-con-componentes-gratuitos-para-tailwind-css/
 
 
 https://www.hyperui.dev/
+
+## Exemple de un shoppping cart funcional amb laravel-livewire:
+https://adevait.com/laravel/create-shopping-cart-laravel-livewire
 

@@ -98,7 +98,7 @@
                         </svg>
                     </button>
 
-{{--                    <a class=" pb-2 text-sm leading-6 text-gray-900">{{ __('translate.MOSTRAR_CATEGORIES_TXT') }}</a>--}}
+                    {{--                    <a class=" pb-2 text-sm leading-6 text-gray-900">{{ __('translate.MOSTRAR_CATEGORIES_TXT') }}</a>--}}
 
                 </div>
 
@@ -113,17 +113,19 @@
                 <!-- Search -->
                 <div class="flex lg:ml-6">
                     <form id="search-form" action="{{ route('search') }}" method="GET">
-                        <input id="search-input" type="text" name="query" placeholder="{{ __('translate.BUSCAR_TXT') }}" class="p-2 text-gray-400">
+                        <input id="search-input" type="text" name="query" placeholder="{{ __('translate.BUSCAR_TXT') }}"
+                               class="p-2 text-gray-400">
                         <button type="submit" class="p-2 text-gray-400 hover:text-gray-500">
                             <span class="sr-only">Search</span>
-                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                 stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                      d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/>
                             </svg>
                         </button>
                     </form>
 
                 </div>
-
 
                 <!-- Flyout menus -->
                 <div class="pl-6" xmlns:wire="http://www.w3.org/1999/xhtml">
@@ -261,14 +263,9 @@
                                 @endauth
                             </div>
 
-
-
-
-
-
-                            <!-- Cart -->
+                            <!-- CartPage -->
                             <div class="ml-4 flow-root lg:ml-6">
-                                <a href="#" class="group -m-2 flex items-center p-2">
+                                <a href="{{ route('cart') }}" class="group -m-2 flex items-center p-2">
                                     <svg class="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
                                          fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                          stroke="currentColor" aria-hidden="true">
@@ -287,11 +284,9 @@
 
                     <!-- divider -->
                     <span class="relative flex justify-center">
-                        <div class="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-75"></div>
+                        <div
+                            class="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-75"></div>
                     </span>
-
-
-
 
 
                     <ul class="flex flex-col font-medium mt-4 rounded-lg dark:bg-gray-800 dark:border-gray-700">
@@ -303,32 +298,33 @@
                         <!-- Bucle para mostrar las categorías de la base de datos-->
 
                         <div class="mb-4">
-                        @foreach($categories as $category)
-                            <li wire:click="selectCategory({{ $category->id }})"
-                                class="text-sm font-medium pb-2 text-gray-700 hover:text-gray-800 cursor-pointer">
+                            @foreach($categories as $category)
+                                <li wire:click="selectCategory({{ $category->id }})"
+                                    class="text-sm font-medium pb-2 text-gray-700 hover:text-gray-800 cursor-pointer">
 
-                                <a href="#"
-                                   class="inline-flex items-start p-3 -m-3 transition duration-150 ease-in-out rounded-xl hover:bg-gray-50">
-{{--                                    <div class="">--}}
-{{--                                        <!-- Mostrar imagen correspondiente a la categoría -->--}}
-{{--                                        <img src="/Img/{{ $category->name_category }}ICON.png" alt="{{ $category->name_category }}" class="h-10 w-auto mr-2">--}}
+                                    <a href="#"
+                                       class="inline-flex items-start p-3 -m-3 transition duration-150 ease-in-out rounded-xl hover:bg-gray-50">
+                                            <div class="">
+                                                <!-- Mostrar imagen correspondiente a la categoría -->
+                                                <img src="/Img/{{ $category->name_category }}ICON.png" alt="{{ $category->name_category }}" class="h-10 w-auto mr-2">
 
 
-{{--                                    </div>--}}
-                                    <div class="ml-4 flex"> <!-- Añadimos la clase flex aquí -->
-                                        <div>
-                                            <p class="text-base font-medium text-gray-900">
-                                                <!-- Mostramos las categorías de la base de datos traducidas -->
-                                                {{ __('translate.CATEGORIES_ARRAY_TXT.' . $category->name_category) }}
-                                            </p>
+                                            </div>
+                                        <div class="ml-4 flex"> <!-- Añadimos la clase flex aquí -->
+                                            <div>
+                                                <p class="text-base font-medium text-gray-900">
+                                                    <!-- Mostramos las categorías de la base de datos traducidas -->
+                                                    {{ __('translate.CATEGORIES_ARRAY_TXT.' . $category->name_category) }}
+                                                </p>
+                                            </div>
                                         </div>
-                                    </div>
-                                </a>
-                            </li>
-                        @endforeach
+                                    </a>
+                                </li>
+                            @endforeach
                         </div>
 
                     </ul>
+                </div>
 
         </nav>
 
@@ -344,9 +340,9 @@
     </script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             const searchForm = document.getElementById('search-form');
-            searchForm.addEventListener('submit', function(event) {
+            searchForm.addEventListener('submit', function (event) {
                 const query = document.getElementById('search-input').value;
                 if (query.length < 2) {
                     alert('Por favor, introduzca al menos dos caracteres para buscar.');
@@ -357,8 +353,6 @@
     </script>
 
 
-
-    </div>
 
 
 </header>

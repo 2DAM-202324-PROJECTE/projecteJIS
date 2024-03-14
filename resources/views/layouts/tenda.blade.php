@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,15 +34,6 @@
 
                 button.addEventListener('click', function () {
                     modal.classList.remove('hidden');
-                    const productContainer = button.closest('.group');
-                    // Per a mostrar les dades del producte corresponent a la finestra de (Quick View)
-                    const productName = productContainer.querySelector('.text-gray-600').innerText;
-                    const productPrice = productContainer.querySelector('.text-gray-900').innerText;
-
-
-                    modal.querySelector('.modal-product-name').innerText = productName;
-                    modal.querySelector('.modal-product-price').innerText = productPrice;
-
                 });
 
                 modal.querySelector('.btn-close-modal').addEventListener('click', function () {
@@ -51,7 +44,28 @@
 
     </script>
 
-
 </head>
+
+
+<body class="antialiased">
+
+<div >
+
+    @livewire('header')
+
+        <main>
+            {{ $slot }}
+        </main>
+
+    @livewire('footer')
+    @livewireScripts
+
+</div>
+
+</body>
+
+</html>
+
+
 
 

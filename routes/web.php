@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\LanguageController;
+use App\Livewire\CartPage;
 use App\Livewire\Category\Index as CategoryIndex;
 
+use App\Livewire\Header;
 use App\Livewire\Products\Index as ProductsIndex;
 
 
@@ -47,12 +49,13 @@ Route::get('/products/category/{category}', ProductsIndex::class)->name('product
 Route::get('/states', StatesIndex::class)->name('states');
 
 
-Route::get('/products/{category}', \App\Livewire\Products\Index::class)
-    ->name('products.by.category');
+Route::get('/products/{category}', ProductsIndex::class)->name('products.by.category');
 
 
 // Ruta per canviar l'idioma
 Route::get('lang/{lang}', [LanguageController::class, 'swap'])->name('lang.swap');
 
-Route::get('/search', [\App\Livewire\Header::class, 'search'])->name('search');
+Route::get('/search', [Header::class, 'search'])->name('search');
+
+Route::get('/cart', CartPage::class)->name('cart');
 

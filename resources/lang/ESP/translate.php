@@ -6,7 +6,7 @@ return[
     "TRIA_IDIOMA_TXT" => "Idioma",
     "PERFIL_TXT" => "Perfil",
     "TANCAR_SESSIO_TXT" => "Cerrar sesión",
-    "ENVIO_GRATIS_HEADER_TXT" => "Envío gratis en pedidos superiores a $100",
+    "ENVIO_GRATIS_HEADER_TXT" => "Envío gratis en pedidos superiores a 100€",
     'CATEGORIES_ARRAY_TXT' => [
         'Torres' => 'Torres',
         'Portàtils' => 'Portátiles',

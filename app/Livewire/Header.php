@@ -3,7 +3,6 @@
 namespace App\Livewire;
 
 use App\Models\Category;
-use App\Models\Products;
 use Illuminate\Support\Facades\Session;
 use Livewire\Component;
 use Illuminate\Http\Request;
@@ -28,8 +27,8 @@ class Header extends Component
         $this->selectedCategory = $categoryId;
         // Asigna el valor de la categoría seleccionada a la variable de sessió
         Session::put('selected_category', $categoryId);
-        // Carga los productos de la categoría seleccionada
-        return redirect()->to('/products');
+        // Mostra els productes de la categoría seleccionada
+        return redirect()->to('/products')->with('selected_category', $categoryId);
     }
 
     public function search(Request $request)
@@ -37,10 +36,9 @@ class Header extends Component
         $request->validate([
             'query' => 'required|min:2', // Validació per a assegurar que la consulta té almenys dos caràcters
         ]);
+        // Asigna el valor de la consulta a la variable de sessió
+        Session::put('searchParam', $request->input('query'));
 
-        $query = $request->input('query');
-        $products = Products::where('name', 'LIKE', "%$query%")->get();
-
-        return view('livewire.products.index', compact('products'));
+        return redirect()->to('/products');
     }
 }
