@@ -32,5 +32,7 @@ return[
     "BUSCAR_TXT" => "Buscar...",
     "OFERTES_TXT" => "Ofertes",
     "BOTO_OFERTES_TXT" => "Porta'm a elles",
+    "CISTELLA_BUIDA_TXT" => "La teva cistella està buida",
+
 
 ];

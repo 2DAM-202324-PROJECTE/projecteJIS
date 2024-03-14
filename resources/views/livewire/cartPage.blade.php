@@ -1,20 +1,8 @@
-<!DOCTYPE html>
-<html lang="ca" xmlns:livewire="">
-@include("headComu")
-<body class="antialiased">
-
-
-<div>
-    @livewire('header')
+<x-tenda-layout xmlns:livewire="">
 
     <div class="bg-white mt-36">
         <livewire:cart-component />
     </div>
 
-    @livewire('footer')
-</div>
+</x-tenda-layout>
 
-
-
-</body>
-</html>

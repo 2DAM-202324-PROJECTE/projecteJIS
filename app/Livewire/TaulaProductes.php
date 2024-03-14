@@ -11,10 +11,6 @@ class TaulaProductes extends Component
 {
     public $products;
     public $quantity;
-    public $productName;
-    public $productPrice;
-
-    protected $listeners = ['openProductModal'];
 
 
     public function render()
@@ -52,28 +48,16 @@ class TaulaProductes extends Component
         }
     }
 
-    public function addToCart(): void
+    public function addToCart($productId): void
     {
-        $product = $this->products->first(); // Obtén el primer producto de la colección
-
+        // Busca el producte amb l'id passat per parametre a la vista taula-productes
+        $product = Products::findOrFail($productId);
         if ($product) {
-            // Agrega la cantidad como cuarto argumento
+            // Afegeix el producte al carret
             Cart::add($product->id, $product->name, $product->price, $this->quantity);
             $this->dispatch('productAddedToCart');
         }
     }
-
-
-
-    public function openProductModal($productName, $productPrice): void
-    {
-        $this->productName = $productName;
-        $this->productPrice = $productPrice;
-
-        $this->dispatch('openProductModal', $productName, $productPrice);
-    }
-
-
 
 
 }

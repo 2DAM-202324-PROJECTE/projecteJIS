@@ -28,19 +28,6 @@
             });
         });
 
-        document.addEventListener('DOMContentLoaded', function () {
-            document.querySelectorAll('.quick-view-button').forEach(function (button) {
-                const modal = document.querySelector('.modal');
-
-                button.addEventListener('click', function () {
-                    modal.classList.remove('hidden');
-                });
-
-                modal.querySelector('.btn-close-modal').addEventListener('click', function () {
-                    modal.classList.add('hidden');
-                });
-            });
-        });
 
     </script>
 
@@ -49,9 +36,11 @@
 
 <body class="antialiased">
 
-<div >
+<div>
 
     @livewire('header')
+
+
 
         <main>
             {{ $slot }}
