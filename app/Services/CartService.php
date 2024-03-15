@@ -2,12 +2,15 @@
 
 namespace App\Services;
 
+use Exception;
 use Illuminate\Support\Collection;
 use Illuminate\Session\SessionManager;
 
 class CartService {
     const MINIMUM_QUANTITY = 1;
     const DEFAULT_INSTANCE = 'shopping-cart';
+    const IVA_PERCENTAGE = 0.21;
+
 
     protected $session;
     protected $instance;
@@ -120,18 +123,66 @@ class CartService {
     /**
      * Returns total price of the items in the cart.
      *
-     * @return string
+     * @return float
      */
-    public function total(): string
+    public function total(): float
     {
         $content = $this->getContent();
 
         $total = $content->reduce(function ($total, $item) {
-            return $total += $item->get('price') * $item->get('quantity');
-        });
+            return $total + ($item->get('price') * $item->get('quantity'));
+        }, 0);
 
-        return number_format($total, 2);
+        return $total;
     }
+
+    /**
+     * Retorna el total del carret formatat.
+     * @return string
+     */
+    public function totalANumeric(): string
+    {
+        $totalANumeric = $this->total();
+
+        return number_format($totalANumeric, 2);
+    }
+
+    /**
+     * Retorna el calcul del IVA del total del carret.
+     *
+     * @return float
+     */
+    public function Iva(): float
+    {
+        $total = $this->total(); // Obtiene el total sin formatear
+        // Calcula el total amb IVA
+        return $total * self::IVA_PERCENTAGE;
+    }
+
+
+    /**
+     * Retorna el total del carret més l'IVA.
+     *
+     * @return string
+     * @throws Exception
+     */
+
+    public function totalMesIva(): string
+    {
+        $total = $this->total(); // Obtiene el total sin formatear
+        $calculIva = $this->Iva();
+
+        // Verifica que $total y $calculIva sean numéricos
+        if (!is_numeric($total) || !is_numeric($calculIva)) {
+            // Maneja el error aquí, por ejemplo, lanzando una excepción
+            throw new Exception("Los valores de total o IVA no son numéricos");
+        }
+
+        $totalMesIva = $total + $calculIva;
+
+        return number_format($totalMesIva, 2);
+    }
+
 
     /**
      * Returns the content of the cart.

@@ -9,6 +9,10 @@ use Illuminate\Contracts\View\View;
 class CartComponent extends Component
 {
     protected $total;
+    protected $calculIva;
+
+    protected $totalANumeric;
+    protected $totalMesIva;
     protected $content;
 
     protected $listeners = [
@@ -33,7 +37,11 @@ class CartComponent extends Component
     public function render(): View
     {
         return view('livewire.cartResume', [
+
             'total' => $this->total,
+            'Iva' => $this->calculIva,
+            'totalMesIva' => $this->totalMesIva,
+            'totalANumeric' => $this->totalANumeric,
             'content' => $this->content,
         ]);
     }
@@ -82,6 +90,9 @@ class CartComponent extends Component
     public function updateCart()
     {
         $this->total = Cart::total();
+        $this->calculIva = Cart::Iva();
+        $this->totalMesIva = Cart::totalMesIva();
+        $this->totalANumeric = Cart::totalANumeric();
         $this->content = Cart::content();
     }
 }
