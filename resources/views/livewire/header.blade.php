@@ -231,6 +231,11 @@
                                             <x-dropdown-link href="{{ route('profile.show') }}">
                                                 {{ __('translate.PERFIL_TXT') }}
                                             </x-dropdown-link>
+                                            <!-- En cas d'un user ser admin, afegim un link al dropdown -->
+                                            @if (Auth::user()->role === 'admin')
+                                                <x-dropdown-link href="/admin">{{ __('translate.PANEL_ADMIN_TXT') }}</x-dropdown-link>
+                                            @endif
+
                                             <div class="border-t border-gray-200 dark:border-gray-600"></div>
 
                                             <!-- Authentication -->

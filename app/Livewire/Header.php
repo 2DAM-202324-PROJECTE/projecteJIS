@@ -41,4 +41,6 @@ class Header extends Component
 
         return redirect()->to('/products');
     }
+
+
 }

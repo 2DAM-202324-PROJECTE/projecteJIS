@@ -10,6 +10,8 @@ use App\Livewire\Products\Index as ProductsIndex;
 
 use App\Livewire\States\Index as StatesIndex;
 
+use App\Livewire\Admin\Index as AdminIndex;
+
 use App\Livewire\Welcome;
 use Illuminate\Support\Facades\Route;
 
@@ -58,4 +60,6 @@ Route::get('lang/{lang}', [LanguageController::class, 'swap'])->name('lang.swap'
 Route::get('/search', [Header::class, 'search'])->name('search');
 
 Route::get('/cart', CartPage::class)->name('cart');
+
+Route::get('/admin', AdminIndex::class)->name('admin');
 

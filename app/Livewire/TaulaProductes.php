@@ -25,7 +25,7 @@ class TaulaProductes extends Component
 
     }
 
-    // Funció per carregar els productes, depenent dels parametres passats, ja siguin del header, d'algun filtre...
+    // Funció per carregar els productes, depenent dels paràmetres passats, ja siguin del header, d'algun filtre...
     public function loadProducts()
     {
 
@@ -36,8 +36,8 @@ class TaulaProductes extends Component
             $category = Category::findOrFail($selectedCategoryId); //Fa select de la categoria seleccionada
             $this->products = $category->products;
         }
-        // en cas de que hi hagi un parametre de cerca, farà un select dels productes
-        // que continguin el parametre de cerca
+        // en cas que hi hagi un paràmetre de cerca, farà un select dels productes
+        // que continguin el paràmetre de cerca
         if ($searchParam){
             $products = Products::where('name', 'LIKE', "%$searchParam%")->get();
             $this->products = $products;
@@ -50,7 +50,7 @@ class TaulaProductes extends Component
 
     public function addToCart($productId): void
     {
-        // Busca el producte amb l'id passat per parametre a la vista taula-productes
+        // Busca el producte amb l'id passat per paràmetre a la vista taula-productes
         $product = Products::findOrFail($productId);
         if ($product) {
             // Afegeix el producte al carret

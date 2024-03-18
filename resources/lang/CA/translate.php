@@ -33,6 +33,11 @@ return[
     "OFERTES_TXT" => "Ofertes",
     "BOTO_OFERTES_TXT" => "Porta'm a elles",
     "CISTELLA_BUIDA_TXT" => "La teva cistella està buida",
+    "CISTELLA_TXT" => "La teva Cistella",
+    "BUIDA_CISTELLA_TXT" => "Buidar Cistella",
+    "AFEGIR_CISTELLA_TXT" => "Afegir a cistella",
+    "PANEL_ADMIN_TXT" => "Panel d'Administració",
+
 
 
 ];

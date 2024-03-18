@@ -33,4 +33,8 @@ return[
     "OFERTES_TXT" => "Ofertas",
     "BOTO_OFERTES_TXT" => "Llévame a ellas",
     "CISTELLA_BUIDA_TXT" => "Tu cesta está vacía",
+    "CISTELLA_TXT" => "Tu Cesta",
+    "BUIDA_CISTELLA_TXT" => "Vaciar cesta",
+    "AFEGIR_CISTELLA_TXT" => "Añadir a cesta",
+    "PANEL_ADMIN_TXT" => "Panel de Administración",
 ];

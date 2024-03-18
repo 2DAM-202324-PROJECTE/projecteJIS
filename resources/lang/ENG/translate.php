@@ -33,5 +33,9 @@ return[
     "OFERTES_TXT" => "Offers",
     "BOTO_OFERTES_TXT" => "Take me to",
     "CISTELLA_BUIDA_TXT" => "Your cart is empty",
+    "CISTELLA_TXT" => "Your Cart",
+    "BUIDA_CISTELLA_TXT" => "Clear cart",
+    "AFEGIR_CISTELLA_TXT" => "Add to cart",
+    "PANEL_ADMIN_TXT" => "Admin Panel",
 
 ];

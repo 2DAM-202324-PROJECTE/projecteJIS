@@ -8,10 +8,10 @@
 <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8" xmlns:wire="http://www.w3.org/1999/xhtml">
         <div class="mx-auto max-w-3xl">
             <header class="text-center">
-                <h1 class="text-xl font-bold text-gray-900 sm:text-3xl">Your Cart</h1>
+                <h1 class="text-xl font-bold text-gray-900 sm:text-3xl">{{ __("translate.CISTELLA_TXT") }}</h1>
             </header>
 
-            <div class="mt-8">
+            <div class="mt-28">
                 <ul class="space-y-4">
                     @if ($content->count() > 0)
                         @foreach ($content as $id => $item)
@@ -139,9 +139,9 @@
 
                             <a
                                 href="#"
-                                class="block ml-3 rounded bg-red-600 px-5 py-3 text-sm text-gray-100 transition hover:bg-gray-600" wire:click="clearCart"
+                                class="block ml-3 rounded bg-red-600 px-5 py-3 text-sm text-gray-100 transition hover:bg-red-500" wire:click="clearCart"
                             >
-                                Clear Cart
+                                {{ __("translate.BUIDA_CISTELLA_TXT") }}
                             </a>
                         </div>
                     </div>

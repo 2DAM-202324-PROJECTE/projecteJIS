@@ -17,3 +17,8 @@ https://www.hyperui.dev/
 ## Exemple de un shoppping cart funcional amb laravel-livewire:
 https://adevait.com/laravel/create-shopping-cart-laravel-livewire
 
+## Video de crud amb user roles:
+
+https://laraveldaily.com/video/laravel-jetstream-add-crud-with-user-roles
+
+
