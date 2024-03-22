@@ -1,7 +1,6 @@
 <?php
 
-namespace App\Livewire\Category;
-
+namespace App\Http\Controllers\Category;
 use App\Models\Category;
 use Livewire\Component;
 
@@ -14,6 +13,6 @@ class Index extends Component
     }
     public function render()
     {
-        return view('livewire.category.index');
+        return view('category.index');
     }
 }

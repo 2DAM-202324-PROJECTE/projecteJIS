@@ -8,11 +8,13 @@ use Illuminate\Contracts\View\View;
 
 class CartComponent extends Component
 {
+    public $totalProducts; // Agrega esta propiedad para almacenar la cantidad total de productos en el carrito
+
     protected $total;
     protected $calculIva;
-
     protected $totalANumeric;
     protected $totalMesIva;
+    protected $enviament;
     protected $content;
 
     protected $listeners = [
@@ -37,12 +39,13 @@ class CartComponent extends Component
     public function render(): View
     {
         return view('livewire.cartResume', [
-
             'total' => $this->total,
             'Iva' => $this->calculIva,
             'totalMesIva' => $this->totalMesIva,
             'totalANumeric' => $this->totalANumeric,
+            'enviament' => $this->enviament,
             'content' => $this->content,
+            'totalProducts' => $this->totalProducts, // Pasa la cantidad total de productos a la vista
         ]);
     }
 
@@ -87,12 +90,14 @@ class CartComponent extends Component
      *
      * @return void
      */
-    public function updateCart()
+    public function updateCart(): void
     {
         $this->total = Cart::total();
         $this->calculIva = Cart::Iva();
-        $this->totalMesIva = Cart::totalMesIva();
+        $this->totalMesIva = Cart::totalMesIvaMesEnviament();
         $this->totalANumeric = Cart::totalANumeric();
+        $this->enviament = Cart::enviamentString();
         $this->content = Cart::content();
+        $this->totalProducts = Cart::QuantityTotalCart(); // Actualiza la cantidad total de productos en el carrito
     }
 }

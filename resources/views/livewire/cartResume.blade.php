@@ -86,13 +86,18 @@
                     <div class="w-screen max-w-lg space-y-4">
                         <dl class="space-y-0.5 text-sm text-gray-700">
                             <div class="flex justify-between">
-                                <dt>Subtotal</dt>
+                                <dt>{{ __("translate.SUBTOTAL_TXT") }}</dt>
                                 <dd>+ {{ $total }} €</dd>
                             </div>
 
                             <div class="flex justify-between">
-                                <dt>IVA</dt>
+                                <dt>{{ __("translate.IVA_TXT") }}</dt>
                                 <dd>+ {{ $Iva }} €</dd>
+                            </div>
+
+                            <div class="flex justify-between">
+                                <dt>{{ __("translate.ENVIAMENT_TXT") }}</dt>
+                                <dd> {{ $enviament }} €</dd>
                             </div>
 
 {{--                            <div class="flex justify-between">--}}
@@ -101,7 +106,7 @@
 {{--                            </div>--}}
 
                             <div class="flex justify-between !text-base font-medium">
-                                <dt>Total</dt>
+                                <dt>{{ __("translate.TOTAL_TXT") }}</dt>
                                 <dd> {{ $totalMesIva }} € </dd>
                             </div>
                         </dl>
@@ -130,17 +135,11 @@
                         </div>
 
                         <div class="flex justify-end">
-                            <a
-                                href="#"
-                                class="block rounded bg-gray-700 px-5 py-3 text-sm text-gray-100 transition hover:bg-gray-600"
-                            >
-                                Checkout
+                            <a href="{{ route('checkout') }}" class="block rounded bg-indigo-900 px-5 py-3 text-sm text-gray-100 transition hover:bg-gray-600">
+                                {{ __("translate.CHECKOUT_TXT")}}
                             </a>
 
-                            <a
-                                href="#"
-                                class="block ml-3 rounded bg-red-600 px-5 py-3 text-sm text-gray-100 transition hover:bg-red-500" wire:click="clearCart"
-                            >
+                            <a href="#" class="block ml-3 rounded bg-red-600 px-5 py-3 text-sm text-gray-100 transition hover:bg-red-500" wire:click="clearCart">
                                 {{ __("translate.BUIDA_CISTELLA_TXT") }}
                             </a>
                         </div>

@@ -159,6 +159,20 @@ class CartService {
         return $total * self::IVA_PERCENTAGE;
     }
 
+    public function quantityTotalCart(): int
+    {
+        $totalQuantity = 0;
+
+        $content = $this->content();
+
+        foreach ($content as $item) {
+            $totalQuantity += $item['quantity'];
+        }
+
+        return $totalQuantity;
+    }
+
+
 
     /**
      * Retorna el total del carret més l'IVA.
@@ -167,20 +181,47 @@ class CartService {
      * @throws Exception
      */
 
-    public function totalMesIva(): string
+    public function totalMesIvaMesEnviament(): string
     {
-        $total = $this->total(); // Obtiene el total sin formatear
+        $total = $this->total(); // Obté el total sense formatejar
         $calculIva = $this->Iva();
 
-        // Verifica que $total y $calculIva sean numéricos
+        // Verifica que $total y $calculIva siguin numérics
         if (!is_numeric($total) || !is_numeric($calculIva)) {
-            // Maneja el error aquí, por ejemplo, lanzando una excepción
             throw new Exception("Los valores de total o IVA no son numéricos");
         }
 
+        // Calcula el total (sense enviament)
         $totalMesIva = $total + $calculIva;
 
-        return number_format($totalMesIva, 2);
+        // Si el total és superior a 100, l'enviament és gratis
+        if ($totalMesIva > 250) {
+            return number_format($totalMesIva, 2);
+
+        // Si el total és inferior a 100, l'enviament costa 5,99
+        // i el suma al total
+        } else {
+            $totalMesIva = $totalMesIva + 5.99;
+            return number_format($totalMesIva, 2);
+        }
+    }
+
+    /**
+     * Retorna el cost de l'enviament, solament el string per a la vista de l'usuari.
+     *
+     * @return string
+     */
+
+    public function enviamentString(): string
+    {
+        $total = $this->total();
+        $calculIva = $this->Iva();
+        $totalMesIva = $total + $calculIva;
+        if ($totalMesIva > 250) {
+            return "Gratis";
+        } else {
+            return "+ 5.99";
+        }
     }
 
 

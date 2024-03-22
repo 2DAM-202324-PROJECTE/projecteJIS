@@ -1,19 +1,19 @@
 <?php
 
+use App\Http\Controllers\Admin\Index as AdminIndex;
+use App\Http\Controllers\Admin\Products\AddProducts;
+use App\Http\Controllers\Admin\Products\Index as AdminProducts;
+use App\Http\Controllers\Admin\Products\ModifyProducts;
+use App\Http\Controllers\Category\Index as CategoryIndex;
+use App\Http\Controllers\Checkout;
 use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\Products\Index as ProductsIndex;
+use App\Http\Controllers\States\Index as StatesIndex;
 use App\Livewire\CartPage;
-use App\Livewire\Category\Index as CategoryIndex;
-
 use App\Livewire\Header;
-use App\Livewire\Products\Index as ProductsIndex;
-
-
-use App\Livewire\States\Index as StatesIndex;
-
-use App\Livewire\Admin\Index as AdminIndex;
-
 use App\Livewire\Welcome;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +42,8 @@ Route::middleware([
 
 Route::get('/', Welcome::class)->name('welcome');
 
+
+
 // name() es necessari per a poder fer servir les rutes a href, fent servir el nom
 Route::get('/categories', CategoryIndex::class)->name('categories');
 
@@ -63,3 +65,13 @@ Route::get('/cart', CartPage::class)->name('cart');
 
 Route::get('/admin', AdminIndex::class)->name('admin');
 
+Route::get('/panelProducts', AdminProducts::class)->name('panelProducts');
+
+Route::get('/addProducts', AddProducts::class)->name('addProducts');
+
+Route::get('/checkout', Checkout::class)->name('checkout');
+
+// Crida a la funció editProduct del controlador ModifyProducts
+Route::get('/products/edit/{id}', [ModifyProducts::class, 'loadDataProduct'])->name('products.edit');
+
+Route::put('/products/{id}', [ModifyProducts::class, 'updateProduct']);
