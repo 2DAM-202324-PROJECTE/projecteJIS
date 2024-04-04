@@ -59,5 +59,7 @@ return[
     "GUARDAR_TXT" => "Guardar",
     "AFEGIR_PRODUCTE_TXT" => "Añadir Producto",
     "CHECKOUT_TXT" => "Finalizar compra",
+    "CREARBORRAR_PRODUCTES_TXT" => "Aquí puedes ver, crear, modificar y borrar Productos",
+    "TORRES_TXT" => "Torres",
 
 ];

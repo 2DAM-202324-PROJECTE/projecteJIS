@@ -60,7 +60,18 @@ class FormAddProducts extends Component
     {
         $this->validate();
 
+        // Obté las IDs existents
+        $existingIds = Products::pluck('id')->toArray();
+
+        // Busca la primera ID disponible
+        $newProductId = 1;
+        while (in_array($newProductId, $existingIds)) {
+            $newProductId++;
+        }
+
+        // Crear el producte amb la nova id (serà sempre la més petita disponible)
         Products::create([
+            'id' => $newProductId,
             'name' => $this->name,
             'description' => $this->description,
             'price' => $this->price,
@@ -68,13 +79,14 @@ class FormAddProducts extends Component
             'image_url' => $this->image_url,
             'category_id' => $this->category_id,
             'state_id' => $this->state_id,
-
         ]);
+
         $this->loadProducts();
 
         return redirect()->route('panelProducts');
-
     }
+
+
 
     public function deleteProduct($productId)
     {

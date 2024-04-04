@@ -20,8 +20,8 @@ class ListProductsAdmin extends Component
     public $price;
     public $stock;
     public $selectedProductId;
-
-
+    public $orderBy;
+    public $groupBy;
 
     public function render()
     {
@@ -30,15 +30,29 @@ class ListProductsAdmin extends Component
 
     public function mount()
     {
+        $this->orderBy = 'id';
+        $this->groupBy = null;
+
         $this->loadProducts();
         $this->loadProductsColumns();
         $this->categories = Category::all();
         $this->estat = State::all();
     }
 
+
     public function loadProducts()
     {
-        $this->products = Products::all();
+        $query = Products::query();
+
+        // Aplicar filtro de orden
+        $query->orderBy($this->orderBy, 'asc');
+
+        // Aplicar filtro de agrupación
+        if ($this->groupBy) {
+            $query->groupBy($this->groupBy);
+        }
+
+        $this->products = $query->get();
     }
 
     public function loadProductsColumns()

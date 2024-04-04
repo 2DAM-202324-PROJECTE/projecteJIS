@@ -21,4 +21,8 @@ https://adevait.com/laravel/create-shopping-cart-laravel-livewire
 
 https://laraveldaily.com/video/laravel-jetstream-add-crud-with-user-roles
 
+## Per a generar un fondo amb colors difuminats de tailwind:
+
+https://tailwindcomponents.com/gradient-generator/
+
 

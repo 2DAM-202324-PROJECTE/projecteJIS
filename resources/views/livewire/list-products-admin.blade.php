@@ -10,6 +10,28 @@
             </a>
         </div>
     </div>
+
+    <!-- Filtres -->
+    <label>
+        <select wire:model="orderBy">
+            @foreach($productsColumns as $column)
+                <option value="{{ $column }}">{{ ucfirst($column) }}</option>
+            @endforeach
+        </select>
+    </label>
+
+    {{--    <label>--}}
+    {{--        <select wire:model="groupBy">--}}
+    {{--            <option value="category_id">Categoría</option>--}}
+    {{--            <!-- Agrega más opciones según tus necesidades -->--}}
+    {{--        </select>--}}
+    {{--    </label>--}}
+
+    <div>
+        <button wire:click="loadProducts">Aplicar</button>
+    </div>
+
+
     <div class="mt-8 flow-root">
         <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
             <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
@@ -32,34 +54,41 @@
                     <tbody class="divide-y divide-gray-200 bg-white">
                     @foreach($products as $product)
                         <tr>
-                            <!-- Iterem sobre les columnes seleccionades d'abans i llistem sobre elles-->
+                            <!-- Iterem sobre les columnes seleccionades d'abans i llistem sobre elles,
+                             en cas de una de les columnes ser category_id o state_id, es mostrarà de manera diferent.-->
                             @foreach($productsColumns as $column)
-                                <!-- Lógica condicional para mostrar los datos de la columna de manera diferente -->
+                                <!-- Per a mostrar el valor relacionat de category_id i state_id -->
                                 @if($column === 'category_id')
                                     @if($product->category)
-                                        <!-- Muestra el nombre de la categoría -->
-                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $product->$column }} ({{ $product->category->name_category }})</td>
+                                        <!-- Mostra el nom de la categoría -->
+                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $product->$column }}
+                                            ({{ $product->category->name_category }})
+                                        </td>
                                     @endif
 
                                 @elseif($column === 'state_id')
-                                    <!-- Verifica si el producto tiene un estado asociado -->
+                                    <!-- Verifica si el producte té un state associat -->
                                     @if($product->state)
-                                        <!-- Muestra el nombre del estado -->
-                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $product->$column }} ({{ $product->state->name_state }})</td>
+                                        <!-- Mostra el nom del state -->
+                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $product->$column }}
+                                            ({{ $product->state->name_state }})
+                                        </td>
                                     @endif
                                 @else
-                                    <!-- Llista el producto de esa columna (algunas están excluidas)-->
+
                                     <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $product->$column }}</td>
                                 @endif
                             @endforeach
 
                             <!-- Botons d'edició i eliminació -->
                             <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
-                                <button wire:click="edit({{$product->id}})" class="text-indigo-600 hover:text-indigo-900">
+                                <button wire:click="edit({{$product->id}})"
+                                        class="text-indigo-600 hover:text-indigo-900">
                                     {{ __("translate.EDITAR_TXT") }}
                                 </button>
                                 <a> | </a>
-                                <button class="text-red-600 hover:text-red-900" wire:click="deleteProduct('{{ $product->id }}')">
+                                <button class="text-red-600 hover:text-red-900"
+                                        wire:click="deleteProduct('{{ $product->id }}')">
                                     {{ __("translate.ELIMINAR_TXT") }}
                                 </button>
                             </td>
@@ -69,6 +98,8 @@
 
                     </tbody>
                 </table>
+
+
             </div>
         </div>
     </div>

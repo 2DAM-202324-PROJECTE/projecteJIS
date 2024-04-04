@@ -18,7 +18,7 @@
                 <div class="ml-4">
 
                     <button id="navbar-toggle" type="button"
-                            class="inline-flex items-center justify-center p-2 w-10 h-10 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                            class="inline-flex items-center justify-center p-2 w-10 h-10 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
                             aria-controls="navbar-hamburger" aria-expanded="false">
                         <span class="sr-only">Open main menu</span>
                         <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -75,7 +75,7 @@
                                             <x-slot name="trigger">
                                 <span class="inline-flex rounded-md">
                                     <button type="button"
-                                            class="inline-flex items-center px-3 py-2 border border-transparent text-sm font-medium text-gray-700 hover:text-gray-800 leading-4 font-medium rounded-md  dark:bg-gray-800  focus:outline-none focus:bg-gray-50 dark:focus:bg-gray-700 active:bg-gray-50 dark:active:bg-gray-700 transition ease-in-out duration-150">
+                                            class="inline-flex items-center px-3 py-2 border border-transparent text-sm font-medium text-gray-700 hover:text-gray-800 leading-4 font-medium rounded-md   focus:outline-none focus:bg-gray-50  active:bg-gray-50  transition ease-in-out duration-150">
                                         {{ Auth::user()->currentTeam->name }}
 
                                         <svg class="ms-2 -me-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -109,7 +109,7 @@
                                                     <!-- Team Switcher -->
                                                     @if (Auth::user()->allTeams()->count() > 1)
                                                         <div
-                                                            class="border-t border-gray-200 dark:border-gray-600"></div>
+                                                            class="border-t border-gray-200"></div>
 
                                                         <div class="block px-4 py-2 text-xs text-gray-400">
                                                             {{ __('Switch Teams') }}
@@ -139,7 +139,7 @@
                                             @else
                                                 <span class="inline-flex rounded-md">
                                     <button type="button"
-                                            class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none focus:bg-gray-50 dark:focus:bg-gray-700 active:bg-gray-50 dark:active:bg-gray-700 transition ease-in-out duration-150">
+                                            class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500  bg-white hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50  transition ease-in-out duration-150">
                                         {{ Auth::user()->name }}
 
                                         <svg class="ms-2 -me-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -167,7 +167,7 @@
                                                     href="{{ route('admin') }}">{{ __('translate.PANEL_ADMIN_TXT') }}</x-dropdown-link>
                                             @endif
 
-                                            <div class="border-t border-gray-200 dark:border-gray-600"></div>
+                                            <div class="border-t border-gray-200"></div>
 
                                             <!-- Authentication -->
                                             <form method="POST" action="{{ route('logout') }}" x-data>
@@ -225,7 +225,7 @@
                     </span>
 
 
-                    <ul class="flex flex-col font-medium mt-4 rounded-lg dark:bg-gray-800 dark:border-gray-700">
+                    <ul class="flex flex-col font-medium mt-4 rounded-lg">
                         <li class="mb-4 ">
                             <h1 class=" mb-2 text-2xl">{{__('translate.LES_NOSTRES_CATEG_TXT')}}</h1>
                             <a href="" class="text-indigo-900 text-lg mt-2">{{__('translate.OFERTES_TXT')}}</a>
@@ -238,8 +238,7 @@
                                 <li wire:click="selectCategory({{ $category->id }})"
                                     class="text-sm font-medium pb-2 text-gray-700 hover:text-gray-800 cursor-pointer">
 
-                                    <a href="#"
-                                       class="inline-flex items-start p-3 -m-3 transition duration-150 ease-in-out rounded-xl hover:bg-gray-50">
+                                    <a href="#" class="inline-flex items-start p-3 -m-3 transition duration-150 ease-in-out rounded-xl hover:bg-gray-50">
                                         <div class="">
                                             <!-- Mostrar imagen correspondiente a la categoría -->
                                             <img src="/Img/{{ $category->name_category }}ICON.png"

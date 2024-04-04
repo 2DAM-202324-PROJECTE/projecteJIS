@@ -35,10 +35,11 @@ class TaulaProductes extends Component
         if ($selectedCategoryId) {
             $category = Category::findOrFail($selectedCategoryId); //Fa select de la categoria seleccionada
             $this->products = $category->products;
+
         }
         // en cas que hi hagi un paràmetre de cerca, farà un select dels productes
         // que continguin el paràmetre de cerca
-        if ($searchParam){
+        else if ($searchParam){
             $products = Products::where('name', 'LIKE', "%$searchParam%")->get();
             $this->products = $products;
         }
