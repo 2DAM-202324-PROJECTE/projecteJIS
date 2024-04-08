@@ -81,6 +81,39 @@ class ProductsSeeder extends Seeder
                 'state_id' => 2
             ]
         );
+        Products::create(
+            [
+                'name' => 'HP 24mh FHD Monitor',
+                'description' => 'HP 24mh FHD Monitor - Computer Monitor with 23.8-Inch IPS Display (1080p) - Built-In Speakers and VESA Mounting - Height/Tilt Adjustment for Ergonomic Viewing - HDMI and DisplayPort - (1D0J9AA#ABA)',
+                'price' => 200,
+                'stock' => 10,
+                'image_url' => 'https://m.media-amazon.com/images/I/91fAU6mxFsL._AC_UY218_.jpg',
+                'category_id' => 5,
+                'state_id' => 1
+            ]
+        );
+        Products::create(
+            [
+                'name' => 'HP 15 Laptop',
+                'description' => 'HP 15 Laptop, 11th Gen Intel Core i5-1135G7 Processor, 8 GB RAM, 256 GB SSD Storage, 15.6” Full HD IPS Display, Windows 10 Home, HP Fast Charge, Lightweight Design (15-dy2021nr, 2020)',
+                'price' => 600,
+                'stock' => 10,
+                'image_url' => 'https://m.media-amazon.com/images/I/71uX8JjV4oL._AC_UY218_.jpg',
+                'category_id' => 2,
+                'state_id' => 1
+            ]
+        );
+        Products::create(
+            [
+                'name' => 'HP Pavilion 22cwa 21.5-Inch Full HD 1080p IPS LED Monitor',
+                'description' => 'HP Pavilion 22cwa 21.5-Inch Full HD 1080p IPS LED Monitor, Tilt, VGA and HDMI (T4Q59AA) - Black',
+                'price' => 100,
+                'stock' => 10,
+                'image_url' => 'https://m.media-amazon.com/images/I/81QpkIctqPL._AC_UY218_.jpg',
+                'category_id' => 5,
+                'state_id' => 1
+            ]
+        );
 
 
     }

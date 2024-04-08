@@ -18,18 +18,20 @@
                 <option value="{{ $column }}">{{ ucfirst($column) }}</option>
             @endforeach
         </select>
+
+        <select wire:model="selectedCategory">
+            <option value="">Todas las categorías</option>
+            @foreach($categories as $category)
+                <option class="" value="{{ $category->id }}">{{ $category->name_category }}</option>
+            @endforeach
+        </select>
+
+        <div>
+            <button wire:click="loadProducts">Aplicar</button>
+        </div>
     </label>
 
-    {{--    <label>--}}
-    {{--        <select wire:model="groupBy">--}}
-    {{--            <option value="category_id">Categoría</option>--}}
-    {{--            <!-- Agrega más opciones según tus necesidades -->--}}
-    {{--        </select>--}}
-    {{--    </label>--}}
 
-    <div>
-        <button wire:click="loadProducts">Aplicar</button>
-    </div>
 
 
     <div class="mt-8 flow-root">

@@ -13,7 +13,9 @@
 
                 <a href="javascript:;" class="max-w-[384px] mx-auto">
                     <div class="w-full max-w-sm aspect-square relative">
-                        <img src="{{ $product->image_url }}" alt="{{ $product->name }}" class="w-full h-full rounded-xl" livewire:src="">
+                        <img src="{{ $product->image_url }}" alt="{{ $product->name }}" class="w-full h-full rounded-xl"
+                             style="max-height: 300px; min-height: 300px "
+                             livewire:src="">
 {{--                        <span--}}
 {{--                            class="py-1 min-[400px]:py-2 px-2 min-[400px]:px-4 cursor-pointer rounded-lg bg-gradient-to-tr from-indigo-600 to-purple-600 font-medium text-base leading-7 text-white absolute top-3 right-3 z-10">20%--}}
 {{--                            Off</span>--}}

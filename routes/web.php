@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\Index as AdminIndex;
 use App\Http\Controllers\Admin\Products\AddProducts;
+use App\Http\Controllers\Admin\Products\Featureds;
 use App\Http\Controllers\Admin\Products\Index as AdminProducts;
 use App\Http\Controllers\Admin\Products\ModifyProducts;
 use App\Http\Controllers\Category\Index as CategoryIndex;
@@ -11,6 +12,7 @@ use App\Http\Controllers\Products\Index as ProductsIndex;
 use App\Http\Controllers\States\Index as StatesIndex;
 use App\Livewire\CartPage;
 use App\Livewire\Header;
+use App\Livewire\SelectDestacats;
 use App\Livewire\Welcome;
 use Illuminate\Support\Facades\Route;
 
@@ -75,3 +77,8 @@ Route::get('/checkout', Checkout::class)->name('checkout');
 Route::get('/products/edit/{id}', [ModifyProducts::class, 'loadDataProduct'])->name('products.edit');
 
 Route::put('/products/{id}', [ModifyProducts::class, 'updateProduct']);
+
+Route::get('/featureds', Featureds::class)->name('featureds');
+
+Route::post('/fetauredProduct', [SelectDestacats::class, 'updateFeaturedProducts'])->name('updateFeaturedProducts');
+

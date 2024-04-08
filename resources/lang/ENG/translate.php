@@ -59,8 +59,10 @@ return[
     "GUARDAR_TXT" => "Save",
     "AFEGIR_PRODUCTE_TXT" => "Add Product",
     "CHECKOUT_TXT" => "Checkout",
-    "CREARBORRAR_PRODUCTES_TXT" => "Here you can see and create, modify or delete Products",
+    "CREARBORRAR_PRODUCTES_TXT" => "See all the Products",
     "TORRES_TXT" => "Towers",
+    "DESTACATS_TXT" => "Featureds",
+    "SELECT_DESTACATS_TXT" => "Select the featured Products",
 
 
 

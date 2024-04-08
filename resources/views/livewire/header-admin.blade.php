@@ -31,6 +31,9 @@
                     <x-nav-link href="{{ route('panelProducts') }}">
                         {{ __('translate.PRODUCTES_TXT') }}
                     </x-nav-link>
+                    <x-nav-link href="{{ route('featureds') }}">
+                        {{ __('translate.DESTACATS_TXT') }}
+                    </x-nav-link>
 
                 </div>
             </div>
@@ -181,6 +184,9 @@
 
             <x-responsive-nav-link href="{{ route('panelProducts') }}">
                 {{ __('translate.PRODUCTES_TXT') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link href="{{ route('featureds') }}">
+                {{ __('translate.DESTACATS_TXT') }}
             </x-responsive-nav-link>
         </div>
 

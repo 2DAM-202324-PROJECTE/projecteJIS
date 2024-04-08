@@ -14,8 +14,9 @@ class Welcome extends Component
 
     public function render()
     {
+        $featuredProducts = Products::where('featured', true)->take(2)->get();
         $categories = Category::all();
-        return view('livewire.welcome', compact('categories'));
+        return view('livewire.welcome', compact('categories', 'featuredProducts'));
     }
 
     public function selectCategory($categoryId)

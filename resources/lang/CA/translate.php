@@ -60,8 +60,10 @@ return[
     "GUARDAR_TXT" => "Guardar",
     "AFEGIR_PRODUCTE_TXT" => "Afegir Producte",
     "CHECKOUT_TXT" => "Finalitzar Compra",
-    "CREARBORRAR_PRODUCTES_TXT" => "Aquí pots veure i crear, modificar o esborrar Productes",
+    "CREARBORRAR_PRODUCTES_TXT" => "Veure tots els Productes",
     "TORRES_TXT" => "Torres",
+    "DESTACATS_TXT" => "Destacats",
+    "SELECT_DESTACATS_TXT" => "Selecciona els Productes destacats",
 
 
 

@@ -19,6 +19,8 @@ class ListProductsAdmin extends Component
     public $description;
     public $price;
     public $stock;
+    public $selectedCategory;
+
     public $selectedProductId;
     public $orderBy;
     public $groupBy;
@@ -47,9 +49,9 @@ class ListProductsAdmin extends Component
         // Aplicar filtro de orden
         $query->orderBy($this->orderBy, 'asc');
 
-        // Aplicar filtro de agrupación
-        if ($this->groupBy) {
-            $query->groupBy($this->groupBy);
+        // Aplicar filtro de categoría
+        if ($this->selectedCategory) {
+            $query->where('category_id', $this->selectedCategory);
         }
 
         $this->products = $query->get();

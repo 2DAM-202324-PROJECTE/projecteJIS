@@ -59,7 +59,10 @@ return[
     "GUARDAR_TXT" => "Guardar",
     "AFEGIR_PRODUCTE_TXT" => "Añadir Producto",
     "CHECKOUT_TXT" => "Finalizar compra",
-    "CREARBORRAR_PRODUCTES_TXT" => "Aquí puedes ver, crear, modificar y borrar Productos",
+    "CREARBORRAR_PRODUCTES_TXT" => "Ver todos los Productos",
     "TORRES_TXT" => "Torres",
+    "DESTACATS_TXT" => "Destacados",
+    "SELECT_DESTACATS_TXT" => "Selecciona los Productos destacados",
+
 
 ];
