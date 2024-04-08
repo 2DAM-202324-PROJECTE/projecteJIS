@@ -25,6 +25,8 @@ class ListProductsAdmin extends Component
     public $orderBy;
     public $groupBy;
 
+    public $selectedState;
+
     public function render()
     {
         return view('livewire.list-products-admin');
@@ -52,6 +54,11 @@ class ListProductsAdmin extends Component
         // Aplicar filtro de categoría
         if ($this->selectedCategory) {
             $query->where('category_id', $this->selectedCategory);
+        }
+
+        // Aplicar filtro de estat
+        if ($this->selectedState) {
+            $query->where('state_id', $this->selectedState);
         }
 
         $this->products = $query->get();

@@ -26,6 +26,13 @@
             @endforeach
         </select>
 
+        <select wire:model="selectedState">
+            <option value="">Todos los estados</option>
+            @foreach($estat as $state)
+                <option class="" value="{{ $state->id }}">{{ $state->name_state }}</option>
+            @endforeach
+        </select>
+
         <div>
             <button wire:click="loadProducts">Aplicar</button>
         </div>

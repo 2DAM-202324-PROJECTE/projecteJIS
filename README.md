@@ -25,4 +25,8 @@ https://laraveldaily.com/video/laravel-jetstream-add-crud-with-user-roles
 
 https://tailwindcomponents.com/gradient-generator/
 
+## Components sliders/carrousels tailwind amb animacions:
+
+https://wind-ui.com/components/sliders/
+
 

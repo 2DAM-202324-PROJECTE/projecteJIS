@@ -87,7 +87,7 @@ class ProductsSeeder extends Seeder
                 'description' => 'HP 24mh FHD Monitor - Computer Monitor with 23.8-Inch IPS Display (1080p) - Built-In Speakers and VESA Mounting - Height/Tilt Adjustment for Ergonomic Viewing - HDMI and DisplayPort - (1D0J9AA#ABA)',
                 'price' => 200,
                 'stock' => 10,
-                'image_url' => 'https://m.media-amazon.com/images/I/91fAU6mxFsL._AC_UY218_.jpg',
+                'image_url' => 'https://thumb.pccomponentes.com/w-150-150/articles/1077/10770018/1182-hp-e-series-e24-g5-238-led-ips-fullhd-75hz.jpg',
                 'category_id' => 5,
                 'state_id' => 1
             ]
@@ -98,22 +98,53 @@ class ProductsSeeder extends Seeder
                 'description' => 'HP 15 Laptop, 11th Gen Intel Core i5-1135G7 Processor, 8 GB RAM, 256 GB SSD Storage, 15.6” Full HD IPS Display, Windows 10 Home, HP Fast Charge, Lightweight Design (15-dy2021nr, 2020)',
                 'price' => 600,
                 'stock' => 10,
-                'image_url' => 'https://m.media-amazon.com/images/I/71uX8JjV4oL._AC_UY218_.jpg',
+                'image_url' => 'https://thumb.pccomponentes.com/w-530-530/articles/1081/10819169/2843-hp-laptop-15-fd0036np-intel-core-i3-n305-8gb-256gb-ssd-156-pt-foto.jpg',
                 'category_id' => 2,
                 'state_id' => 1
             ]
         );
-        Products::create(
-            [
-                'name' => 'HP Pavilion 22cwa 21.5-Inch Full HD 1080p IPS LED Monitor',
-                'description' => 'HP Pavilion 22cwa 21.5-Inch Full HD 1080p IPS LED Monitor, Tilt, VGA and HDMI (T4Q59AA) - Black',
-                'price' => 100,
-                'stock' => 10,
-                'image_url' => 'https://m.media-amazon.com/images/I/81QpkIctqPL._AC_UY218_.jpg',
-                'category_id' => 5,
-                'state_id' => 1
-            ]
-        );
+
+        Products::create([
+            'name' => 'Apple iPhone 13',
+            'description' => 'Apple iPhone 13 (128GB, Product)',
+            'price' => 1000,
+            'stock' => 10,
+            'image_url' => 'https://thumb.pccomponentes.com/w-150-150/articles/57/578962/128-apple-iphone-13-128gb-blanco-estrella-libre.jpg',
+            'category_id' => 3,
+            'state_id' => 1
+        ]);
+
+        Products::create([
+            'name' => 'Samsung Galaxy Tab S8',
+            'description' => 'Samsung Galaxy Tab S8 - 11 inch Android Tablet 2022 (Latest Model)',
+            'price' => 800,
+            'stock' => 10,
+            'image_url' => 'https://thumb.pccomponentes.com/w-150-150/articles/1051/10519758/1941-samsung-galaxy-tab-s8-ultra-5g-12-256-gb-gris.jpg',
+            'category_id' => 4,
+            'state_id' => 1
+        ]);
+
+        Products::create([
+            'name' => 'Logitech G Pro X Superlight Wireless Gaming Mouse',
+            'description' => 'Logitech G Pro X Superlight Wireless Gaming Mouse, Ultra-Lightweight, Hero 25K Sensor, 25,600 DPI, 5 Programmable Buttons, Long Battery Life, Compatible with PC/Mac - Black',
+            'price' => 150,
+            'stock' => 10,
+            'image_url' => 'https://thumb.pccomponentes.com/w-150-150/articles/1077/10772979/1940-logitech-g-pro-x-superlight-2-lightspeed-raton-inalambrico-gaming-negro-32000-dpi-4d3fc748-2b1b-4427-b7ac-c5d90b72dbe9.jpg',
+            'category_id' => 5,
+            'state_id' => 1
+        ]);
+
+        Products::create([
+            'name' => 'PcCom Ready Intel Core i5-12400F / 16GB / 1TB SSD / RTX 3060 + Windows 11 Home',
+            'description' => 'PcCom Ready Intel Core i5-12400F / 16GB / 1TB SSD / RTX 3060 + Windows 11 Home',
+            'price' => 1500,
+            'stock' => 100,
+            'image_url' => 'https://thumb.pccomponentes.com/w-530-530/articles/1077/10770783/1367-pccom-ready-i5-12400f-16gb-ram-1tb-ssd-rtx-3060-12gb-windows-11-pc-gaming.jpg',
+            'category_id' => 1,
+            'state_id' => 1
+        ]);
+
+
 
 
     }

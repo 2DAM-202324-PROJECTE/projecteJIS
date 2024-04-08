@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\Index as AdminIndex;
 use App\Http\Controllers\Admin\Products\AddProducts;
 use App\Http\Controllers\Admin\Products\Featureds;
 use App\Http\Controllers\Admin\Products\Index as AdminProducts;
+use App\Http\Controllers\Admin\Categories\Index as AdminCategories;
 use App\Http\Controllers\Admin\Products\ModifyProducts;
 use App\Http\Controllers\Category\Index as CategoryIndex;
 use App\Http\Controllers\Checkout;
@@ -82,3 +83,4 @@ Route::get('/featureds', Featureds::class)->name('featureds');
 
 Route::post('/fetauredProduct', [SelectDestacats::class, 'updateFeaturedProducts'])->name('updateFeaturedProducts');
 
+Route::get('/panelCategories', AdminCategories::class)->name('panelCategories');
