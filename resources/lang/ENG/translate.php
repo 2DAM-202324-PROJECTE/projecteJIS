@@ -59,10 +59,14 @@ return[
     "GUARDAR_TXT" => "Save",
     "AFEGIR_PRODUCTE_TXT" => "Add Product",
     "CHECKOUT_TXT" => "Checkout",
-    "CREARBORRAR_PRODUCTES_TXT" => "See all the Products",
+    "VEURE_PRODUCTES_TXT" => "See all the Products",
     "TORRES_TXT" => "Towers",
     "DESTACATS_TXT" => "Featureds",
     "SELECT_DESTACATS_TXT" => "Select the featured Products",
+    "VEURE_CATEGORIES_TXT" => "See all the Categories",
+    "CATEGORIES_TXT" => "Categories",
+    "AFEGIR_CATEGORIA_TXT" => "Add Category",
+    "INTROD_NOM_TXT" => "Enter the name",
 
 
 

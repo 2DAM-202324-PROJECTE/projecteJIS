@@ -29,7 +29,7 @@ return[
     "LES_NOSTRES_CATEG_TXT" => "Les nostres categories",
     "MISSATGE_PRODUCTES_DESTACATS_TXT" => "Aquests són dos dels nostres millors productes, mira totes les torres que tenim disponibles!",
     "BOTO_COMPRA_TOTS_TXT" => "Compra'ls tots",
-    "BUSCAR_TXT" => "Buscar...",
+    "BUSCAR_TXT" => "Cercar...",
     "OFERTES_TXT" => "Ofertes",
     "BOTO_OFERTES_TXT" => "Porta'm a elles",
     "CISTELLA_BUIDA_TXT" => "La teva cistella està buida",
@@ -60,10 +60,13 @@ return[
     "GUARDAR_TXT" => "Guardar",
     "AFEGIR_PRODUCTE_TXT" => "Afegir Producte",
     "CHECKOUT_TXT" => "Finalitzar Compra",
-    "CREARBORRAR_PRODUCTES_TXT" => "Veure tots els Productes",
+    "VEURE_PRODUCTES_TXT" => "Veure tots els Productes",
     "TORRES_TXT" => "Torres",
     "DESTACATS_TXT" => "Destacats",
     "SELECT_DESTACATS_TXT" => "Selecciona els Productes destacats",
+    "VEURE_CATEGORIES_TXT" => "Veure totes les Categories",
+    "CATEGORIES_TXT" => "Categories",
+    "AFEGIR_CATEGORIA_TXT" => "Afegir Categoria",
 
 
 

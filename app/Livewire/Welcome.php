@@ -14,8 +14,16 @@ class Welcome extends Component
 
     public function render()
     {
-        $featuredProducts = Products::where('featured', true)->take(2)->get();
-        $categories = Category::all();
+        $featuredProducts = Products::where('featured', true)
+            ->where('state_id', '!=', 2) // Excluir productos con state_id = 2
+            ->take(2)
+            ->get();
+
+        $categories = Category::whereHas('products', function ($query) {
+            $query->where('state_id', '!=', 2); // Excluir productos con state_id = 2
+        })
+            ->get();
+
         return view('livewire.welcome', compact('categories', 'featuredProducts'));
     }
 

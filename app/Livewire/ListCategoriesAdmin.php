@@ -66,21 +66,37 @@ class ListCategoriesAdmin extends Component
     }
 
 
-//    public function deleteProduct($productId)
-//    {
-//        $product = Products::findOrFail($productId);
-//        if ($product) {
-//            $product->delete();
-//            $this->loadCategories();
-//        }
-//        return redirect()->route('panelProducts');
-//    }
+    public function deleteCategory($categoryId)
+    {
+        $category = Category::findOrFail($categoryId);
+        if ($category) {
+            // Obtener todos los productos asociados a esta categoría
+            $products = Products::where('category_id', $categoryId)->get();
+
+            // Eliminar cada producto y su imagen asociada, si existe
+            foreach ($products as $product) {
+                if ($product->image_url) {
+                    $imageUrl = public_path($product->image_url);
+                    if (file_exists($imageUrl)) {
+                        unlink($imageUrl);
+                    }
+                }
+                $product->delete();
+            }
+
+            $category->delete();
+
+            $this->loadCategories();
+        }
+        return redirect()->route('panelCategories');
+    }
+
 //
 //    // Agafo la id passada a la vista amb onclick i redirigeixo a la ruta amb les dades.
 //    // La ruta cridarà al mètode editProduct de la vista (ModifyProducts).
-//    public function edit($productId)
-//    {
-//        return redirect()->route('products.edit', ['id' => $productId]);
-//    }
+    public function edit($categoryId)
+    {
+        return redirect()->route('categories.edit', ['id' => $categoryId]);
+    }
 
 }

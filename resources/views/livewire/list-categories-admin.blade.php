@@ -4,10 +4,10 @@
             {{--                    <p class="mt-2 text-sm text-gray-700">A list of all the users in your account including their name, title, email and role.</p>--}}
         </div>
         <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
-{{--            <a href="{{ route('addCategory') }}">--}}
-{{--                <button type="button"--}}
-{{--                        class="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">{{__("translate.AFEGIR_CATEGORIA_TXT")}}</button>--}}
-{{--            </a>--}}
+            <a href="{{ route('addCategories') }}">
+                <button type="button"
+                        class="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">{{__("translate.AFEGIR_CATEGORIA_TXT")}}</button>
+            </a>
         </div>
     </div>
 
@@ -18,21 +18,6 @@
                 <option value="{{ $column }}">{{ ucfirst($column) }}</option>
             @endforeach
         </select>
-
-        {{--        <select wire:model="selectedCategory">--}}
-        {{--            <option value="">Todas las categorías</option>--}}
-        {{--            @foreach($categories as $category)--}}
-        {{--                <option class="" value="{{ $category->id }}">{{ $category->name_category }}</option>--}}
-        {{--            @endforeach--}}
-        {{--        </select>--}}
-
-        {{--        <select wire:model="selectedState">--}}
-        {{--            <option value="">Todos los estados</option>--}}
-        {{--            @foreach($estat as $state)--}}
-        {{--                <option class="" value="{{ $state->id }}">{{ $state->name_state }}</option>--}}
-        {{--            @endforeach--}}
-        {{--        </select>--}}
-
         <div>
             <button wire:click="loadCategories">Aplicar</button>
         </div>

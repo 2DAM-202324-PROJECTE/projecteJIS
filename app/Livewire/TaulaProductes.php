@@ -31,22 +31,25 @@ class TaulaProductes extends Component
 
         $selectedCategoryId = session('selected_category');
         $searchParam = session('searchParam');
-        // en cas de que hi hagi una categoria seleccionada, farà un select de la categoria seleccionada
+        // en caso de que haya una categoria seleccionada, hará un select de la categoria seleccionada
         if ($selectedCategoryId) {
-            $category = Category::findOrFail($selectedCategoryId); //Fa select de la categoria seleccionada
-            $this->products = $category->products;
-
+            $category = Category::findOrFail($selectedCategoryId);
+            $products = $category->products()->where('state_id', '!=', 2)->get(); // Excluir productos con state_id = 2
+            $this->products = $products;
         }
-        // en cas que hi hagi un paràmetre de cerca, farà un select dels productes
-        // que continguin el paràmetre de cerca
-        else if ($searchParam){
-            $products = Products::where('name', 'LIKE', "%$searchParam%")->get();
+        // en caso que haya un parámetro de búsqueda, hará un select de los productos que contengan el parámetro de búsqueda
+        else if ($searchParam) {
+            $products = Products::where('name', 'LIKE', "%$searchParam%")
+                ->where('state_id', '!=', 2) // Excluir productos con state_id = 2
+                ->get();
+            $this->products = $products;
+        }
+        // en caso contrario, cargará todos los productos
+        else {
+            $products = Products::where('state_id', '!=', 2)->get(); // Excluir productos con state_id = 2
             $this->products = $products;
         }
 
-        else {
-            $this->products = Products::all();
-        }
     }
 
     public function addToCart($productId): void

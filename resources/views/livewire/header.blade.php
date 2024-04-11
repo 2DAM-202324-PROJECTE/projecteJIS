@@ -3,7 +3,9 @@
 
 
     <div class="fixed top-0 left-0 right-0 z-50 bg-white shadow-md ">
+
         <div class="bg-indigo-900 relative">
+
             <p class="flex h-10 items-center justify-center px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
                 {{ __('translate.ENVIO_GRATIS_HEADER_TXT') }}
             </p>
@@ -12,7 +14,7 @@
 
 
         <nav aria-label="Top" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div class="flex h-16 items-center">
+            <div class="flex h-20 items-center">
 
 
                 <div class="ml-4">
@@ -41,11 +43,16 @@
                 </div>
 
                 <!-- Search -->
-                <div class="flex lg:ml-6">
-                    <form id="search-form" action="{{ route('search') }}" method="GET">
-                        <input id="search-input" type="text" name="query" placeholder="{{ __('translate.BUSCAR_TXT') }}"
-                               class="p-2 text-gray-400">
-                        <button type="submit" class="p-2 text-gray-400 hover:text-gray-500">
+
+                <div class="flex lg:ml-6 input-wrapper mt-2">
+                    <form id="search-form" action="{{ route('search') }}" method="GET" class="flex">
+                        <div class="relative flex-grow">
+                            <input type="text" id="search-input" name="query" required autocomplete="off"
+                                   class="w-full py-1 px-2 border border-gray-300 focus:outline-none focus:border-gray-300 focus:ring-0">
+                            <label for="username"
+                                   class="absolute bottom-0 left-0 text-sm text-gray-500 pointer-events-none transition-all duration-300">{{ __("translate.BUSCAR_TXT") }}</label>
+                        </div>
+                        <button type="submit" class="p-2 text-gray-400 hover:text-gray-500 ml-2">
                             <span class="sr-only">Search</span>
                             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                  stroke="currentColor" aria-hidden="true">
@@ -54,7 +61,6 @@
                             </svg>
                         </button>
                     </form>
-
                 </div>
 
                 <!-- Flyout menus -->
@@ -238,7 +244,8 @@
                                 <li wire:click="selectCategory({{ $category->id }})"
                                     class="text-sm font-medium pb-2 text-gray-700 hover:text-gray-800 cursor-pointer">
 
-                                    <a href="#" class="inline-flex items-start p-3 -m-3 transition duration-150 ease-in-out rounded-xl hover:bg-gray-50">
+                                    <a href="#"
+                                       class="inline-flex items-start p-3 -m-3 transition duration-150 ease-in-out rounded-xl hover:bg-gray-50">
                                         <div class="">
                                             <!-- Mostrar imagen correspondiente a la categoría -->
                                             <img src="/Img/{{ $category->name_category }}ICON.png"

@@ -19,7 +19,7 @@ class ProductsSeeder extends Seeder
             'description' => 'Laptop HP 15.6" 8GB RAM 1TB HDD Intel Core i5 10th Gen 1035G1 3.6GHz Windows 10 Home 15-dy1036nr',
             'price' => 1000,
             'stock' => 10,
-            'image_url' => 'https://www.hp.com/es-es/shop/Html/Merch/Images/c08505663_1750x1285.jpg',
+            'image_url' => '/Img/Productes/laptopHP.jpg',
             'category_id' => 2,
             'state_id' => 1,
         ]);
@@ -28,7 +28,7 @@ class ProductsSeeder extends Seeder
             'description' => 'Samsung Galaxy A10s A107M - 32GB, 6.2" HD+ Infinity-V Display, 13MP+2MP Dual Rear +8MP Front Cameras, GSM Unlocked Smartphone - Blue',
             'price' => 500,
             'stock' => 10,
-            'image_url' => 'https://m.media-amazon.com/images/I/61OhSCY69kL._AC_UF894,1000_QL80_.jpg',
+            'image_url' => '/Img/Productes/Galaxy-A10.jpg',
             'category_id' => 3,
             'state_id' => 1
 
@@ -39,7 +39,7 @@ class ProductsSeeder extends Seeder
             'description' => 'Tablet Samsung Galaxy Tab A 8.0" 32 GB Wifi Android 9.0 Pie SM-T290 (2019) - Black',
             'price' => 300,
             'stock' => 10,
-            'image_url' => 'https://m.media-amazon.com/images/I/71jEzLfsMcL._AC_UF894,1000_QL80_.jpg',
+            'image_url' => '/Img/Productes/samsung-galaxy-tab-A.jpg',
             'category_id' => 4,
             'state_id' => 1
         ]);
@@ -48,7 +48,7 @@ class ProductsSeeder extends Seeder
             'description' => 'Computer Monitor - 23.8" Full HD Monitor (1920 x 1080p) - IPS Panel and Built-in Audio - VESA Compatible 24m',
             'price' => 200,
             'stock' => 10,
-            'image_url' => 'https://www.hp.com/es-es/shop/Html/Merch/Images/c06470666_1750x1285.jpg',
+            'image_url' => '/Img/Productes/MonitorHpfhd.jpg',
             'category_id' => 5,
             'state_id' => 1
         ]);
@@ -57,7 +57,7 @@ class ProductsSeeder extends Seeder
             'description' => 'Logitech MK270 Wireless Keyboard and Mouse Combo - Keyboard and Mouse Included, 2.4GHz Dropout-Free Connection, Long Battery Life',
             'price' => 50,
             'stock' => 10,
-            'image_url' => 'https://m.media-amazon.com/images/I/61pUul1oDlL._AC_UF894,1000_QL80_.jpg',
+            'image_url' => '/Img/Productes/logitech-Mk270-Mouse.jpg',
             'category_id' => 5,
             'state_id' => 1
         ]);
@@ -66,7 +66,7 @@ class ProductsSeeder extends Seeder
             'description' => 'AMD Ryzen 5 3600 6-Core, 12-Thread Unlocked Desktop Processor with Wraith Stealth Cooler',
             'price' => 200,
             'stock' => 10,
-            'image_url' => 'https://m.media-amazon.com/images/I/81b75EQJrgL.jpg',
+            'image_url' => '/Img/Productes/AMD_Ryzen5_3600.jpg',
             'category_id' => 6,
             'state_id' => 1
         ]);
@@ -76,29 +76,19 @@ class ProductsSeeder extends Seeder
                 'description' => 'HP Pavilion Gaming Desktop Computer, AMD Ryzen 5 3500 Processor, NVIDIA GeForce GTX 1650 4 GB, 8 GB RAM, 512 GB SSD, Windows 10 Home (TG01-0030, Black)',
                 'price' => 800,
                 'stock' => 10,
-                'image_url' => 'https://www.worten.es/i/98057e589fc8dd6a67d9c583c019a8d003d435bf',
+                'image_url' => '/Img/Productes/Hp_PavilionGaming_desktop.jpg',
                 'category_id' => 1,
                 'state_id' => 2
             ]
         );
-        Products::create(
-            [
-                'name' => 'HP 24mh FHD Monitor',
-                'description' => 'HP 24mh FHD Monitor - Computer Monitor with 23.8-Inch IPS Display (1080p) - Built-In Speakers and VESA Mounting - Height/Tilt Adjustment for Ergonomic Viewing - HDMI and DisplayPort - (1D0J9AA#ABA)',
-                'price' => 200,
-                'stock' => 10,
-                'image_url' => 'https://thumb.pccomponentes.com/w-150-150/articles/1077/10770018/1182-hp-e-series-e24-g5-238-led-ips-fullhd-75hz.jpg',
-                'category_id' => 5,
-                'state_id' => 1
-            ]
-        );
+
         Products::create(
             [
                 'name' => 'HP 15 Laptop',
                 'description' => 'HP 15 Laptop, 11th Gen Intel Core i5-1135G7 Processor, 8 GB RAM, 256 GB SSD Storage, 15.6” Full HD IPS Display, Windows 10 Home, HP Fast Charge, Lightweight Design (15-dy2021nr, 2020)',
                 'price' => 600,
                 'stock' => 10,
-                'image_url' => 'https://thumb.pccomponentes.com/w-530-530/articles/1081/10819169/2843-hp-laptop-15-fd0036np-intel-core-i3-n305-8gb-256gb-ssd-156-pt-foto.jpg',
+                'image_url' => '/Img/Productes/HP15_Laptop.jpg',
                 'category_id' => 2,
                 'state_id' => 1
             ]

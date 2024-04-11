@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\Categories\AddCategories;
+use App\Http\Controllers\Admin\Categories\ModifyCategories;
 use App\Http\Controllers\Admin\Index as AdminIndex;
 use App\Http\Controllers\Admin\Products\AddProducts;
 use App\Http\Controllers\Admin\Products\Featureds;
@@ -84,3 +86,10 @@ Route::get('/featureds', Featureds::class)->name('featureds');
 Route::post('/fetauredProduct', [SelectDestacats::class, 'updateFeaturedProducts'])->name('updateFeaturedProducts');
 
 Route::get('/panelCategories', AdminCategories::class)->name('panelCategories');
+
+Route::get('/addCategories', AddCategories::class)->name('addCategories');
+
+Route::get('/categories/edit/{id}', [ModifyCategories::class, 'loadDataCategories'])->name('categories.edit');
+
+Route::put('/categories/{id}', [ModifyCategories::class, 'updateCategory']);
+

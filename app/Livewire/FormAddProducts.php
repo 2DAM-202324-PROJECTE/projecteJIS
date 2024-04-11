@@ -4,11 +4,17 @@ namespace App\Livewire;
 use App\Models\Category;
 use App\Models\Products;
 use App\Models\State;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
+
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class FormAddProducts extends Component
 {
+    use WithFileUploads;
 
+    public $image;
     public $products;
     public $categories;
     public $estat;
@@ -19,8 +25,7 @@ class FormAddProducts extends Component
     public $price;
     public $stock;
 
-    // valor per defecte, si no el canviem al formulari es quedarà aquest
-    public $image_url = 'https://mijnbuurtje.imgix.net/1906/578fad10-9675-11e9-9e2a-03c3674f56a6.jpeg?h=2614&w=2614&s=4a87e90cd71ab7cafbe8229ab40521b7';
+    public $image_url;
     public $category_id;
     public $state_id;
 
@@ -54,32 +59,50 @@ class FormAddProducts extends Component
     }
 
 
-
-
     public function createProduct()
     {
-        $this->validate();
+        $this->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'price' => 'required|numeric|min:0',
+            'stock' => 'required|numeric|min:0',
+            'category_id' => 'required',
+            'state_id' => 'required',
+            'image' => 'required|image', // Validación de la imagen
+        ]);
 
-        // Obté las IDs existents
+        // Obtener todos los IDs de productos existentes
         $existingIds = Products::pluck('id')->toArray();
 
-        // Busca la primera ID disponible
-        $newProductId = 1;
-        while (in_array($newProductId, $existingIds)) {
-            $newProductId++;
+        // Encontrar el menor ID disponible que sea mayor que 0
+        $nextId = 1;
+        while (in_array($nextId, $existingIds)) {
+            $nextId++;
         }
 
-        // Crear el producte amb la nova id (serà sempre la més petita disponible)
+        // Guardar la imagen en storage/app/Img
+        $imageName = $this->image->store('Img', 'public');
+
+        // Mover la imagen a public/Img
+        $imagePath = storage_path("app/public/$imageName");
+        $publicImagePath = public_path("Img/Productes/{$this->image->getClientOriginalName()}");
+        File::move($imagePath, $publicImagePath);
+
+        $imageUrl = asset("Img/Productes/{$this->image->getClientOriginalName()}");
+        $imageUrl = str_replace(url('/'), '', $imageUrl);
+
         Products::create([
-            'id' => $newProductId,
+            'id' => $nextId, // Asignar el próximo ID disponible
             'name' => $this->name,
             'description' => $this->description,
             'price' => $this->price,
             'stock' => $this->stock,
-            'image_url' => $this->image_url,
+            'image_url' => $imageUrl,
             'category_id' => $this->category_id,
             'state_id' => $this->state_id,
         ]);
+
+        $this->reset(['name', 'description', 'price', 'stock', 'image']);
 
         $this->loadProducts();
 
@@ -88,21 +111,21 @@ class FormAddProducts extends Component
 
 
 
-    public function deleteProduct($productId)
-    {
-        $product = Products::findOrFail($productId);
-        if ($product) {
-            $product->delete();
-            $this->loadProducts();
-        }
-        return redirect()->route('panelProducts');
-    }
-
-//    private function resetForm()
+//    public function deleteProduct($productId)
 //    {
-//        $this->name = '';
-//        $this->description = '';
-//        $this->price = '';
-//        $this->selectedProductId = null;
+//        $product = Products::findOrFail($productId);
+//
+//            // Eliminar el producto de la base de datos
+//            $product->delete();
+//
+//            // Recargar los productos
+//            $this->loadProducts();
+//
+//
+//        return redirect()->route('panelProducts');
 //    }
+
+
+
+
 }

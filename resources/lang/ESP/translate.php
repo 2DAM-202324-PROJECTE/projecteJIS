@@ -59,10 +59,14 @@ return[
     "GUARDAR_TXT" => "Guardar",
     "AFEGIR_PRODUCTE_TXT" => "Añadir Producto",
     "CHECKOUT_TXT" => "Finalizar compra",
-    "CREARBORRAR_PRODUCTES_TXT" => "Ver todos los Productos",
+    "VEURE_PRODUCTES_TXT" => "Ver todos los Productos",
     "TORRES_TXT" => "Torres",
     "DESTACATS_TXT" => "Destacados",
     "SELECT_DESTACATS_TXT" => "Selecciona los Productos destacados",
+    "VEURE_CATEGORIES_TXT" => "Ver todas las Categorías",
+    "CATEGORIES_TXT" => "Categorías",
+    "AFEGIR_CATEGORIA_TXT" => "Añadir Categoría",
+    "INTROD_NOM_TXT" => "Introduce el nombre",
 
 
 ];
