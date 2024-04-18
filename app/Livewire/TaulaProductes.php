@@ -11,11 +11,17 @@ class TaulaProductes extends Component
 {
     public $products;
     public $quantity;
+    public $minPrice;
+    public $maxPrice;
 
+    protected $listeners = ['filtersApplied'];
 
     public function render()
     {
-        return view('livewire.taula-productes');
+        return view('livewire.taula-productes', [
+            'searchParam' => session('searchParam'),
+            'selectedCategory' => session('selected_category'),
+        ]);
     }
     public function mount()
     {
@@ -28,29 +34,33 @@ class TaulaProductes extends Component
     // Funció per carregar els productes, depenent dels paràmetres passats, ja siguin del header, d'algun filtre...
     public function loadProducts()
     {
-
         $selectedCategoryId = session('selected_category');
         $searchParam = session('searchParam');
-        // en caso de que haya una categoria seleccionada, hará un select de la categoria seleccionada
+
         if ($selectedCategoryId) {
             $category = Category::findOrFail($selectedCategoryId);
-            $products = $category->products()->where('state_id', '!=', 2)->get(); // Excluir productos con state_id = 2
-            $this->products = $products;
-        }
-        // en caso que haya un parámetro de búsqueda, hará un select de los productos que contengan el parámetro de búsqueda
-        else if ($searchParam) {
+            $productsQuery = $category->products()->where('state_id', '!=', 2);
+
+            if ($this->minPrice) {
+                $productsQuery->where('price', '>=', $this->minPrice);
+            }
+
+            if ($this->maxPrice) {
+                $productsQuery->where('price', '<=', $this->maxPrice);
+            }
+
+            $this->products = $productsQuery->get();
+        } else if ($searchParam) {
             $products = Products::where('name', 'LIKE', "%$searchParam%")
-                ->where('state_id', '!=', 2) // Excluir productos con state_id = 2
+                ->where('state_id', '!=', 2)
                 ->get();
             $this->products = $products;
-        }
-        // en caso contrario, cargará todos los productos
-        else {
-            $products = Products::where('state_id', '!=', 2)->get(); // Excluir productos con state_id = 2
+        } else {
+            $products = Products::where('state_id', '!=', 2)->get();
             $this->products = $products;
         }
-
     }
+
 
     public function addToCart($productId): void
     {
@@ -61,6 +71,13 @@ class TaulaProductes extends Component
             Cart::add($product->id, $product->name, $product->price, $this->quantity);
             $this->dispatch('productAddedToCart');
         }
+    }
+
+    public function filtersApplied($filters)
+    {
+        $this->minPrice = $filters['minPrice'];
+        $this->maxPrice = $filters['maxPrice'];
+        $this->loadProducts();
     }
 
 

@@ -13,6 +13,7 @@
     @vite('resources/js/app.js')
 
 
+
     <link href="/resources/css/app.css" rel="stylesheet">
     <!-- Scripts -->
     <script>

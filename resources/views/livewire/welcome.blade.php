@@ -1,9 +1,9 @@
 <x-tenda-layout xmlns:wire="http://www.w3.org/1999/xhtml">
 
-<div class="relative overflow-hidden bg-white z-0 mt-30">
+<div class="relative overflow-hidden bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-cyan-100 via-sky-50 to-cyan-100z-0 mt-30">
 
     <!-- Promo section -->
-    <div class="relative isolate bg-gradient-to-b from-indigo-200 via-indigo-100 to-white pt-14 ">
+    <div class="relative isolate pt-14 ">
         <div class="py-24 sm:py-32 lg:pb-40">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
                 <div class="mx-auto max-w-2xl text-center ">
@@ -22,7 +22,7 @@
     </div>
 <div class="20">
     <!-- Featured section with sliders-->
-    <div class=" relative w-full mt-20 max-w-screen-2xl mx-auto glide-08">
+    <div class=" relative w-full mt-20 max-w-screen-2xl mx-auto glide-08 ">
         <!-- Slides -->
         <div class="overflow-hidden text-center bg-white rounded shadow-2xl shadow-slate-200 text-slate-500" data-glide-el="track">
             <ul class="relative w-full overflow-hidden p-0 whitespace-no-wrap flex flex-no-wrap [backface-visibility: hidden] [transform-style: preserve-3d] [touch-action: pan-Y] [will-change: transform]">
@@ -41,9 +41,12 @@
                                                 </p>
                                             </header>
 
-                                            <a href="#" wire:click="selectCategory({{ $category->id }})" class="mt-8 inline-block rounded border border-gray-900 bg-indigo-900 hover:bg-indigo-800 px-12 py-3 text-sm font-medium text-white transition hover:shadow focus:outline-none focus:ring">
-                                                {{__('translate.BOTO_COMPRA_TOTS_TXT')}}
-                                            </a>
+{{--                                            <a href="#" wire:click="selectCategory({{ $category->id }})" >--}}
+                                                <button wire:click="selectCategory({{ $category->id }})"
+                                                        class="mt-4 group group-hover:before:duration-500 group-hover:after:duration-500 after:duration-500 hover:border-indigo-300 hover:before:[box-shadow:_20px_20px_20px_30px_#a21caf] duration-500 before:duration-500 hover:duration-500 underline underline-offset-2 hover:after:-right-8 hover:before:right-12 hover:before:-bottom-8 hover:before:blur hover:underline hover:underline-offset-4  origin-left hover:decoration-2 hover:text-indigo-300 relative bg-indigo-900 h-16 w-52 border text-left p-3 text-gray-50 text-base font-bold rounded-lg  overflow-hidden  before:absolute before:w-12 before:h-12 before:content[''] before:right-1 before:top-1 before:z-10 before:bg-violet-500 before:rounded-full before:blur-lg  after:absolute after:z-10 after:w-20 after:h-20 after:content['']  after:bg-indigo-300 after:right-8 after:top-3 after:rounded-full after:blur-lg">
+                                                    {{__('translate.BOTO_COMPRA_TOTS_TXT')}}
+                                                </button>
+{{--                                            </a>--}}
                                         </div>
                                     </div>
 
@@ -77,11 +80,13 @@
             </ul>
         </div>
         <!-- Indicators -->
+        <!-- Indicators -->
         <div class="flex items-center justify-center w-full gap-2 pt-6" data-glide-el="controls[nav]">
             @foreach ($categories as $index => $category)
-                <button class="p-4 group" data-glide-dir="={{ $index }}" aria-label="goto slide {{ $index + 1 }}"><span class="block w-2 h-2 transition-colors duration-300 rounded-full opacity-70 ring-1 ring-slate-700  focus:outline-none"></span></button>
+                <button class="p-4 group" data-glide-dir="={{ $index }}" aria-label="goto slide {{ $index + 1 }}"><span class="block w-2 h-2 transition-colors duration-300 rounded-full opacity-70  bg-indigo-700 focus:outline-none"></span></button>
             @endforeach
         </div>
+
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.0.2/glide.js"></script>
@@ -103,7 +108,7 @@
     </script>
 </div>
     <!-- Categories preview -->
-    <div class="mt-20 bg-gradient-to-b from-white via-indigo-100 to-white">
+    <div class="mt-20">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="mx-auto max-w-2xl py-16 sm:py-24 lg:max-w-none lg:py-32">
                 <h2 class="text-2xl font-bold text-gray-900">Categories</h2>
@@ -137,6 +142,7 @@
             </div>
 
         </div>
+
     </div>
 
 

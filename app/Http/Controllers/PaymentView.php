@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+
 use Livewire\Component;
 
-class Checkout extends Component
+class PaymentView extends Component
+
 {
+
     public function render()
     {
-        return view('checkout');
+        return view('paymentView');
     }
 }

@@ -29,4 +29,8 @@ https://tailwindcomponents.com/gradient-generator/
 
 https://wind-ui.com/components/sliders/
 
+## Per a fer gradients mes complexos:
+
+https://tocinocode.com/generator/gradient/
+
 

@@ -29,7 +29,7 @@ class Header extends Component
         // Asigna el valor de la categoría seleccionada a la variable de sesión
         Session::put('selected_category', $categoryId);
         // Muestra los productos de la categoría seleccionada
-        return redirect()->to('/products')->with('selected_category', $categoryId);
+        return redirect()->to('/products');
     }
 
     public function search(Request $request)

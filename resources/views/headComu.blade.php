@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
 {{--    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@^2.0/dist/tailwind.min.css" rel="stylesheet">--}}
-
+    @vite('resources/js/AlertWind.jsx')
     <link href="/resources/css/app.css" rel="stylesheet">
     <!-- Scripts -->
     <script>

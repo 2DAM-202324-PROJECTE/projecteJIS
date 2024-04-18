@@ -1,8 +1,8 @@
-<header class="relative bg-white" xmlns:x-on="http://www.w3.org/1999/xhtml"
+<header class="relative " xmlns:x-on="http://www.w3.org/1999/xhtml"
         xmlns:wire="http://www.w3.org/1999/xhtml">
 
 
-    <div class="fixed top-0 left-0 right-0 z-50 bg-white shadow-md ">
+    <div class="fixed top-0 left-0 right-0 z-50 bg-white  shadow-md">
 
         <div class="bg-indigo-900 relative">
 

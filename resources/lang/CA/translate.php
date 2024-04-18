@@ -28,7 +28,7 @@ return[
     "MOSTRAR_CATEGORIES_TXT" => "Categories",
     "LES_NOSTRES_CATEG_TXT" => "Les nostres categories",
     "MISSATGE_PRODUCTES_DESTACATS_TXT" => "Aquests són dos dels nostres millors productes, mira totes les torres que tenim disponibles!",
-    "BOTO_COMPRA_TOTS_TXT" => "Compra'ls tots",
+    "BOTO_COMPRA_TOTS_TXT" => "Portam!",
     "BUSCAR_TXT" => "Cercar...",
     "OFERTES_TXT" => "Ofertes",
     "BOTO_OFERTES_TXT" => "Porta'm a elles",

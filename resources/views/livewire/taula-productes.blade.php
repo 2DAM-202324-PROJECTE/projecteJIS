@@ -1,46 +1,61 @@
-
-
 <div xmlns:wire="http://www.w3.org/1999/xhtml" xmlns:livewire="">
 
 
     <section class="py-24">
         <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-{{--            <h2 class="font-manrope font-bold text-3xl min-[400px]:text-4xl text-black mb-8 max-lg:text-center">Available Products</h2>--}}
+            {{--            <h2 class="font-manrope font-bold text-3xl min-[400px]:text-4xl text-black mb-8 max-lg:text-center">Available Products</h2>--}}
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
+                @if($selectedCategory)
+                    <div>
+{{--                        <livewire:filtres-productes :selectedCategory="$selectedCategory" :key="'filters-'.$selectedCategory" />--}}
+                        <livewire:filtres-productes :selectedCategory="$selectedCategory" :key="'products-'.$selectedCategory" />
 
-                @foreach ($products as $product)
 
-                <a href="javascript:;" class="max-w-[384px] mx-auto">
-                    <div class="w-full max-w-sm aspect-square relative">
-                        <img src="{{ $product->image_url }}" alt="{{ $product->name }}" class="w-full h-full rounded-xl"
-                             style="max-height: 300px; min-height: 300px "
-                             livewire:src="">
-{{--                        <span--}}
-{{--                            class="py-1 min-[400px]:py-2 px-2 min-[400px]:px-4 cursor-pointer rounded-lg bg-gradient-to-tr from-indigo-600 to-purple-600 font-medium text-base leading-7 text-white absolute top-3 right-3 z-10">20%--}}
-{{--                            Off</span>--}}
+                        {{--                        <livewire:filtres-productes :selectedCategory="$selectedCategory" :brands="$brands" :key="'products-'.$selectedCategory" />--}}
                     </div>
-                    <div class="mt-5 flex items-center justify-between">
-                        <div class="">
-                            <h6 class="font-medium text-xl leading-8 text-black mb-2">{{ $product->name }}</h6>
-                            <h6 class="font-semibold text-xl leading-8 text-indigo-600">{{ $product->price }}€</h6>
-                            <label>
-                                <input class="mb-2 border-2 rounded" type="number" min="1" wire:model="quantity">
-                            </label>
+                @elseif($searchParam)
+{{--                    TODO -solament mostrar filtres--}}
+                @endif
+
+
+            @foreach ($products as $product)
+
+                    <a href="javascript:;" class="max-w-[384px] mx-auto">
+
+                        <!-- component -->
+                        <div
+                            class="mx-auto mt-11 w-80 transform overflow-hidden rounded-lg bg-slate-800 shadow-md duration-300 hover:scale-105 hover:shadow-lg">
+                            <img src="{{ $product->image_url }}" alt="{{ $product->name }}"
+                                 class="h-48 w-full object-cover object-center"
+                                 style="max-height: 300px; min-height: 300px " livewire:src="">
+                            <div class="p-4">
+                                <h2 class="mb-2 text-lg font-medium text-white ">{{ $product->name }}</h2>
+                                {{--                            <p class="mb-2 text-base  text-gray-700">Product description goes here.</p>--}}
+                                <div class="pt-2 flex items-center">
+                                    <p class="mr-2 text-lg font-semibold text-white">{{ $product->price }}€</p>
+                                </div>
+                                <div class="flex items-center mb-2">
+                                    <label class="mr-2">
+                                        <input class="border-2 rounded" type="number" min="1" wire:model="quantity">
+                                    </label>
+                                    <button
+                                        class="p-2 min-[400px]:p-4 rounded-full bg-white border border-gray-300 flex items-center justify-center group shadow-sm shadow-transparent transition-all duration-500 hover:shadow-gray-200 hover:border-gray-400 hover:bg-gray-50"
+                                        wire:click="addToCart('{{ $product->id }}')">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24">
+                                            <path
+                                                d="M24 3l-.743 2h-1.929l-3.474 12h-13.239l-4.615-11h16.812l-.564 2h-13.24l2.937 7h10.428l3.432-12h4.195zm-15.5 15c-.828 0-1.5.672-1.5 1.5 0 .829.672 1.5 1.5 1.5s1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5zm6.9-7-1.9 7c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
 
-                        <button
-                            class="p-2 min-[400px]:p-4 rounded-full bg-white border border-gray-300 flex items-center justify-center group shadow-sm shadow-transparent transition-all duration-500 hover:shadow-gray-200 hover:border-gray-400 hover:bg-gray-50">
-
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" wire:click="addToCart('{{ $product->id }}')">{{ __("translate.AFEGIR_CISTELLA_TXT") }}>
-                                <path d="M24 3l-.743 2h-1.929l-3.474 12h-13.239l-4.615-11h16.812l-.564 2h-13.24l2.937 7h10.428l3.432-12h4.195zm-15.5 15c-.828 0-1.5.672-1.5 1.5 0 .829.672 1.5 1.5 1.5s1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5zm6.9-7-1.9 7c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5z"/>
-                            </svg>
-
-                        </button>
-                    </div>
-                </a>
+                    </a>
                 @endforeach
             </div>
         </div>
     </section>
+
 </div>

@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Facades\Cart;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Illuminate\Contracts\View\View;
 
@@ -99,5 +100,19 @@ class CartComponent extends Component
         $this->enviament = Cart::enviamentString();
         $this->content = Cart::content();
         $this->totalProducts = Cart::QuantityTotalCart(); // Actualiza la cantidad total de productos en el carrito
+    }
+
+    /**
+     * Redirigeix a l'usuari al checkout o al login, depenent de si està autenticat.
+     * @return void
+     */
+    public function finalizarCompraRedirect(): void
+    {
+        if (Auth::check()) {
+
+            $this->redirect('/checkout');
+        } else {
+            $this->redirect('/login');
+        }
     }
 }
