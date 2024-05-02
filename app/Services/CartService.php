@@ -32,12 +32,13 @@ class CartService {
      * @param string $name
      * @param string $price
      * @param string $quantity
+     * @param string $image_url
      * @param array $options
      * @return void
      */
-    public function add($id, $name, $price, $quantity, $options = []): void
+    public function add($id, $name, $price, $quantity, $image_url, $options = []): void
     {
-        $cartItem = $this->createCartItem($name, $price, $quantity, $options);
+        $cartItem = $this->createCartItem($name, $price, $quantity, $image_url, $options);
 
         $content = $this->getContent();
 
@@ -218,7 +219,7 @@ class CartService {
         $calculIva = $this->Iva();
         $totalMesIva = $total + $calculIva;
         if ($totalMesIva > 250) {
-            return "Gratis";
+            return  __('translate.GRATIS_TXT');
         } else {
             return "+ 5.99";
         }
@@ -241,10 +242,11 @@ class CartService {
      * @param string $name
      * @param string $price
      * @param string $quantity
+     * @param string $image_url
      * @param array $options
      * @return Illuminate\Support\Collection
      */
-    protected function createCartItem(string $name, string $price, string $quantity, array $options): Collection
+    protected function createCartItem(string $name, string $price, string $quantity, string $image_url, array $options): Collection
     {
         $price = floatval($price);
         $quantity = intval($quantity);
@@ -257,6 +259,7 @@ class CartService {
             'name' => $name,
             'price' => $price,
             'quantity' => $quantity,
+            'img' => $image_url,
             'options' => $options,
         ]);
     }

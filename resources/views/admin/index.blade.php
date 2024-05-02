@@ -112,9 +112,9 @@
                             <div class="rounded-[10px] bg-white p-4 !pt-20 sm:p-6">
                                 <time datetime="2022-10-10" class="block text-xs text-gray-500"> 10th Oct 2022</time>
 
-                                <a href="#">
+                                <a href="{{ route('panelMarques') }}">
                                     <h3 class="mt-0.5 text-lg font-medium text-gray-900">
-                                        How to center an element using JavaScript and jQuery
+                                        {{__("translate.VEURE_MARQUES_TXT")}}
                                     </h3>
                                 </a>
 

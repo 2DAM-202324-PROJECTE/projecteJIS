@@ -9,11 +9,10 @@
                 @if ($content->count() > 0)
                     @foreach ($content as $id => $item)
                         <li class="flex items-center gap-4">
-                            {{--                        <img--}}
-                            {{--                            src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=830&q=80"--}}
-                            {{--                            alt=""--}}
-                            {{--                            class="size-16 rounded object-cover"--}}
-                            {{--                        />--}}
+                                <img
+                                    src="{{ $item->get('img') }}" alt="{{ $item->get('name') }}"
+                                    class="size-24 rounded object-cover"
+                                />
 
                             <div>
 
@@ -23,6 +22,7 @@
                                         class="text-sm p-1 border-2 rounded border-gray-200 hover:border-gray-300 bg-gray-200 hover:bg-gray-300"
                                         wire:click="updateCartItem({{ $id }}, 'minus')"> -
                                     </button>
+
 
 
                                     {{ $item->get('name') }}

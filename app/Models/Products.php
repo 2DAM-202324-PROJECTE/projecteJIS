@@ -20,4 +20,8 @@ class Products extends Model
         return $this->belongsTo(State::class);
     }
 
+    public function marques()
+    {
+        return $this->belongsTo(Marques::class);
+    }
 }

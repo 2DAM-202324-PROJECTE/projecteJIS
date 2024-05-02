@@ -113,6 +113,24 @@
                     </div>
                 </div>
 
+                <div class="sm:col-span-3">
+                    <label for="marca_id"
+                           class="block text-sm font-medium leading-6 text-gray-900">{{__("translate.MARCA_FORM_TXT")}}</label>
+                    <div class="mt-2">
+                        <select id="marca_id" name="marca_id" wire:model="marca_id" autocomplete="marca_id"
+                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                            <option value="" selected>{{ __("translate.SELECCIONA_MARCA_TXT") }}</option>
+
+                            @foreach($marca as $brand)
+                                <option value="{{ $brand->id }}">{{ $brand->name }}</option>
+
+                            @endforeach
+                        </select>
+                        @error('marca_id') <span>{{ $message }}</span> @enderror
+
+                    </div>
+                </div>
+
 
                 <div class="col-span-full">
                     <label for="cover-photo" class="block text-sm font-medium leading-6 text-gray-900">Product photo</label>

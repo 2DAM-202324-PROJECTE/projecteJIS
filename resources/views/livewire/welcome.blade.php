@@ -41,12 +41,10 @@
                                                 </p>
                                             </header>
 
-{{--                                            <a href="#" wire:click="selectCategory({{ $category->id }})" >--}}
                                                 <button wire:click="selectCategory({{ $category->id }})"
-                                                        class="mt-4 group group-hover:before:duration-500 group-hover:after:duration-500 after:duration-500 hover:border-indigo-300 hover:before:[box-shadow:_20px_20px_20px_30px_#a21caf] duration-500 before:duration-500 hover:duration-500 underline underline-offset-2 hover:after:-right-8 hover:before:right-12 hover:before:-bottom-8 hover:before:blur hover:underline hover:underline-offset-4  origin-left hover:decoration-2 hover:text-indigo-300 relative bg-indigo-900 h-16 w-52 border text-left p-3 text-gray-50 text-base font-bold rounded-lg  overflow-hidden  before:absolute before:w-12 before:h-12 before:content[''] before:right-1 before:top-1 before:z-10 before:bg-violet-500 before:rounded-full before:blur-lg  after:absolute after:z-10 after:w-20 after:h-20 after:content['']  after:bg-indigo-300 after:right-8 after:top-3 after:rounded-full after:blur-lg">
+                                                        class="mt-4 group group-hover:before:duration-500 group-hover:after:duration-500 after:duration-500 hover:border-indigo-300 hover:before:[box-shadow:_20px_20px_20px_30px_#574cd] duration-500 before:duration-500 hover:duration-500 underline underline-offset-2 hover:after:-right-8 hover:before:right-12 hover:before:-bottom-8 hover:before:blur hover:underline hover:underline-offset-4  origin-left hover:decoration-2 hover:text-indigo-300 relative bg-indigo-900 h-16 w-52 border text-left p-3 text-gray-50 text-base font-bold rounded-lg  overflow-hidden  before:absolute before:w-12 before:h-12 before:content[''] before:right-1 before:top-1 before:z-10 before:bg-indigo-900 before:rounded-full before:blur-lg  after:absolute after:z-10 after:w-20 after:h-20 after:content['']  after:bg-indigo-300 after:right-8 after:top-3 after:rounded-full after:blur-lg">
                                                     {{__('translate.BOTO_COMPRA_TOTS_TXT')}}
                                                 </button>
-{{--                                            </a>--}}
                                         </div>
                                     </div>
 
@@ -79,7 +77,6 @@
                 @endforeach
             </ul>
         </div>
-        <!-- Indicators -->
         <!-- Indicators -->
         <div class="flex items-center justify-center w-full gap-2 pt-6" data-glide-el="controls[nav]">
             @foreach ($categories as $index => $category)
@@ -124,13 +121,23 @@
                                 <img src="{{ $category -> category_image }}" alt="{{ __('translate.CATEGORIES_ARRAY_TXT.' . $category->name_category) }}" class="h-full w-full object-cover object-center">
                             </div>
                             <div class="mb-6 mt-2">
-                                <p class="text-base font-semibold text-gray-900">{{$category -> name_category}}</p>
+
+                                <!-- En cas de no trobar la traducció, mostra el valor de la bd sense traducció-->
+                                @if( __('translate.CATEGORIES_ARRAY_TXT.' . $category->name_category) != 'translate.CATEGORIES_ARRAY_TXT.' . $category->name_category)
+                                <p class="text-base font-semibold text-gray-900">{{ __('translate.CATEGORIES_ARRAY_TXT.' . $category->name_category) }}</p>
+                                @else
+                                    <p class="text-base font-semibold text-gray-900">{{ $category->name_category }}</p>
+                                @endif
+
 
                                 <h3 class="mb-0 text-sm text-gray-500">
                                     <a href="#">
                                         <span class="absolute inset-0"></span>
-                                        <!--Mostrem el contingut corresponent de l'array, respecte al nom de la categoria -->
+                                        @if( __('translate.CATEGORIES_DESCRIPTION_ARRAY_TXT.' . $category->name_category) != 'translate.CATEGORIES_DESCRIPTION_ARRAY_TXT.' . $category->name_category)
                                         {{ __('translate.CATEGORIES_DESCRIPTION_ARRAY_TXT.' . $category->name_category) }}
+                                        @else
+                                            {{ $category->category_description }}
+                                        @endif
                                     </a>
                                 </h3>
                             </div>
@@ -144,6 +151,8 @@
         </div>
 
     </div>
+
+    @livewire('logoClouds')
 
 
 

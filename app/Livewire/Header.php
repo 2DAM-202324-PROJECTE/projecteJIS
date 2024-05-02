@@ -13,7 +13,7 @@ class Header extends Component
     public $selectedCategory;
     public $products;
     public $categoryImages;
-    public $totalProductesCarro; // Necesitas definir esta propiedad para utilizarla
+    public $totalProductesCarro;
 
     public function render()
     {

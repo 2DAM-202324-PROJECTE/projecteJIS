@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 use App\Models\Category;
+use App\Models\Marques;
 use App\Models\Products;
 use App\Models\State;
 use Illuminate\Support\Facades\File;
@@ -18,6 +19,7 @@ class FormAddProducts extends Component
     public $products;
     public $categories;
     public $estat;
+    public $marca;
     public $productsColumns;
 
     public $name;
@@ -28,6 +30,7 @@ class FormAddProducts extends Component
     public $image_url;
     public $category_id;
     public $state_id;
+    public $marca_id;
 
     public $selectedProductId;
 
@@ -37,7 +40,7 @@ class FormAddProducts extends Component
     protected $rules = [
         'name' => 'required',
         'description' => 'required',
-        'price' => 'required|numeric|min:0',
+        'price' => 'required|numeric|min:1',
     ];
     public function render()
     {
@@ -50,6 +53,7 @@ class FormAddProducts extends Component
         $this->loadProducts();
         $this->categories = Category::all();
         $this->estat = State::all();
+        $this->marca = Marques::all();
 
     }
 
@@ -68,6 +72,7 @@ class FormAddProducts extends Component
             'stock' => 'required|numeric|min:0',
             'category_id' => 'required',
             'state_id' => 'required',
+            'marca_id' => 'required',
             'image' => 'required|image', // Validación de la imagen
         ]);
 
@@ -100,6 +105,7 @@ class FormAddProducts extends Component
             'image_url' => $imageUrl,
             'category_id' => $this->category_id,
             'state_id' => $this->state_id,
+            'marca_id' => $this->marca_id,
         ]);
 
         $this->reset(['name', 'description', 'price', 'stock', 'image']);

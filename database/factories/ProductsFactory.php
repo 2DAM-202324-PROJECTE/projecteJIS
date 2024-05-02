@@ -24,6 +24,7 @@ class ProductsFactory extends Factory
             'image_url' => 'https://via.placeholder.com/150',
             'category_id' => fake()->numberBetween(1, 5),
             'state_id' => fake()->numberBetween(1, 2),
+            'marca_id' => fake()->numberBetween(1, 5),
             'created_at' => now(),
             'updated_at' => now(),
 

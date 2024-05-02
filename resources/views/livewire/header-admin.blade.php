@@ -37,6 +37,10 @@
                     <x-nav-link href="{{ route('featureds') }}">
                         {{ __('translate.DESTACATS_TXT') }}
                     </x-nav-link>
+                    <x-nav-link href="{{ route('panelMarques') }}">
+                        {{ __('translate.MARQUES_TXT') }}
+                    </x-nav-link>
+
 
 
                 </div>

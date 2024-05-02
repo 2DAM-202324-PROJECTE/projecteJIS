@@ -67,6 +67,10 @@ return[
     "VEURE_CATEGORIES_TXT" => "Veure totes les Categories",
     "CATEGORIES_TXT" => "Categories",
     "AFEGIR_CATEGORIA_TXT" => "Afegir Categoria",
+    "GRATIS_TXT" => "Gratuït",
+    "PAGAR_TXT" => "Pagar",
+    "RESUM_ORDRE_TXT" => "Resum de la comanda",
+
 
 
 

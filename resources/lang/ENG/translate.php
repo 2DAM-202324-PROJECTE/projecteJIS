@@ -58,7 +58,7 @@ return[
     "CANCELAR_TXT" => "Cancel",
     "GUARDAR_TXT" => "Save",
     "AFEGIR_PRODUCTE_TXT" => "Add Product",
-    "CHECKOUT_TXT" => "CheckoutComponent",
+    "CHECKOUT_TXT" => "Checkout",
     "VEURE_PRODUCTES_TXT" => "See all the Products",
     "TORRES_TXT" => "Towers",
     "DESTACATS_TXT" => "Featureds",
@@ -67,6 +67,9 @@ return[
     "CATEGORIES_TXT" => "Categories",
     "AFEGIR_CATEGORIA_TXT" => "Add Category",
     "INTROD_NOM_TXT" => "Enter the name",
+    "GRATIS_TXT" => "Free",
+    "PAGAR_TXT" => "Pay",
+    "RESUM_ORDRE_TXT" => "Order Summary",
 
 
 

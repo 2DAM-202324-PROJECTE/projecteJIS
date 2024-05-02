@@ -67,6 +67,9 @@ return[
     "CATEGORIES_TXT" => "Categorías",
     "AFEGIR_CATEGORIA_TXT" => "Añadir Categoría",
     "INTROD_NOM_TXT" => "Introduce el nombre",
+    "GRATIS_TXT" => "Gratis",
+    "PAGAR_TXT" => "Pagar",
+    "RESUM_ORDRE_TXT" => "Resumen del pedido",
 
 
 ];

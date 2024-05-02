@@ -6,6 +6,7 @@ use App\Facades\Cart;
 use App\Models\Category;
 use App\Models\Products;
 use Livewire\Component;
+use Illuminate\Support\Facades\Session; // Importa la clase Session
 
 class TaulaProductes extends Component
 {
@@ -13,6 +14,7 @@ class TaulaProductes extends Component
     public $quantity;
     public $minPrice;
     public $maxPrice;
+    public $image_url;
 
     protected $listeners = ['filtersApplied'];
 
@@ -50,12 +52,18 @@ class TaulaProductes extends Component
             }
 
             $this->products = $productsQuery->get();
+
+            Session::forget('selected_category');
+
         } else if ($searchParam) {
             $products = Products::where('name', 'LIKE', "%$searchParam%")
                 ->where('state_id', '!=', 2)
                 ->get();
+
             $this->products = $products;
-        } else {
+
+            Session::forget('searchParam');
+        } else{
             $products = Products::where('state_id', '!=', 2)->get();
             $this->products = $products;
         }
@@ -68,7 +76,7 @@ class TaulaProductes extends Component
         $product = Products::findOrFail($productId);
         if ($product) {
             // Afegeix el producte al carret
-            Cart::add($product->id, $product->name, $product->price, $this->quantity);
+            Cart::add($product->id, $product->name, $product->price, $this->quantity, $product->image_url);
             $this->dispatch('productAddedToCart');
         }
     }
@@ -79,6 +87,7 @@ class TaulaProductes extends Component
         $this->maxPrice = $filters['maxPrice'];
         $this->loadProducts();
     }
+
 
 
 }

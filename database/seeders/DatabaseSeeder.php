@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
     {
         // L'ordre d'execució dels seeders és important, primer s'han de crear
         // les dades a on se faràn referéncia, i després les dades que fan referéncia a aquestes.
-        $this->call([CategorySeeder::class, StateSeeder::class,
-            ProductsSeeder::class, UserSeeder::class]);
+        $this->call([UserSeeder::class, ShipmentDataSeeder::class, MarquesSeeder::class, CategorySeeder::class, StateSeeder::class,
+            ProductsSeeder::class]);
     }
 }

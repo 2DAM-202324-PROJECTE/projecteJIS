@@ -20,6 +20,7 @@ return new class extends Migration
             $table->text('image_url');
             $table->unsignedBigInteger('category_id');
             $table->unsignedBigInteger('state_id');
+            $table->unsignedBigInteger('marca_id');
             $table->boolean('featured')->default(false);
             $table->timestamps();
 
@@ -28,6 +29,9 @@ return new class extends Migration
 
             $table->foreign('state_id')->references('id')->
             on('states')->onUpdate('cascade')->onDelete('cascade');
+
+            $table->foreign('marca_id')->references('id')->
+            on('marques')->onUpdate('cascade')->onDelete('cascade');
 
         });
     }

@@ -1,11 +1,20 @@
 <?php
 
+
+
+
+
+
+
+
+
 namespace App\Livewire;
 
 use App\Facades\Cart;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\Session;
 
 class CartComponent extends Component
 {
@@ -39,14 +48,14 @@ class CartComponent extends Component
      */
     public function render(): View
     {
-        return view('livewire.cartResume', [
+        return view('livewire.cartComponent', [
             'total' => $this->total,
             'Iva' => $this->calculIva,
             'totalMesIva' => $this->totalMesIva,
             'totalANumeric' => $this->totalANumeric,
             'enviament' => $this->enviament,
             'content' => $this->content,
-            'totalProducts' => $this->totalProducts, // Pasa la cantidad total de productos a la vista
+            'totalProducts' => $this->totalProducts,
         ]);
     }
 
@@ -100,6 +109,8 @@ class CartComponent extends Component
         $this->enviament = Cart::enviamentString();
         $this->content = Cart::content();
         $this->totalProducts = Cart::QuantityTotalCart(); // Actualiza la cantidad total de productos en el carrito
+
+
     }
 
     /**

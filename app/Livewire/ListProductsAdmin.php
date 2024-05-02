@@ -4,6 +4,10 @@ namespace App\Livewire;
 use App\Models\Category;
 use App\Models\Products;
 use App\Models\State;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Foundation\Application;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Schema;
 use Livewire\Component;
 
@@ -30,7 +34,7 @@ class ListProductsAdmin extends Component
     }
 
 
-    public function mount()
+    public function mount(): void
     {
         $this->orderBy = 'id';
         $this->groupBy = null;
@@ -45,7 +49,7 @@ class ListProductsAdmin extends Component
      * Carrega els productes de la bd
      * @return void
      */
-    public function loadProducts()
+    public function loadProducts(): void
     {
         $query = Products::query();
 
@@ -69,13 +73,13 @@ class ListProductsAdmin extends Component
      * Carrega les columnes de la taula products
      * @return void
      */
-    public function loadProductsColumns()
+    public function loadProductsColumns(): void
     {
         $this->productsColumns = Schema::getConnection()
             ->getSchemaBuilder()
             ->getColumnListing('products');
 
-        // Columnes que vols excloure del llistat
+        // Columnes que s'exclouen del llistat
         $excludedColumns = ['description', 'image_url', 'created_at', 'updated_at'];
 
         // Filtrar les columnes excloses
@@ -86,9 +90,9 @@ class ListProductsAdmin extends Component
     /**
      * Borra el producte de la bd i la imatge associada dels arxius locals
      * @param $productId
-     * @return \Illuminate\Http\RedirectResponse
+     * @return RedirectResponse
      */
-    public function deleteProduct($productId)
+    public function deleteProduct($productId): RedirectResponse
     {
         $product = Products::findOrFail($productId);
 
@@ -104,7 +108,6 @@ class ListProductsAdmin extends Component
             // Elimina el producte de la bd
             $product->delete();
 
-            // Recargar los productos
             $this->loadProducts();
         }
 

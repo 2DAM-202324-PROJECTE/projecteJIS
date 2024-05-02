@@ -22,6 +22,7 @@ class ProductsSeeder extends Seeder
             'image_url' => '/Img/Productes/laptopHP.jpg',
             'category_id' => 2,
             'state_id' => 1,
+            'marca_id' => 1
         ]);
         Products::create([
             'name' => 'Samsung Galaxy A10s A107M',
@@ -30,7 +31,8 @@ class ProductsSeeder extends Seeder
             'stock' => 10,
             'image_url' => '/Img/Productes/Galaxy-A10.jpg',
             'category_id' => 3,
-            'state_id' => 1
+            'state_id' => 1,
+            'marca_id' => 1
 
 
         ]);
@@ -41,7 +43,9 @@ class ProductsSeeder extends Seeder
             'stock' => 10,
             'image_url' => '/Img/Productes/samsung-galaxy-tab-A.jpg',
             'category_id' => 4,
-            'state_id' => 1
+            'state_id' => 1,
+            'marca_id' => 1
+
         ]);
         Products::create([
             'name' => 'Monitor HP 24mh FHD Monitor',
@@ -50,7 +54,9 @@ class ProductsSeeder extends Seeder
             'stock' => 10,
             'image_url' => '/Img/Productes/MonitorHpfhd.jpg',
             'category_id' => 5,
-            'state_id' => 1
+            'state_id' => 1,
+            'marca_id' => 1
+
         ]);
         Products::create([
             'name' => 'Logitech MK270 Wireless Keyboard and Mouse Combo',
@@ -59,7 +65,9 @@ class ProductsSeeder extends Seeder
             'stock' => 10,
             'image_url' => '/Img/Productes/logitech-Mk270-Mouse.jpg',
             'category_id' => 5,
-            'state_id' => 1
+            'state_id' => 1,
+            'marca_id' => 1
+
         ]);
         Products::create([
             'name' => 'AMD Ryzen 5 3600 6-Core',
@@ -68,7 +76,9 @@ class ProductsSeeder extends Seeder
             'stock' => 10,
             'image_url' => '/Img/Productes/AMD_Ryzen5_3600.jpg',
             'category_id' => 6,
-            'state_id' => 1
+            'state_id' => 1,
+            'marca_id' => 1
+
         ]);
         Products::create(
             [
@@ -78,7 +88,9 @@ class ProductsSeeder extends Seeder
                 'stock' => 10,
                 'image_url' => '/Img/Productes/Hp_PavilionGaming_desktop.jpg',
                 'category_id' => 1,
-                'state_id' => 2
+                'state_id' => 2,
+                'marca_id' => 1
+
             ]
         );
 
@@ -90,7 +102,9 @@ class ProductsSeeder extends Seeder
                 'stock' => 10,
                 'image_url' => '/Img/Productes/HP15_Laptop.jpg',
                 'category_id' => 2,
-                'state_id' => 1
+                'state_id' => 1,
+                'marca_id' => 1
+
             ]
         );
 
@@ -101,7 +115,9 @@ class ProductsSeeder extends Seeder
             'stock' => 10,
             'image_url' => 'https://thumb.pccomponentes.com/w-150-150/articles/57/578962/128-apple-iphone-13-128gb-blanco-estrella-libre.jpg',
             'category_id' => 3,
-            'state_id' => 1
+            'state_id' => 1,
+            'marca_id' => 1
+
         ]);
 
         Products::create([
@@ -111,7 +127,9 @@ class ProductsSeeder extends Seeder
             'stock' => 10,
             'image_url' => 'https://thumb.pccomponentes.com/w-150-150/articles/1051/10519758/1941-samsung-galaxy-tab-s8-ultra-5g-12-256-gb-gris.jpg',
             'category_id' => 4,
-            'state_id' => 1
+            'state_id' => 1,
+            'marca_id' => 1
+
         ]);
 
         Products::create([
@@ -121,7 +139,9 @@ class ProductsSeeder extends Seeder
             'stock' => 10,
             'image_url' => 'https://thumb.pccomponentes.com/w-150-150/articles/1077/10772979/1940-logitech-g-pro-x-superlight-2-lightspeed-raton-inalambrico-gaming-negro-32000-dpi-4d3fc748-2b1b-4427-b7ac-c5d90b72dbe9.jpg',
             'category_id' => 5,
-            'state_id' => 1
+            'state_id' => 1,
+            'marca_id' => 1
+
         ]);
 
         Products::create([
@@ -131,7 +151,9 @@ class ProductsSeeder extends Seeder
             'stock' => 100,
             'image_url' => 'https://thumb.pccomponentes.com/w-530-530/articles/1077/10770783/1367-pccom-ready-i5-12400f-16gb-ram-1tb-ssd-rtx-3060-12gb-windows-11-pc-gaming.jpg',
             'category_id' => 1,
-            'state_id' => 1
+            'state_id' => 1,
+            'marca_id' => 1
+
         ]);
 
 
