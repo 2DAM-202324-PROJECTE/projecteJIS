@@ -5,13 +5,10 @@ namespace App\Livewire;
 use App\Facades\Cart;
 use App\Models\ShipmentData;
 use App\Services\CartService;
-use Illuminate\Http\Client\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redirect;
 use Livewire\Component;
-use Illuminate\Support\Facades\Session;
 
-class CheckoutComponent extends Component
+class CheckoutPaymentComponent extends Component
 {
     public $total;
     public $calculIva;
@@ -20,7 +17,7 @@ class CheckoutComponent extends Component
     public $enviament;
 
     public $shipmentData;
-    public $content;
+public $content;
 
     public $name;
     public $email;
@@ -40,7 +37,7 @@ class CheckoutComponent extends Component
         $this->calculIva = app(CartService::class)->Iva();
         $this->totalMesIvaEnviament = app(CartService::class)->totalMesIvaMesEnviament();
         $this->enviament = app(CartService::class)->enviamentString();
-        return view('livewire.checkoutComponent');
+        return view('livewire.checkoutPaymentComponent');
     }
     public function mount()
     {

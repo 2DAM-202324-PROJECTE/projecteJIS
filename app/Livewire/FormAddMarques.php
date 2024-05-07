@@ -13,7 +13,7 @@ class FormAddMarques extends Component
 {
     use WithFileUploads;
 
-    public s $image;
+    public $image;
     public $marques;
 
 

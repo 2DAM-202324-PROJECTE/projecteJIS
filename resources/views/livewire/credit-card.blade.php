@@ -1,4 +1,4 @@
-<div>
+<div xmlns:wire="http://www.w3.org/1999/xhtml">
     @vite('resources/css/creditcard.css')
     @vite('resources/js/creditcard.js')
     <main>
@@ -99,7 +99,12 @@
                     <input id="cvv" type="number" maxlength="3">
                 </div>
             </div>
+            <button class="submit-button mt-10 px-4 py-3 rounded-full bg-indigo-900 text-white focus:ring focus:outline-none w-full text-xl font-semibold transition-colors">
+                {{ __("translate.PAGAR_TXT") }} {{ $totalMesIvaEnviament }}€
+            </button>
         </form>
+
+
     </main>
 
 </div>

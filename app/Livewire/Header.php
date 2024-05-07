@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Facades\Cart;
 use App\Models\Category;
 use App\Services\CartService;
 use Illuminate\Support\Facades\Session;
@@ -15,10 +16,17 @@ class Header extends Component
     public $categoryImages;
     public $totalProductesCarro;
 
+    protected $listeners = ['cartUpdated' => 'updateCartQuantity'];
+
+    public function updateCartQuantity()
+    {
+        $this->totalProductesCarro = Cart::QuantityTotalCart();
+    }
+
     public function render()
     {
         $categories = Category::all();
-        $this->totalProductesCarro = app(CartService::class)->QuantityTotalCart(); // Obtenemos la cantidad de productos en el carrito
+        $this->totalProductesCarro = Cart::QuantityTotalCart(); // Obtenemos la cantidad de productos en el carrito
 
         return view('livewire.header', compact('categories'));
     }

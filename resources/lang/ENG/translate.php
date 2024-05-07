@@ -70,6 +70,19 @@ return[
     "GRATIS_TXT" => "Free",
     "PAGAR_TXT" => "Pay",
     "RESUM_ORDRE_TXT" => "Order Summary",
+    "NOM_TXT" => "Name",
+    "CORREU_TXT" => "Email",
+    "ADREÇA_TXT" => "Address",
+    "CIUTAT_TXT" => "City",
+    "ESTAT_TXT" => "State",
+    "CP_TXT" => "CP",
+    "PAIS_TXT" => "Country",
+    "ESPANYA_TXT" => "Spain",
+    "REGNE_UNIT_TXT" => "United Kingdom",
+    "ESTATS_UNITS_TXT" => "United States",
+    "MARQUES_TXT" => "Brands",
+    "VEURE_MARQUES_TXT" => "See all brands",
+    "AFEGIR_MARCA_TXT" => "Add Brand",
 
 
 

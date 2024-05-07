@@ -50,6 +50,7 @@
         </main>
 
     @livewire('footer')
+    @livewire('cookies')
     @livewireScripts
 
 </div>

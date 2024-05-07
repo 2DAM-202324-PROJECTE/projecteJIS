@@ -70,6 +70,19 @@ return[
     "GRATIS_TXT" => "Gratis",
     "PAGAR_TXT" => "Pagar",
     "RESUM_ORDRE_TXT" => "Resumen del pedido",
+    "NOM_TXT" => "Nombre",
+    "CORREU_TXT" => "Correo",
+    "ADREÇA_TXT" => "Dirección",
+    "CIUTAT_TXT" => "Ciudad",
+    "ESTAT_TXT" => "Estado",
+    "CP_TXT" => "CP",
+    "PAIS_TXT" => "País",
+    "ESPANYA_TXT" => "España",
+    "REGNE_UNIT_TXT" => "Reino Unido",
+    "ESTATS_UNITS_TXT" => "Estados Unidos",
+    "MARQUES_TXT" => "Marcas",
+    "VEURE_MARQUES_TXT" => "Ver todas las marcas",
+    "AFEGIR_MARCA_TXT" => "Añadir Marca",
 
 
 ];

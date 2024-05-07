@@ -47,7 +47,6 @@
                                 <select name="country" class="border-none bg-transparent flex-1 cursor-pointer appearance-none focus:outline-none" required="required" wire:model="country">
 
                                     <option value="ES">{{ __("translate.ESPANYA_TXT") }}</option>
-                                    <option value="CA">{{ __("translate.CATALUNYA_TXT") }}</option>
                                     <option value="GB">{{ __("translate.REGNE_UNIT_TXT") }}</option>
                                     <option value="US" >{{ __("translate.ESTATS_UNITS_TXT") }}</option>
                                 </select>

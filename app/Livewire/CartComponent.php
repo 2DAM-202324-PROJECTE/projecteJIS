@@ -2,12 +2,6 @@
 
 
 
-
-
-
-
-
-
 namespace App\Livewire;
 
 use App\Facades\Cart;
@@ -109,6 +103,9 @@ class CartComponent extends Component
         $this->enviament = Cart::enviamentString();
         $this->content = Cart::content();
         $this->totalProducts = Cart::QuantityTotalCart(); // Actualiza la cantidad total de productos en el carrito
+
+        // Emite un evento de Livewire
+        $this->dispatch('cartUpdated');
 
 
     }

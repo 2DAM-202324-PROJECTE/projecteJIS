@@ -1,7 +1,9 @@
-<div>
-    todo, resum preu compra i productes, boto finalitzar i opcio de codi descompte. Tambe inputs de direccio de facturacio
+<div class="">
+
+    <div class=" mr-10">
+        @livewire('credit-card')
+    </div>
 
 
-    @livewire('credit-card')
 
 </div>

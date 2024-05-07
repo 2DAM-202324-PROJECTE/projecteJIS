@@ -56,7 +56,7 @@ return[
     "SELECCIONA_CATEG_TXT" => "Selecciona una categoria",
     "SELECCIONA_ESTAT_TXT" => "Selecciona un estat",
     "INTROD_NOM_TXT" => "Introdueix el nom",
-    "CANCELAR_TXT" => "Cancelar",
+    "CANCELAR_TXT" => "Cancel·lar",
     "GUARDAR_TXT" => "Guardar",
     "AFEGIR_PRODUCTE_TXT" => "Afegir Producte",
     "CHECKOUT_TXT" => "Finalitzar Compra",
@@ -70,6 +70,20 @@ return[
     "GRATIS_TXT" => "Gratuït",
     "PAGAR_TXT" => "Pagar",
     "RESUM_ORDRE_TXT" => "Resum de la comanda",
+    "NOM_TXT" => "Nom",
+    "CORREU_TXT" => "Correu",
+    "ADREÇA_TXT" => "Adreça",
+    "CIUTAT_TXT" => "Ciutat",
+    "ESTAT_TXT" => "Estat",
+    "CP_TXT" => "CP",
+    "PAIS_TXT" => "País",
+    "ESPANYA_TXT" => "Espanya",
+    "REGNE_UNIT_TXT" => "Regne Unit",
+    "ESTATS_UNITS_TXT" => "Estats Units",
+    "MARQUES_TXT" => "Marques",
+    "VEURE_MARQUES_TXT" => "Veure totes les marques",
+    "AFEGIR_MARCA_TXT" => "Afegir Marca",
+
 
 
 
