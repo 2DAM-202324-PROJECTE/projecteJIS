@@ -92,12 +92,12 @@ class ListProductsAdmin extends Component
      * @param $productId
      * @return RedirectResponse
      */
-    public function deleteProduct($productId): RedirectResponse
+    public function deleteProduct($productId)
     {
         $product = Products::findOrFail($productId);
 
         if ($product) {
-            // Eliminar la imatge(dels arxius locals) associada al producte si existeix
+            // Eliminar la imatge (dels arxius) associada al producte si existeix
             if ($product->image_url) {
                 $imageUrl = public_path($product->image_url);
                 if (file_exists($imageUrl)) {
