@@ -12,15 +12,17 @@ class Welcome extends Component
     public $products;
     public $selectedCategory;
 
+    public $selectedBrand;
+
     public function render()
     {
         $featuredProducts = Products::where('featured', true)
-            ->where('state_id', '!=', 2) // Excluir productos con state_id = 2
+            ->where('state_id', '!=', 2) // Excloure productes amb state_id = 2
             ->take(2)
             ->get();
 
         $categories = Category::whereHas('products', function ($query) {
-            $query->where('state_id', '!=', 2); // Excluir productos con state_id = 2
+            $query->where('state_id', '!=', 2); // Excloure productes amb state_id = 2
         })
             ->get();
 
@@ -30,11 +32,13 @@ class Welcome extends Component
     public function selectCategory($categoryId)
     {
         $this->selectedCategory = $categoryId;
-        // Asigna el valor de la categoría seleccionada a la variable de sesión
+        // Assigna el valor de la categoría seleccionada a la variable de sessió
         Session::put('selected_category', $categoryId);
-        // Muestra los productos de la categoría seleccionada
+        // Mostra els productes de la categoría seleccionada
         return redirect()->to('/products')->with('selected_category', $categoryId);
     }
+
+
 
 
 

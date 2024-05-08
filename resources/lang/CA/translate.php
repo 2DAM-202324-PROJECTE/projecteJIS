@@ -83,6 +83,9 @@ return[
     "MARQUES_TXT" => "Marques",
     "VEURE_MARQUES_TXT" => "Veure totes les marques",
     "AFEGIR_MARCA_TXT" => "Afegir Marca",
+    "COOKIES_DESCRIPCIO_TXT" => "Aquest lloc web utilitza cookies per millorar la teva experiència. Si continues navegant, considerem que acceptes el seu ús.",
+    "ACCEPTA_TXT" => "Accepta-ho",
+    "REBUTJA_TXT" => "Rebutja-ho",
 
 
 

@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use App\Facades\Cart;
 use App\Models\Category;
+use App\Models\Marques;
 use App\Models\Products;
 use Livewire\Component;
 use Illuminate\Support\Facades\Session; // Importa la clase Session
@@ -23,6 +24,7 @@ class TaulaProductes extends Component
         return view('livewire.taula-productes', [
             'searchParam' => session('searchParam'),
             'selectedCategory' => session('selected_category'),
+            'selectedBrand' => session('selected_brand'),
         ]);
     }
     public function mount()
@@ -38,6 +40,7 @@ class TaulaProductes extends Component
     {
         $selectedCategoryId = session('selected_category');
         $searchParam = session('searchParam');
+        $selectedBrand = session('selected_brand');
 
         if ($selectedCategoryId) {
             $category = Category::findOrFail($selectedCategoryId);
@@ -62,8 +65,25 @@ class TaulaProductes extends Component
 
             $this->products = $products;
 
-            Session::forget('searchParam');
-        } else{
+        }else if ($selectedBrand){
+
+            $brand = Marques::findOrFail($selectedBrand);
+
+            $productsQuery = $brand->products()->where('state_id', '!=', 2);
+
+            if ($this->minPrice) {
+                $productsQuery->where('price', '>=', $this->minPrice);
+            }
+
+            if ($this->maxPrice) {
+                $productsQuery->where('price', '<=', $this->maxPrice);
+            }
+
+            $this->products = $productsQuery->get();
+
+            Session::forget('selected_brand');
+        }
+        else{
             $products = Products::where('state_id', '!=', 2)->get();
             $this->products = $products;
         }

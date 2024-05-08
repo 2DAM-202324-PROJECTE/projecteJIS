@@ -22,6 +22,6 @@ class Products extends Model
 
     public function marques()
     {
-        return $this->belongsTo(Marques::class);
+        return $this->belongsTo(Marques::class, 'marca_id');
     }
 }
