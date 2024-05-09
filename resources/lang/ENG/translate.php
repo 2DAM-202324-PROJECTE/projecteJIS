@@ -84,6 +84,10 @@ return[
     "VEURE_MARQUES_TXT" => "See all brands",
     "AFEGIR_MARCA_TXT" => "Add Brand",
 
+    "ACCEPTA_TXT" => "Accept it",
+    "REBUTJA_TXT" => "Reject it",
+    "PROMOCIONAL_MARQUES_WELCOME_TXT" => "We have the best brands of tecnology products!",
+
 
 
 

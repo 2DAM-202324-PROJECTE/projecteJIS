@@ -84,5 +84,10 @@ return[
     "VEURE_MARQUES_TXT" => "Ver todas las marcas",
     "AFEGIR_MARCA_TXT" => "Añadir Marca",
 
+    "ACCEPTA_TXT" => "Aceptalo",
+    "REBUTJA_TXT" => "Rechazalo",
+    "PROMOCIONAL_MARQUES_WELCOME_TXT" => "Tenemos las mejores marcas en productos de tecnología!",
+
+
 
 ];

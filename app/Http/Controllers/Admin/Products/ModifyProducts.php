@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin\Products;
 use App\Models\Category;
+use App\Models\Marques;
 use App\Models\Products;
 use App\Models\State;
 use Illuminate\Http\Request;
@@ -13,6 +14,7 @@ class ModifyProducts extends Component
     public $product;
     public $categories;
     public $estat;
+    public $marques;
 
     protected $listeners = ['loadDataProduct'];
 
@@ -28,13 +30,15 @@ class ModifyProducts extends Component
         $this->product = Products::find($id);
         $this->categories = Category::all();
         $this->estat = State::all();
+        $this->marques = Marques::all();
 
 
         // Retornem la vista amb les dades del producte seleccionat.
         return view('admin.products.modify-products', [
             'product' => $this->product,
             'categories' => $this->categories,
-            'estat' => $this->estat
+            'estat' => $this->estat,
+            'marques' => $this->marques
         ]);
     }
 
@@ -51,6 +55,7 @@ class ModifyProducts extends Component
         $this->product->stock = $request->input('stock');
         $this->product->category_id = $request->input('category_id');
         $this->product->state_id = $request->input('state_id');
+        $this->product->marca_id = $request->input('marca_id');
         $this->product->image_url = $request->input('image_url');
         $this->product->save();
 

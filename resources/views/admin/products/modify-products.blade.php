@@ -87,7 +87,7 @@
                                        class="block text-sm font-medium leading-6 text-gray-900">{{__("translate.CATEGORY_FORM_TXT")}}</label>
                                 <div class="mt-2">
                                     <select name="category_id" autocomplete="category_id" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
-                                        <option value="" {{ $product->category_id == null ? 'selected' : '' }}>{{ __("translate.SELECCIONA_CATEG_TXT") }}</option>
+{{--                                        <option value="" {{ $product->category_id == null ? 'selected' : '' }}>{{ __("translate.SELECCIONA_CATEG_TXT") }}</option>--}}
 
                                         @foreach($categories as $category)
                                             <option value="{{ $category->id }}" {{ $product->category_id == $category->id ? 'selected' : '' }}>
@@ -106,7 +106,7 @@
                                        class="block text-sm font-medium leading-6 text-gray-900">{{__("translate.ESTATE_FORM_TXT")}}</label>
                                 <div class="mt-2">
                                     <select id="state_id" name="state_id" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
-                                        <option value="" {{ $product->state_id == null ? 'selected' : '' }}>{{ __("translate.SELECCIONA_ESTAT_TXT") }}</option>
+{{--                                        <option value="" {{ $product->state_id == null ? 'selected' : '' }}>{{ __("translate.SELECCIONA_ESTAT_TXT") }}</option>--}}
 
                                         @foreach($estat as $state)
                                             <option value="{{ $state->id }}" {{ $product->state_id == $state->id ? 'selected' : '' }}>
@@ -116,6 +116,25 @@
                                     </select>
 
                                     @error('state_id') <span>{{ $message }}</span> @enderror
+
+                                </div>
+                            </div>
+
+                            <div class="sm:col-span-3">
+                                <label for="marca_id"
+                                       class="block text-sm font-medium leading-6 text-gray-900">{{__("translate.MARCA_FORM_TXT")}}</label>
+                                <div class="mt-2">
+                                    <select name="marca_id" autocomplete="marca_id" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+{{--                                        <option value="" {{ $product->marca_id == null ? 'selected' : '' }}>{{ __("translate.SELECCIONA_MARCA_TXT") }}</option>--}}
+
+                                        @foreach($marques as $marca)
+                                            <option value="{{ $marca->id }}" {{ $product->marca_id == $marca->id ? 'selected' : '' }}>
+                                                {{ $marca->name }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+
+                                    @error('marca_id') <span>{{ $message }}</span> @enderror
 
                                 </div>
                             </div>

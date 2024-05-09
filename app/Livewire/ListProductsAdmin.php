@@ -38,9 +38,10 @@ class ListProductsAdmin extends Component
     {
         $this->orderBy = 'id';
         $this->groupBy = null;
-
+        // Carregar els productes de la bd i les columnes de la taula
         $this->loadProducts();
         $this->loadProductsColumns();
+        // Carregar les categories i estats per a filtrar
         $this->categories = Category::all();
         $this->estat = State::all();
     }

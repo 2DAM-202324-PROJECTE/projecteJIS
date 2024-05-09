@@ -22,7 +22,7 @@ class ProductsSeeder extends Seeder
             'image_url' => '/Img/Productes/laptopHP.jpg',
             'category_id' => 2,
             'state_id' => 1,
-            'marca_id' => 1
+            'marca_id' => 2
         ]);
         Products::create([
             'name' => 'Samsung Galaxy A10s A107M',
@@ -55,7 +55,7 @@ class ProductsSeeder extends Seeder
             'image_url' => '/Img/Productes/MonitorHpfhd.jpg',
             'category_id' => 5,
             'state_id' => 1,
-            'marca_id' => 1
+            'marca_id' => 2
 
         ]);
         Products::create([
@@ -86,11 +86,10 @@ class ProductsSeeder extends Seeder
                 'description' => 'HP Pavilion Gaming Desktop Computer, AMD Ryzen 5 3500 Processor, NVIDIA GeForce GTX 1650 4 GB, 8 GB RAM, 512 GB SSD, Windows 10 Home (TG01-0030, Black)',
                 'price' => 800,
                 'stock' => 10,
-                'image_url' => '/Img/Productes/Hp_PavilionGaming_desktop.jpg',
+                'image_url' => '/Img/Productes/Hp_PavilonGaming_desktop.jpg',
                 'category_id' => 1,
-                'state_id' => 2,
-                'marca_id' => 1
-
+                'state_id' => 1,
+                'marca_id' => 2
             ]
         );
 
@@ -103,61 +102,10 @@ class ProductsSeeder extends Seeder
                 'image_url' => '/Img/Productes/HP15_Laptop.jpg',
                 'category_id' => 2,
                 'state_id' => 1,
-                'marca_id' => 1
+                'marca_id' => 2
 
             ]
         );
-
-        Products::create([
-            'name' => 'Apple iPhone 13',
-            'description' => 'Apple iPhone 13 (128GB, Product)',
-            'price' => 1000,
-            'stock' => 10,
-            'image_url' => 'https://thumb.pccomponentes.com/w-150-150/articles/57/578962/128-apple-iphone-13-128gb-blanco-estrella-libre.jpg',
-            'category_id' => 3,
-            'state_id' => 1,
-            'marca_id' => 1
-
-        ]);
-
-        Products::create([
-            'name' => 'Samsung Galaxy Tab S8',
-            'description' => 'Samsung Galaxy Tab S8 - 11 inch Android Tablet 2022 (Latest Model)',
-            'price' => 800,
-            'stock' => 10,
-            'image_url' => 'https://thumb.pccomponentes.com/w-150-150/articles/1051/10519758/1941-samsung-galaxy-tab-s8-ultra-5g-12-256-gb-gris.jpg',
-            'category_id' => 4,
-            'state_id' => 1,
-            'marca_id' => 1
-
-        ]);
-
-        Products::create([
-            'name' => 'Logitech G Pro X Superlight Wireless Gaming Mouse',
-            'description' => 'Logitech G Pro X Superlight Wireless Gaming Mouse, Ultra-Lightweight, Hero 25K Sensor, 25,600 DPI, 5 Programmable Buttons, Long Battery Life, Compatible with PC/Mac - Black',
-            'price' => 150,
-            'stock' => 10,
-            'image_url' => 'https://thumb.pccomponentes.com/w-150-150/articles/1077/10772979/1940-logitech-g-pro-x-superlight-2-lightspeed-raton-inalambrico-gaming-negro-32000-dpi-4d3fc748-2b1b-4427-b7ac-c5d90b72dbe9.jpg',
-            'category_id' => 5,
-            'state_id' => 1,
-            'marca_id' => 1
-
-        ]);
-
-        Products::create([
-            'name' => 'PcCom Ready Intel Core i5-12400F / 16GB / 1TB SSD / RTX 3060 + Windows 11 Home',
-            'description' => 'PcCom Ready Intel Core i5-12400F / 16GB / 1TB SSD / RTX 3060 + Windows 11 Home',
-            'price' => 1500,
-            'stock' => 100,
-            'image_url' => 'https://thumb.pccomponentes.com/w-530-530/articles/1077/10770783/1367-pccom-ready-i5-12400f-16gb-ram-1tb-ssd-rtx-3060-12gb-windows-11-pc-gaming.jpg',
-            'category_id' => 1,
-            'state_id' => 1,
-            'marca_id' => 1
-
-        ]);
-
-
-
 
     }
 }

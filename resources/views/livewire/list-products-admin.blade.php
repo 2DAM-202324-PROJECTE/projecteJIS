@@ -83,9 +83,15 @@
                                             ({{ $product->state->name_state }})
                                         </td>
                                     @endif
+                                @elseif($column === 'marca_id')
+                                    <!-- Verifica si el producte té una marca associada -->
+                                    @if($product->marques)
+                                        <!-- Mostra el nom de la marca -->
+                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $product->$column }}
+                                            ({{ $product->marques->name }})
+                                        </td>
+                                    @endif
                                 @else
-
-
 
                                     <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $product->$column }}</td>
                                 @endif

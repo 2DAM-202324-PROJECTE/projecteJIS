@@ -65,6 +65,8 @@ class TaulaProductes extends Component
 
             $this->products = $products;
 
+            Session::forget('searchParam');
+
         }else if ($selectedBrand){
 
             $brand = Marques::findOrFail($selectedBrand);

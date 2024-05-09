@@ -18,6 +18,10 @@ class MarquesSeeder extends Seeder
             'name' => 'MSI',
             'logo_ref' => 'Img/Marques/msi.png',
         ]);
+        Marques::create([
+            'name' => 'HP',
+            'logo_ref' => 'Img/Marques/HP.png',
+        ]);
 
     }
 }

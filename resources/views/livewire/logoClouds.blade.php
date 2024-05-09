@@ -6,7 +6,7 @@
 
     <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 text-center  ">
         <div class="max-w-2xl mx-auto text-center">
-            <h2 class="text-2xl font-light text-black sm:text-4xl sm:leading-tight">Trusted by world class companies
+            <h2 class="text-2xl font-light text-black sm:text-4xl sm:leading-tight">{{ __('translate.PROMOCIONAL_MARQUES_WELCOME_TXT') }}
             </h2>
         </div>
 

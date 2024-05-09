@@ -86,6 +86,7 @@ return[
     "COOKIES_DESCRIPCIO_TXT" => "Aquest lloc web utilitza cookies per millorar la teva experiència. Si continues navegant, considerem que acceptes el seu ús.",
     "ACCEPTA_TXT" => "Accepta-ho",
     "REBUTJA_TXT" => "Rebutja-ho",
+    "PROMOCIONAL_MARQUES_WELCOME_TXT" => "Tenim les millors marques en productes de tecnologia!",
 
 
 
