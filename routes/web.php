@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\Categories\ModifyCategories;
 use App\Http\Controllers\Admin\Index as AdminIndex;
 use App\Http\Controllers\Admin\Marques\AddMarques;
 use App\Http\Controllers\Admin\Marques\Index as AdminMarques;
+use App\Http\Controllers\Admin\Marques\ModifyMarques;
 use App\Http\Controllers\Admin\Products\AddProducts;
 use App\Http\Controllers\Admin\Products\Featureds;
 use App\Http\Controllers\Admin\Products\Index as AdminProducts;
@@ -19,6 +20,7 @@ use App\Http\Controllers\States\Index as StatesIndex;
 use App\Livewire\CartPage;
 use App\Livewire\CheckoutComponent;
 use App\Livewire\Header;
+use App\Livewire\ProductDetailsComponent;
 use App\Livewire\SelectDestacats;
 use App\Livewire\Welcome;
 use Illuminate\Support\Facades\Route;
@@ -45,6 +47,8 @@ Route::put('/categories/{id}', [ModifyCategories::class, 'updateCategory']);
 /* Marques */
 Route::get('/panelMarques', AdminMarques::class)->name('panelMarques');
 Route::get('/addMarques', AddMarques::class)->name('addMarques');
+Route::get('/marques/edit/{id}', [ModifyMarques::class, 'loadDataMarca'])->name('marques.edit');
+Route::put('/marques/{id}', [ModifyMarques::class, 'updateMarca']);
 
 /* Productes Destacats */
 Route::get('/featureds', Featureds::class)->name('featureds');
@@ -59,7 +63,7 @@ Route::get('/products', ProductsIndex::class)->name('products');
 Route::get('/search', [Header::class, 'search'])->name('search');
 Route::get('/products/category/{category}', ProductsIndex::class)->name('products.index.category');
 Route::get('/products/{category}', ProductsIndex::class)->name('products.by.category');
-
+Route::get('/product/{id}', [App\Http\Controllers\ProductDetails::class, 'show'])->name('product.show');
 /*
 |--------------------------------------------------------------------------
 | Rutes de carro

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin\Marques;
 use App\Models\Category;
+use App\Models\Marques;
 use App\Models\Products;
 use App\Models\State;
 use Illuminate\Http\Request;
@@ -9,60 +10,39 @@ use Livewire\Component;
 
 class ModifyMarques extends Component
 {
-    public $productId;
-    public $product;
-    public $categories;
-    public $estat;
+    public $marcaId;
+    public $marca;
 
-    protected $listeners = ['loadDataProduct'];
 
-    public function mount(){
-        $this->categories = Category::all();
+    protected $listeners = ['loadDataMarca'];
 
-    }
 
-    // Amb la id que hem passat al mètode anterior i amb la ruta llegim les dades del producte de la id seleccionada.
-    public function loadDataProduct($id)
+
+    // Amb la id que hem passat al mètode anterior i amb la ruta llegim les dades de la marca de la id seleccionada.
+    public function loadDataMarca($id)
     {
-        $this->productId = $id;
-        $this->product = Products::find($id);
-        $this->categories = Category::all();
-        $this->estat = State::all();
+        $this->marcaId = $id;
+        $this->marca = Marques::find($id);
 
 
-        // Retornem la vista amb les dades del producte seleccionat.
-        return view('admin.products.modify-products', [
-            'product' => $this->product,
-            'categories' => $this->categories,
-            'estat' => $this->estat
+
+        // Retornem la vista amb les dades de la marca seleccionat.
+        return view('admin.marques.modify-marques', [
+            'marca' => $this->marca,
+
         ]);
     }
 
-    public function updateProduct(Request $request, $id)
+    public function updateMarca(Request $request, $id)
     {
-        $this->product = Products::find($id);
-        if (!$this->product) {
-            return redirect()->back()->with('error', 'Product not found');
-        }
+        $this->marca = Marques::find($id);
 
-        $this->product->name = $request->input('name');
-        $this->product->description = $request->input('description');
-        $this->product->price = $request->input('price');
-        $this->product->stock = $request->input('stock');
-        $this->product->category_id = $request->input('category_id');
-        $this->product->state_id = $request->input('state_id');
-        $this->product->image_url = $request->input('image_url');
-        $this->product->save();
+        $this->marca->name = $request->input('name');
+        $this->marca->logo_ref = $request->input('logo_ref');
+        $this->marca->save();
 
-        return redirect()->route('panelProducts')->with('success', 'Product updated successfully');
+        return redirect()->route('panelMarques');
     }
 
 
-
-//    public function render()
-//    {
-//        return view('livewire.modify-products', [
-//            'product' => $this->product
-//        ]);
-//    }
 }
