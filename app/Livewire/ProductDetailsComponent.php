@@ -5,6 +5,7 @@ namespace App\Livewire;
 
 use App\Facades\Cart;
 use App\Models\Products;
+use Illuminate\Support\Facades\URL;
 use Livewire\Component;
 class ProductDetailsComponent extends Component
 {
@@ -16,6 +17,10 @@ class ProductDetailsComponent extends Component
     public function mount($id)
     {
         $this->product = Products::findOrFail($id);
+    }
+    public function render()
+    {
+        return view('livewire.product-details-component');
     }
 
     public function addToCart($productId): void

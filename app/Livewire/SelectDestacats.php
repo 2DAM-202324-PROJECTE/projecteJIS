@@ -14,7 +14,7 @@ class SelectDestacats extends Component
     {
         $products = Products::where('state_id', '!=', 2)->get();
         $categories = Category::with(['products' => function ($query) {
-            $query->where('state_id', '!=', 2); // Excluir productos con state_id = 2
+            $query->where('state_id', '!=', 2); // Exclou productes amb state_id = 2
         }])->get();
 
         return view('livewire.select-destacats', compact('products', 'categories'));
@@ -22,18 +22,17 @@ class SelectDestacats extends Component
 
     public function updateFeaturedProducts(Request $request)
     {
-        // Obtener los productos seleccionados y la categoría correspondiente del formulario
+        // Obtenir els productes destacats seleccionats i la categoria
         $featured1 = $request->input('featured1');
         $featured2 = $request->input('featured2');
         $categoryId = $request->input('category_id');
 
-        // Limpiar los productos destacados anteriores para la categoría
+        // Netejar els productes destacats de la categoria seleccionada
         Products::where('category_id', $categoryId)->update(['featured' => 0]);
 
-        // Marcar los nuevos productos seleccionados como destacados
+        // Marcar els nous productes seleccionats com a destacats
         Products::whereIn('id', [$featured1, $featured2])->update(['featured' => 1]);
 
-        // Redirigir de vuelta al menú de administración
-        return redirect()->route('admin')->with('success', 'Productos destacados actualizados exitosamente.');
+        return redirect()->route('admin')->with('success', 'Productes destacats actualitzats exitosament.');
     }
 }
