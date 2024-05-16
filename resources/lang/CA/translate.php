@@ -87,6 +87,18 @@ return[
     "ACCEPTA_TXT" => "Accepta-ho",
     "REBUTJA_TXT" => "Rebutja-ho",
     "PROMOCIONAL_MARQUES_WELCOME_TXT" => "Tenim les millors marques en productes de tecnologia!",
+    "DADES_TARGETA_INVALIDES_TXT" => "Per favor, verifica les dades de la targeta!",
+    "PAGAMENT_COMPLETAT_TXT" => "Pagament completat!",
+    "AGRAIMENT_COMPRAR_TXT" => "Gràcies per comprar a la nostra botiga",
+    "TINGUES_BON_DIA_TXT" => "Que tinguis un bon dia!",
+    "TORNAR_BOTIGA_TXT" => "Tornar a la botiga",
+    "DETALLS_TXT" => "Detalls",
+    "MARCA_FORM_TXT" => "Marca",
+    "IMAGE_FORM_TXT" => "Imatge",
+    "PUJA_FITXER_TXT" => "Puja un fitxer",
+    "ARRASTRA_SOLTA_TXT" => "o arrastra i solta",
+    "EXPLICACIO_DETALLS_TXT" => "Aquí pots veure els detalls del producte, per modificar-los, ves al botó d'editar.",
+    "SELECCIONA_MARCA_TXT" => "Selecciona una marca",
 
 
 

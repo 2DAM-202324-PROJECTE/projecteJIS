@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\Products\ModifyProducts;
 use App\Http\Controllers\Category\Index as CategoryIndex;
 use App\Http\Controllers\CheckoutView;
 use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\OrderConfirmed;
 use App\Http\Controllers\PaymentView;
 use App\Http\Controllers\Products\Index as ProductsIndex;
 use App\Http\Controllers\States\Index as StatesIndex;
@@ -34,9 +35,10 @@ Route::get('/admin', AdminIndex::class)->name('admin');
 
 /* Productes */
 Route::get('/panelProducts', AdminProducts::class)->name('panelProducts');
-Route::get('/products/edit/{id}', [ModifyProducts::class, 'loadDataProduct'])->name('products.edit');
+Route::get('/products/{metode}/{id}', [ModifyProducts::class, 'loadDataProduct'])->name('products.edit'); //Aquesta ruta és per a editar o veure detalls d'un producte, depenent de la variable metode.
 Route::put('/products/{id}', [ModifyProducts::class, 'updateProduct']);
 Route::get('/addProducts', AddProducts::class)->name('addProducts');
+
 
 /* Categories */
 Route::get('/panelCategories', AdminCategories::class)->name('panelCategories');
@@ -73,7 +75,7 @@ Route::get('/cart', CartPage::class)->name('cart');
 Route::get('/checkout', CheckoutView::class)->name('checkout');
 Route::get('/payment', PaymentView::class)->name('payment');
 Route::post('/checkout', [CheckoutComponent::class, 'store'])->name('checkout.store');
-
+Route::get('/order-confirmed', OrderConfirmed::class)->name('order-confirmed');
 /*
 |--------------------------------------------------------------------------
 | Rutes d'idioma

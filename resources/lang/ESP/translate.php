@@ -83,11 +83,21 @@ return[
     "MARQUES_TXT" => "Marcas",
     "VEURE_MARQUES_TXT" => "Ver todas las marcas",
     "AFEGIR_MARCA_TXT" => "Añadir Marca",
-
+    "COOKIES_DESCRIPCIO_TXT" => "Este sitio web usa cookies para mejorar la experiencia de usuario. Si continúas navegando, consideramos que aceptas su uso.",
     "ACCEPTA_TXT" => "Aceptalo",
     "REBUTJA_TXT" => "Rechazalo",
     "PROMOCIONAL_MARQUES_WELCOME_TXT" => "Tenemos las mejores marcas en productos de tecnología!",
-
-
+    "DADES_TARGETA_INVALIDES_TXT" => "Por favor, verifica los datos de la tarjeta!",
+    "PAGAMENT_COMPLETAT_TXT" => "Pago completado!",
+    "AGRAIMENT_COMPRAR_TXT" => "Gracias por comprar en nuestra tienda",
+    "TINGUES_BON_DIA_TXT" => "Que tengas un buen día!",
+    "TORNAR_BOTIGA_TXT" => "Volver a la tienda",
+    "DETALLS_TXT" => "Detalles",
+    "MARCA_FORM_TXT" => "Marca",
+    "IMAGE_FORM_TXT" => "Imagen",
+    "PUJA_FITXER_TXT" => "Subir un archivo",
+    "ARRASTRA_SOLTA_TXT" => "o arrastra y suelta",
+    "EXPLICACIO_DETALLS_TXT" => "Aquí puedes ver los detalles del producto, para modificarlos, ve al botón de editar.",
+    "SELECCIONA_MARCA_TXT" => "Selecciona una marca",
 
 ];

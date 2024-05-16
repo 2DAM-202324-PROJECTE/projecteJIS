@@ -104,10 +104,16 @@
                                     {{ __("translate.EDITAR_TXT") }}
                                 </button>
                                 <a> | </a>
+                                <button class="text-green-600 hover:text-green-900"
+                                        wire:click="details('{{ $product->id }}')">
+                                    {{ __("translate.DETALLS_TXT") }}
+                                </button>
+                                <a> | </a>
                                 <button class="text-red-600 hover:text-red-900"
                                         wire:click="deleteProduct('{{ $product->id }}')">
                                     {{ __("translate.ELIMINAR_TXT") }}
                                 </button>
+
                             </td>
                         </tr>
                     @endforeach

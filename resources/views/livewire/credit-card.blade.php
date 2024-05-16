@@ -51,20 +51,20 @@
             </section>
         </section>
 
-        <form class="form">
+        <form class="form" wire:submit.prevent="confirmPago" id="formCreditCard">
             <div>
                 <label for="number">Card Number</label>
-                <input id="number" type="number" maxlength="16">
+                <input wire:model="cardNumber" id="number" type="number" maxlength="16">
             </div>
             <div>
                 <label for="holder">Card Holder</label>
-                <input id="holder" type="text">
+                <input wire:model="cardHolder" id="holder" type="text">
             </div>
             <div class="filed__group">
                 <div>
                     <label for="expiration_month">Expiration Date</label>
                     <div class="filed__date">
-                        <select id="expiration_month">
+                        <select wire:model="month" id="expiration_month">
                             <option selected disabled>Month</option>
                             <option>01</option>
                             <option>02</option>
@@ -79,9 +79,8 @@
                             <option>11</option>
                             <option>12</option>
                         </select>
-                        <select id="expiration_year">
+                        <select wire:model="year" id="expiration_year">
                             <option selected disabled>Year</option>
-                            <option>2023</option>
                             <option>2024</option>
                             <option>2025</option>
                             <option>2026</option>
@@ -96,17 +95,34 @@
                 </div>
                 <div>
                     <label for="cvv">CVV</label>
-                    <input id="cvv" type="number" maxlength="3">
+                    <input wire:model="cvv"  id="cvv" type="number" maxlength="3">
                 </div>
             </div>
-            <button class="submit-button mt-10 px-4 py-3 rounded-full bg-indigo-900 text-white focus:ring focus:outline-none w-full text-xl font-semibold transition-colors">
+            <button type="submit"  class="submit-button mt-10 px-4 py-3 rounded-full bg-indigo-900 text-white focus:ring focus:outline-none w-full text-xl font-semibold transition-colors">
                 {{ __("translate.PAGAR_TXT") }} {{ $totalMesIvaEnviament }}€
             </button>
         </form>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const searchForm = document.getElementById('formCreditCard');
+                searchForm.addEventListener('submit', function (event) {
+                    const numQuery = document.getElementById('number').value;
+                    const cvvQuery = document.getElementById('cvv').value;
+                    const holderQuery = document.getElementById('holder').value;
+                    if (numQuery.length !== 16 || cvvQuery.length !== 3 || holderQuery.length === 0) {
+                        alert('{{ __("translate.DADES_TARGETA_INVALIDES_TXT") }}');
+                        event.preventDefault();
+                    }
+                });
+            });
+        </script>
 
 
     </main>
 
 </div>
+
+
 
 

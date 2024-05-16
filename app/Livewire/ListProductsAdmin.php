@@ -120,7 +120,12 @@ class ListProductsAdmin extends Component
     // La ruta cridarà al mètode editProduct de la vista (ModifyProducts).
     public function edit($productId)
     {
-        return redirect()->route('products.edit', ['id' => $productId]);
+        return redirect()->route('products.edit', ['id' => $productId, 'metode' => 'edit']); //Donem la id del producte i el mètode 'edit'p er a determinar que fara o no farà la vista.
+    }
+
+    public function details($productId)
+    {
+        return redirect()->route('products.edit', ['id' => $productId, 'metode' => 'details']); //Donem la id del producte i el mètode 'details' per a determinar que fara o no farà la vista.
     }
 
 }

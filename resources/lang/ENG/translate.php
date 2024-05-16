@@ -83,10 +83,24 @@ return[
     "MARQUES_TXT" => "Brands",
     "VEURE_MARQUES_TXT" => "See all brands",
     "AFEGIR_MARCA_TXT" => "Add Brand",
-
+    "COOKIES_DESCRIPCIO_TXT" => "This website uses cookies to improve your experience. If you continue browsing, we consider that you accept their use.",
     "ACCEPTA_TXT" => "Accept it",
     "REBUTJA_TXT" => "Reject it",
     "PROMOCIONAL_MARQUES_WELCOME_TXT" => "We have the best brands of tecnology products!",
+    "DADES_TARGETA_INVALIDES_TXT" => "Please, verify the card data!",
+    "PAGAMENT_COMPLETAT_TXT" => "Payment completed!",
+    "AGRAIMENT_COMPRAR_TXT" => "Thanks for buying in our store",
+    "TINGUES_BON_DIA_TXT" => "Have a nice day!",
+    "TORNAR_BOTIGA_TXT" => "Back to the store",
+    "DETALLS_TXT" => "Details",
+    "MARCA_FORM_TXT" => "Brand",
+    "IMAGE_FORM_TXT" => "Image",
+    "PUJA_FITXER_TXT" => "Upload a file",
+    "ARRASTRA_SOLTA_TXT" => "or drag and drop",
+    "EXPLICACIO_DETALLS_TXT" => "Here you can see the details of the product, to modify them, go to the edit button.",
+    "SELECCIONA_MARCA_TXT" => "Select a brand",
+
+
 
 
 
