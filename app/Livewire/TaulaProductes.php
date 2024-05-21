@@ -7,17 +7,22 @@ use App\Models\Category;
 use App\Models\Marques;
 use App\Models\Products;
 use Livewire\Component;
-use Illuminate\Support\Facades\Session; // Importa la clase Session
+use Illuminate\Support\Facades\Session;
+use Livewire\WithPagination;
+
+// Importa la clase Session
 
 class TaulaProductes extends Component
 {
+    use WithPagination; // Usa el trait WithPagination
+
     public $products;
     public $quantity;
     public $minPrice;
     public $maxPrice;
     public $image_url;
-
-    protected $listeners = ['filtersApplied'];
+    private $paginator; // Define la propiedad $paginator
+    protected $listeners = ['pageChanged' => 'loadProducts', 'productAddedToCart' => 'loadProducts', 'filtersApplied'];
 
     public function render()
     {
@@ -35,6 +40,7 @@ class TaulaProductes extends Component
 
     }
 
+    // Funció per carregar els productes, depenent dels paràmetres passats, ja siguin del header, d'algun filtre...
     // Funció per carregar els productes, depenent dels paràmetres passats, ja siguin del header, d'algun filtre...
     public function loadProducts()
     {
@@ -54,18 +60,19 @@ class TaulaProductes extends Component
                 $productsQuery->where('price', '<=', $this->maxPrice);
             }
 
-            $this->products = $productsQuery->get();
+            $this->paginator = $productsQuery->paginate(9);
 
-            Session::forget('selected_category');
+            $this->products = $this->paginator->getCollection();
+
 
         } else if ($searchParam) {
             $products = Products::where('name', 'LIKE', "%$searchParam%")
-                ->where('state_id', '!=', 2)
-                ->get();
+                ->where('state_id', '!=', 2);
 
-            $this->products = $products;
+            $this->paginator = $products->paginate(9);
 
-            Session::forget('searchParam');
+            $this->products = $this->paginator->getCollection();
+
 
         }else if ($selectedBrand){
 
@@ -81,15 +88,22 @@ class TaulaProductes extends Component
                 $productsQuery->where('price', '<=', $this->maxPrice);
             }
 
-            $this->products = $productsQuery->get();
+            $this->paginator = $productsQuery->paginate(9);
 
-            Session::forget('selected_brand');
+            $this->products = $this->paginator->getCollection();
+
         }
-        else{
-            $products = Products::where('state_id', '!=', 2)->get();
-            $this->products = $products;
+        else {
+            $products = Products::where('state_id', '!=', 2);
+
+
+            $this->paginator = $products->paginate(9);
+
+            $this->products = $this->paginator->getCollection();
         }
+
     }
+
 
 
     public function addToCart($productId): void

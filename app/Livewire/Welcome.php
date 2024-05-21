@@ -34,8 +34,11 @@ class Welcome extends Component
         $this->selectedCategory = $categoryId;
         // Assigna el valor de la categoría seleccionada a la variable de sessió
         Session::put('selected_category', $categoryId);
+
+        Session::forget('searchParam');
+        Session::forget('selected_brand');
         // Mostra els productes de la categoría seleccionada
-        return redirect()->to('/products')->with('selected_category', $categoryId);
+        return redirect()->to('/products');
     }
 
 

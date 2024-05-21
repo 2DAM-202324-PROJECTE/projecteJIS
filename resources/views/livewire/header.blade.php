@@ -296,6 +296,12 @@
         });
     </script>
 
+        <script>
+            Livewire.on('productAddedToCart', function() {
+            @this.call('updateCartQuantity');
+            });
+        </script>
+
 
 </header>
 

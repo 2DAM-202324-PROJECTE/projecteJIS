@@ -23,7 +23,10 @@ class LogoClouds extends Component
         $this->selectedBrand = $brandId;
         // Assigna el valor de la marca seleccionada a la variable de sessió
         Session::put('selected_brand', $brandId);
+
+        Session::forget('selected_category');
+        Session::forget('searchParam');
         // Mostra els productes de la marca seleccionada
-        return redirect()->to('/products')->with('selected_brand', $brandId);
+        return redirect()->to('/products');
     }
 }

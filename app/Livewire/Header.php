@@ -16,7 +16,8 @@ class Header extends Component
     public $categoryImages;
     public $totalProductesCarro;
 
-    protected $listeners = ['cartUpdated' => 'updateCartQuantity'];
+    protected $listeners = ['cartUpdated' => 'updateCartQuantity', 'productAddedToCart' => 'updateCartQuantity'];
+
 
     public function updateCartQuantity()
     {
@@ -36,7 +37,10 @@ class Header extends Component
         $this->selectedCategory = $categoryId;
         // Asigna el valor de la categoría seleccionada a la variable de sesión
         Session::put('selected_category', $categoryId);
-        // Muestra los productos de la categoría seleccionada
+        // olvida la resta de variables de sessio quan vaig a utilitzar una de diferent
+        Session::forget('searchParam');
+        Session::forget('selected_brand');
+
         return redirect()->to('/products');
     }
 
@@ -47,6 +51,11 @@ class Header extends Component
         ]);
         // Asigna el valor de la consulta a la variable de sesión
         Session::put('searchParam', $request->input('query'));
+
+        Session::forget('selected_category');
+        Session::forget('selected_brand');
+
+
 
         return redirect()->to('/products');
     }
