@@ -12,31 +12,39 @@
     </div>
 
     <!-- Filtres -->
-    <label>
+    <div class="pt-4">
+        <p>Ordenar per:</p>
+
         <select wire:model="orderBy">
             @foreach($productsColumns as $column)
                 <option value="{{ $column }}">{{ ucfirst($column) }}</option>
             @endforeach
         </select>
+    </div>
 
+    <div class="pt-4">
+        <p>Mostrar productes de la categoria:</p>
         <select wire:model="selectedCategory">
-            <option value="">Todas las categorías</option>
-            @foreach($categories as $category)
-                <option class="" value="{{ $category->id }}">{{ $category->name_category }}</option>
-            @endforeach
-        </select>
+                <option value="">Todas las categorías</option>
+                @foreach($categories as $category)
+                    <option class="" value="{{ $category->id }}">{{ $category->name_category }}</option>
+                @endforeach
+            </select>
+    </div>
 
+    <div class="pt-4">
+        <p>Mostrar productes amb l'estat:</p>
         <select wire:model="selectedState">
-            <option value="">Todos los estados</option>
-            @foreach($estat as $state)
-                <option class="" value="{{ $state->id }}">{{ $state->name_state }}</option>
-            @endforeach
-        </select>
+                <option value="">Todos los estados</option>
+                @foreach($estat as $state)
+                    <option class="" value="{{ $state->id }}">{{ $state->name_state }}</option>
+                @endforeach
+            </select>
+    </div>
 
-        <div>
-            <button wire:click="loadProducts">Aplicar</button>
-        </div>
-    </label>
+    <div class="pt-4">
+        <button wire:click="loadProducts">Aplicar</button>
+    </div>
 
 
 

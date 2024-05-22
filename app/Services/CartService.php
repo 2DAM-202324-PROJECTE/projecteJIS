@@ -38,7 +38,7 @@ class CartService {
      */
     public function add($id, $name, $price, $quantity, $image_url, $options = []): void
     {
-        $cartItem = $this->createCartItem($name, $price, $quantity, $image_url, $options);
+        $cartItem = $this->createCartItem($id, $name, $price, $quantity, $image_url, $options);
 
         $content = $this->getContent();
 
@@ -231,14 +231,14 @@ class CartService {
      *
      * @return Illuminate\Support\Collection
      */
-    protected function getContent(): Collection
+    public function getContent(): Collection
     {
         return $this->session->has(self::DEFAULT_INSTANCE) ? $this->session->get(self::DEFAULT_INSTANCE) : collect([]);
     }
 
     /**
      * Creates a new cart item from given inputs.
-     *
+     * @param int $id
      * @param string $name
      * @param string $price
      * @param string $quantity
@@ -246,7 +246,7 @@ class CartService {
      * @param array $options
      * @return Illuminate\Support\Collection
      */
-    protected function createCartItem(string $name, string $price, string $quantity, string $image_url, array $options): Collection
+    protected function createCartItem(int $id, string $name, string $price, string $quantity, string $image_url, array $options): Collection
     {
         $price = floatval($price);
         $quantity = intval($quantity);
@@ -256,6 +256,7 @@ class CartService {
         }
 
         return collect([
+            'id' => $id,
             'name' => $name,
             'price' => $price,
             'quantity' => $quantity,

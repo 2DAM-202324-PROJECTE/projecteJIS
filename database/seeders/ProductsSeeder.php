@@ -194,7 +194,7 @@ class ProductsSeeder extends Seeder
                 'description' => 'Para juegos ultrarrealistas, ultrafluidos y ultrainmersivos, la tarjeta gráfica MSI GeForce RTX 4080 SUPER 16G GAMING X SLIM te ofrece las tecnologías más avanzadas para que puedas jugar en las mejores condiciones, en muy alta resolución o en Realidad Virtual.',
                 'price' => 1099,
                 'stock' => 100,
-                'image_url' => '/Img/Productes/',
+                'image_url' => '/Img/Productes/1462-msi-geforce-rtx-4080-super-gaming-x-slim-16gb-gddr6x-dlss3.png',
                 'category_id' => 6,
                 'state_id' => 1,
                 'marca_id' => 1
@@ -204,7 +204,7 @@ class ProductsSeeder extends Seeder
         Products::create(
             [
                 'name' => 'MSI MAG CORELIQUID M360 ARGB Kit de Refrigeración Líquida 360mm Negro',
-                'description' => '',
+                'description' => 'La serie MAG lucha junto a los jugadores en busca del honor. Con elementos añadidos de inspiración militar en estos productos de juego, renacieron como símbolo de robustez y durabilidad.',
                 'price' => 109,
                 'stock' => 100,
                 'image_url' => '/Img/Productes/199-msi-mag-coreliquid-m360-argb-kit-de-refrigeracion-liquida-360mm-negro.png',
@@ -220,7 +220,7 @@ class ProductsSeeder extends Seeder
                 'description' => 'Prepárate para jugar y crear con potencia con NVIDIA® GeForce RTX™ 4070 SUPER. Está construido con la arquitectura ultraeficiente NVIDIA Ada Lovelace. Experimente el trazado de rayos súper rápido, el rendimiento acelerado por IA con DLSS 3, nuevas formas de crear y mucho más.',
                 'price' => 659,
                 'stock' => 100,
-                'image_url' => '/Img/Productes/',
+                'image_url' => '/Img/Productes/1114-msi-geforce-rtx-4070-super-ventus-2x-white-oc-12gb-gddr6x-dlss3.png',
                 'category_id' => 6,
                 'state_id' => 1,
                 'marca_id' => 1

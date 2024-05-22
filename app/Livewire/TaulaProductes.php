@@ -26,7 +26,11 @@ class TaulaProductes extends Component
 
     public function render()
     {
+        $categories = Category::all();
+        $brands = Marques::all();
         return view('livewire.taula-productes', [
+            'categories' => $categories,
+            'brands' => $brands,
             'searchParam' => session('searchParam'),
             'selectedCategory' => session('selected_category'),
             'selectedBrand' => session('selected_brand'),
