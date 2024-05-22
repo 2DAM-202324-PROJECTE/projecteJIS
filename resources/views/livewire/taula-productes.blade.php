@@ -2,47 +2,59 @@
     <section class="py-24">
         <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <!-- Capçalera depenent de si entrem per search, categoria o marca-->
-            @if($selectedCategory)
-                @foreach($categories as $category)
-                    @if($category->id == $selectedCategory)
-                        <!-- En cas de no trobar la traducció, mostra el valor de la bd sense traducció-->
-                        @if( __('translate.CATEGORIES_ARRAY_TXT.' . $category->name_category) != 'translate.CATEGORIES_ARRAY_TXT.' . $category->name_category)
-                            <p class="text-base font-semibold text-gray-900">{{ __('translate.CATEGORIES_ARRAY_TXT.' . $category->name_category) }}</p>
-                        @else
-                            <p class="text-base font-semibold text-gray-900">{{ $category->name_category }}</p>
-                        @endif
-                        <h3 class="mb-0 text-sm text-gray-500">
-                            <span class="absolute inset-0"></span>
-                            @if( __('translate.CATEGORIES_DESCRIPTION_ARRAY_TXT.' . $category->name_category) != 'translate.CATEGORIES_DESCRIPTION_ARRAY_TXT.' . $category->name_category)
-                                {{ __('translate.CATEGORIES_DESCRIPTION_ARRAY_TXT.' . $category->name_category) }}
+            <div class="mb-10" aria-hidden="true">
+
+
+                @if($selectedCategory)
+                    @foreach($categories as $category)
+                        @if($category->id == $selectedCategory)
+
+                            <!-- En cas de no trobar la traducció, mostra el valor de la bd sense traducció-->
+                            @if( __('translate.CATEGORIES_ARRAY_TXT.' . $category->name_category) != 'translate.CATEGORIES_ARRAY_TXT.' . $category->name_category)
+                                <h1 class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-800 via-indigo-50 to-indigo-300  text-5xl font-black">
+                                    {{ __('translate.CATEGORIES_ARRAY_TXT.' . $category->name_category) }}
+                                </h1>
                             @else
-                                {{ $category->category_description }}
+                                <h1 class="bg-clip-text text-transparent bg-gradient-to-r  from-indigo-800 via-indigo-50 to-indigo-300 text-5xl font-black">{{ $category->name_category }}</h1>
                             @endif
-                        </h3>
+                            <div class="mt-2 ml-2">
+                                @if( __('translate.CATEGORIES_DESCRIPTION_ARRAY_TXT.' . $category->name_category) != 'translate.CATEGORIES_DESCRIPTION_ARRAY_TXT.' . $category->name_category)
+                                    <h3 class="text-lg font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-indigo-400">
+                                        {{ __('translate.CATEGORIES_DESCRIPTION_ARRAY_TXT.' . $category->name_category) }}
+                                    </h3>
+                                @else
+                                    <h3 class="text-lg font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-indigo-400">
+                                        {{ $category->category_description }}
+                                    </h3>
+                                @endif
+                            </div>
+                        @endif
+                    @endforeach
+                <!-- Capçalera per a marca-->
+                @elseif($selectedBrand)
+                    @foreach($brands as $marca)
+                        @if($marca->id == $selectedBrand)
+                            <p class="text-base font-semibold text-gray-900">{{__("Aquests són els productes de la marca ")}} {{$marca->name }} {{__(", descobreix-los tots!")}}</p>
+                        @endif
+                    @endforeach
+                <!-- Capçalera per a cerca-->
+                @elseif($searchParam)
+                    @if(!$products->isEmpty())
+                    <p class="text-base font-semibold text-gray-900">{{__("Aquests són els productes que coincideixen amb la teva cerca")}}: {{$searchParam}}</p>
+                    @else
+                        <p class="text-base font-semibold text-gray-900">{{__("No hi ha productes disponibles que coincideixin amb la teva cerca")}}: {{$searchParam}}</p>
                     @endif
-                @endforeach
-            <!-- Capçalera per a marca-->
-            @elseif($selectedBrand)
-                @foreach($brands as $marca)
-                    @if($marca->id == $selectedBrand)
-                        <p class="text-base font-semibold text-gray-900">{{__("Aquests són els productes de la marca ")}} {{$marca->name }} {{__(", descobreix-los tots!")}}</p>
-                    @endif
-                @endforeach
-            <!-- Capçalera per a cerca-->
-            @elseif($searchParam)
-                @if(!$products->isEmpty())
-                <p class="text-base font-semibold text-gray-900">{{__("Aquests són els productes que coincideixen amb la teva cerca")}}: {{$searchParam}}</p>
-                @else
-                    <p class="text-base font-semibold text-gray-900">{{__("No hi ha productes disponibles que coincideixin amb la teva cerca")}}: {{$searchParam}}</p>
                 @endif
-            @endif
+{{--                    <div class="w-full border-t border-gray-300"></div>--}}
+
+            </div>
 
             <!-- Llista els productes -->
             @if(!$products->isEmpty())
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     @foreach ($products as $product)
                         <!-- Producte -->
-                        <div class="mx-auto mt-11 w-80 transform overflow-hidden rounded-lg bg-slate-800 shadow-md duration-300 hover:scale-105 hover:shadow-lg">
+                        <div class="mx-auto mt-11 w-80 transform overflow-hidden rounded-lg bg-gradient-to-br  from-indigo-950 to-indigo-950 shadow-md duration-300 hover:scale-105 hover:shadow-lg">
                             <a href="{{ route('product.show', $product->id) }}" class="max-w-[384px] mx-auto">
                                 <img src="{{ $product->image_url }}" alt="{{ $product->name }}" class="h-48 w-full object-cover object-center" style="max-height: 300px; min-height: 300px " livewire:src="">
                             </a>
