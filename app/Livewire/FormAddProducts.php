@@ -117,21 +117,4 @@ class FormAddProducts extends Component
 
 
 
-//    public function deleteProduct($productId)
-//    {
-//        $product = Products::findOrFail($productId);
-//
-//            // Eliminar el producto de la base de datos
-//            $product->delete();
-//
-//            // Recargar los productos
-//            $this->loadProducts();
-//
-//
-//        return redirect()->route('panelProducts');
-//    }
-
-
-
-
 }

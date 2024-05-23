@@ -27,7 +27,7 @@
             class="inline-flex items-center  bg-indigo-900  text-sm leading-4 font-medium  text-white   hover:text-gray-100 transition ease-in-out duration-150"
             id="menu-button" aria-expanded="true" aria-haspopup="true">
             <!-- Afegir la imatge de la bandera del llenguatge actual -->
-            <img src="Img/Flags/{{ App::getLocale() }}.png" alt="{{ App::getLocale() }}"
+            <img src="/Img/Flags/{{ App::getLocale() }}.png" alt="{{ App::getLocale() }}"
                  class="h-4 w-auto mr-2">
             {{ App::getLocale() }} <!-- Mostrar el idioma actual -->
             <!-- Heroicon name: solid/chevron-down -->

@@ -34,7 +34,9 @@
                 @elseif($selectedBrand)
                     @foreach($brands as $marca)
                         @if($marca->id == $selectedBrand)
-                            <p class="text-base font-semibold text-gray-900">{{__("Aquests són els productes de la marca ")}} {{$marca->name }} {{__(", descobreix-los tots!")}}</p>
+                            <h1 class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-800 via-indigo-700 to-indigo-500  text-5xl font-black">
+                                {{__("Aquests són els productes de la marca ")}} {{$marca->name }} {{__(", descobreix-los tots!")}}
+                            </h1>
                         @endif
                     @endforeach
                 <!-- Capçalera per a cerca-->

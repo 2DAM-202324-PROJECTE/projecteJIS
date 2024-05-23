@@ -16,6 +16,7 @@ class ModifyProducts extends Component
     public $categories;
     public $estat;
     public $marques;
+    public $image;
     public $metode;
     protected $listeners = ['loadDataProduct'];
 
@@ -33,6 +34,8 @@ class ModifyProducts extends Component
         $this->categories = Category::all();
         $this->estat = State::all();
         $this->marques = Marques::all();
+        $this->image = $this->product->image_url;
+
 
 
         // Retornem la vista amb les dades del producte seleccionat.
@@ -52,25 +55,31 @@ class ModifyProducts extends Component
             return redirect()->back()->with('error', 'Product not found');
         }
 
-        // Obtener la ruta de la imagen del producto
-        $oldImagePath = public_path("Img/Productes/{$product->image_url}");
+        // Check if a new image is uploaded
+        if ($request->hasFile('image')) {
+            // Obtener la ruta de la imagen del producto
+            $oldImagePath = public_path($product->image_url);
 
-        // Verificar si la imagen existe
-        if (File::exists($oldImagePath)) {
-            // Eliminar la imagen
-            File::delete($oldImagePath);
+            // Verificar si la imagen existe
+            if (File::exists($oldImagePath)) {
+                // Eliminar la imagen
+                File::delete($oldImagePath);
+            }
+
+            // Guardar la nueva imagen en storage/app/Img
+            $imageName = $request->file('image')->store('Img', 'public');
+
+            // Mover la nueva imagen a public/Img
+            $imagePath = storage_path("app/public/$imageName");
+            $publicImagePath = public_path("Img/Productes/{$request->file('image')->getClientOriginalName()}");
+            File::move($imagePath, $publicImagePath);
+
+            $imageUrl = asset("Img/Productes/{$request->file('image')->getClientOriginalName()}");
+            $imageUrl = str_replace(url('/'), '', $imageUrl);
+
+            // Actualizar la imagen del producto
+            $product->image_url = $imageUrl;
         }
-
-        // Guardar la nueva imagen en storage/app/Img
-        $imageName = $request->file('image')->store('Img', 'public');
-
-        // Mover la nueva imagen a public/Img
-        $imagePath = storage_path("app/public/$imageName");
-        $publicImagePath = public_path("Img/Productes/{$request->file('image')->getClientOriginalName()}");
-        File::move($imagePath, $publicImagePath);
-
-        $imageUrl = asset("Img/Productes/{$request->file('image')->getClientOriginalName()}");
-        $imageUrl = str_replace(url('/'), '', $imageUrl);
 
         // Actualizar los datos del producto
         $product->name = $request->input('name');
@@ -80,12 +89,10 @@ class ModifyProducts extends Component
         $product->category_id = $request->input('category_id');
         $product->state_id = $request->input('state_id');
         $product->marca_id = $request->input('marca_id');
-        $product->image_url = $imageUrl;
         $product->save();
 
         return redirect()->route('panelProducts')->with('success', 'Product updated successfully');
     }
-
 
 
 //    public function render()

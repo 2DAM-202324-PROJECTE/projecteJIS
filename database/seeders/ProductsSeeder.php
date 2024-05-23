@@ -29,7 +29,7 @@ class ProductsSeeder extends Seeder
             'description' => 'Samsung Galaxy A10s A107M - 32GB, 6.2" HD+ Infinity-V Display, 13MP+2MP Dual Rear +8MP Front Cameras, GSM Unlocked Smartphone - Blue',
             'price' => 500,
             'stock' => 10,
-            'image_url' => '/Img/Productes/Galaxy-A10.jpg',
+            'image_url' => '/Img/Productes/samsung-galaxy-a10.jpg',
             'category_id' => 3,
             'state_id' => 1,
             'marca_id' => 1
@@ -52,7 +52,7 @@ class ProductsSeeder extends Seeder
             'description' => 'Computer Monitor - 23.8" Full HD Monitor (1920 x 1080p) - IPS Panel and Built-in Audio - VESA Compatible 24m',
             'price' => 200,
             'stock' => 10,
-            'image_url' => '/Img/Productes/MonitorHpfhd.jpg',
+            'image_url' => '/Img/Productes/91TylD88mTL._AC_UF894,1000_QL80_.jpg',
             'category_id' => 5,
             'state_id' => 1,
             'marca_id' => 2
@@ -63,7 +63,7 @@ class ProductsSeeder extends Seeder
             'description' => 'Logitech MK270 Wireless Keyboard and Mouse Combo - Keyboard and Mouse Included, 2.4GHz Dropout-Free Connection, Long Battery Life',
             'price' => 50,
             'stock' => 10,
-            'image_url' => '/Img/Productes/logitech-Mk270-Mouse.jpg',
+            'image_url' => '/Img/Productes/61pUul1oDlL._AC_UF894,1000_QL80_.jpg',
             'category_id' => 5,
             'state_id' => 1,
             'marca_id' => 1
@@ -74,7 +74,7 @@ class ProductsSeeder extends Seeder
             'description' => 'AMD Ryzen 5 3600 6-Core, 12-Thread Unlocked Desktop Processor with Wraith Stealth Cooler',
             'price' => 200,
             'stock' => 10,
-            'image_url' => '/Img/Productes/AMD_Ryzen5_3600.jpg',
+            'image_url' => '/Img/Productes/81b75EQJrgL.__AC_SX300_SY300_QL70_ML2_.jpg',
             'category_id' => 6,
             'state_id' => 1,
             'marca_id' => 1
@@ -86,7 +86,7 @@ class ProductsSeeder extends Seeder
                 'description' => 'HP Pavilion Gaming Desktop Computer, AMD Ryzen 5 3500 Processor, NVIDIA GeForce GTX 1650 4 GB, 8 GB RAM, 512 GB SSD, Windows 10 Home (TG01-0030, Black)',
                 'price' => 800,
                 'stock' => 10,
-                'image_url' => '/Img/Productes/Hp_PavilonGaming_desktop.jpg',
+                'image_url' => '/Img/Productes/363-hp-pavilion-gaming-desktop-tg01-2065ns-amd-ryzen-5-5600g-16gb-1tb-512gb-ssd-rtx-3060-review.png',
                 'category_id' => 1,
                 'state_id' => 1,
                 'marca_id' => 2
@@ -99,7 +99,7 @@ class ProductsSeeder extends Seeder
                 'description' => 'HP 15 Laptop, 11th Gen Intel Core i5-1135G7 Processor, 8 GB RAM, 256 GB SSD Storage, 15.6” Full HD IPS Display, Windows 10 Home, HP Fast Charge, Lightweight Design (15-dy2021nr, 2020)',
                 'price' => 600,
                 'stock' => 10,
-                'image_url' => '/Img/Productes/HP15_Laptop.jpg',
+                'image_url' => '/Img/Productes/con-nb-otto-23c1-laptop-15-fc0000-product-image.png',
                 'category_id' => 2,
                 'state_id' => 1,
                 'marca_id' => 2
@@ -113,7 +113,7 @@ class ProductsSeeder extends Seeder
                 'description' => 'Juega, transmite, crea. La GeForce RTX™ 4060 te permite disfrutar de los últimos juegos y aplicaciones con la arquitectura ultraeficiente NVIDIA Ada Lovelace. Experimente juegos inmersivos acelerados por IA con ray tracing y DLSS 3, y potencie su proceso creativo y productividad con NVIDIA Studio.',
                 'price' => 299,
                 'stock' => 100,
-                'image_url' => '/Img/Productes/rtx4060.png',
+                'image_url' => '/Img/Productes/61q0rsE3ezL._AC_SX522_.jpg',
                 'category_id' => 6,
                 'state_id' => 1,
                 'marca_id' => 1
@@ -127,7 +127,7 @@ class ProductsSeeder extends Seeder
                 'description' => 'La serie MPG saca lo mejor de los jugadores al permitir una expresión completa en color con control avanzado de iluminación RGB y sincronización. Experimente en otro nivel de personalización con una tira de LED frontal que proporciona notificaciones convenientes en el juego y en tiempo real. Con la serie MPG, transforme su equipo en el centro de atención y las mejores tablas de clasificación con estilo.',
                 'price' => 129,
                 'stock' => 100,
-                'image_url' => '/Img/Productes/1879-msi-mpg-b550-gaming-plus.png',
+                'image_url' => '/Img/Productes/616TKsdlL2L._AC_SX522_.jpg',
                 'category_id' => 6,
                 'state_id' => 1,
                 'marca_id' => 1
@@ -141,7 +141,7 @@ class ProductsSeeder extends Seeder
                 'description' => 'La MSI PRO B650M-P está diseñada con toneladas de herramientas flexibles con versión de memoria DDR5.',
                 'price' => 109,
                 'stock' => 100,
-                'image_url' => '/Img/Productes/1788-msi-pro-b650m-p.png',
+                'image_url' => '/Img/Productes/81iWXnNMelL.__AC_SX300_SY300_QL70_ML2_.jpg',
                 'category_id' => 6,
                 'state_id' => 1,
                 'marca_id' => 1
@@ -155,7 +155,7 @@ class ProductsSeeder extends Seeder
                 'description' => 'MAG A650BN proporciona a los jugadores una opción de fuente de alimentación básica segura, confiable y eficiente.',
                 'price' => 49,
                 'stock' => 100,
-                'image_url' => '/Img/Productes/1661-msi-mag-a650bn-650w-80-plus-bronze.png',
+                'image_url' => '/Img/Productes/81eLlIQ5PsL.__AC_SX300_SY300_QL70_ML2_.jpg',
                 'category_id' => 6,
                 'state_id' => 1,
                 'marca_id' => 1
@@ -168,7 +168,7 @@ class ProductsSeeder extends Seeder
                 'description' => 'RTX.  IT’S ON. Disfruta de los mayores éxitos de ventas de hoy como nunca antes con la fidelidad visual del trazado de rayos en tiempo real y el rendimiento definitivo de DLSS con tecnología de IA.',
                 'price' => 309,
                 'stock' => 100,
-                'image_url' => '/Img/Productes/1157-msi-geforce-rtx-3060-ventus-2x-oc-12gb-gddr6.png',
+                'image_url' => '/Img/Productes/71tduSp8ooL.__AC_SY300_SX300_QL70_ML2_.jpg',
                 'category_id' => 6,
                 'state_id' => 1,
                 'marca_id' => 1
@@ -181,7 +181,7 @@ class ProductsSeeder extends Seeder
                 'description' => 'MSI X670E GAMING PLUS WIFI está diseñado con toneladas de conectividad, herramientas flexibles y una conveniente solución Wi-Fi con versión de memoria DDR5 para jugadores que quieren todo.',
                 'price' => 249,
                 'stock' => 100,
-                'image_url' => '/Img/Productes/113-msi-x670e-gaming-plus-wifi.png',
+                'image_url' => '/Img/Productes/81UgzLBvNLL.__AC_SX300_SY300_QL70_ML2_.jpg',
                 'category_id' => 6,
                 'state_id' => 1,
                 'marca_id' => 1
@@ -227,34 +227,6 @@ class ProductsSeeder extends Seeder
 
             ]
         );
-        Products::create(
-            [
-                'name' => 'MSI MAG CORELIQUID M240 Kit de Refrigeración Líquida 240mm Negro',
-                'description' => 'La serie MAG lucha junto a los jugadores en busca del honor. Con elementos añadidos de inspiración militar en estos productos de juego, renacieron como símbolo de robustez y durabilidad.',
-                'price' => 70,
-                'stock' => 100,
-                'image_url' => '/Img/Productes/650-msi-mag-coreliquid-m240-kit-de-refrigeracion-liquida-240mm-negro-opiniones.png',
-                'category_id' => 6,
-                'state_id' => 1,
-                'marca_id' => 1
-
-            ]
-        );
-        Products::create(
-            [
-                'name' => 'MSI MAG A850GL PCIE5 850W 80 PLUS Gold Modular',
-                'description' => 'Tiene un puerto de salida que cumple con PCIe 5.0 e Intel PSDG (Guía de diseño de fuente de alimentación) ATX 3.0, también la fuente de alimentación MAG A850GL PCIE5 puede manejar hasta 2x excursión de potencia total y 3x excursión de potencia GPU.',
-                'price' => 119,
-                'stock' => 100,
-                'image_url' => '/Img/Productes/3125-msi-mag-a850gl-pcie5-850w-80-plus-gold-modular-mejor-precio.png',
-                'category_id' => 6,
-                'state_id' => 1,
-                'marca_id' => 1
-
-            ]
-        );
-
-
 
 
     }
