@@ -107,5 +107,7 @@ return[
     "RECORDA_TXT" => "Recuérdame",
     "OLVIDADA_CONTRA_TXT" => "Has olvidado la contraseña?",
     "NO_COMPTE_TXT" => "No tienes cuenta?",
+    "ANTERIOR_TXT" => "Anterior",
+    "SEGUENT_TXT" => "Siguiente",
 
 ];

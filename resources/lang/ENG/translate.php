@@ -106,7 +106,10 @@ return[
     "CONFIRM_CONTRASENYA_TXT" => "Confirm Password",
     "RECORDA_TXT" => "Remember me",
     "OLVIDADA_CONTRA_TXT" => "Forgot your password?",
-    "NO_COMPTE_TXT" => "Don't have an account?"
+    "NO_COMPTE_TXT" => "Don't have an account?",
+    "ANTERIOR_TXT" => "Previous",
+    "SEGUENT_TXT" => "Next",
+
 
 
 

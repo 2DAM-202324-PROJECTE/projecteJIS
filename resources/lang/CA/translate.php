@@ -107,6 +107,8 @@ return[
     "RECORDA_TXT" => "Recorda'm",
     "OLVIDADA_CONTRA_TXT" => "Has oblidat la contrasenya?",
     "NO_COMPTE_TXT" => "No tens compte?",
+    "ANTERIOR_TXT" => "Anterior",
+    "SEGUENT_TXT" => "Següent",
 
 
 

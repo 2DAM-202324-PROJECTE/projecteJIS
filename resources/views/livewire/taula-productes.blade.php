@@ -42,9 +42,13 @@
                 <!-- Capçalera per a cerca-->
                 @elseif($searchParam)
                     @if(!$products->isEmpty())
-                    <p class="text-base font-semibold text-gray-900">{{__("Aquests són els productes que coincideixen amb la teva cerca")}}: {{$searchParam}}</p>
+                        <h1 class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-800 via-indigo-700 to-indigo-500  text-5xl font-black">
+                            {{__("Aquests són els productes que coincideixen amb la teva cerca")}}: {{$searchParam}}
+                        </h1>
                     @else
-                        <p class="text-base font-semibold text-gray-900">{{__("No hi ha productes disponibles que coincideixin amb la teva cerca")}}: {{$searchParam}}</p>
+                        <h1 class="m-28 bg-clip-text text-transparent bg-gradient-to-r from-indigo-800 via-indigo-700 to-indigo-500  text-5xl font-black">
+                            {{__("No hi ha productes disponibles que coincideixin amb la teva cerca")}}: {{$searchParam}}
+                        </h1>
                     @endif
                 @endif
 {{--                    <div class="w-full border-t border-gray-300"></div>--}}
@@ -87,7 +91,7 @@
                 </div>
 
         </div>
-        <div class="mt-4">
+        <div class="mt-24 flex justify-center items-center">
             @if($this->paginator)
                 @if(count($this->products) > 0)
                     {{ $this->paginator->links('pagination.pagination') }}
