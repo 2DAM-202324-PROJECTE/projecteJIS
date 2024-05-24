@@ -99,6 +99,14 @@ return[
     "ARRASTRA_SOLTA_TXT" => "o arrastra i solta",
     "EXPLICACIO_DETALLS_TXT" => "Aquí pots veure els detalls del producte, per modificar-los, ves al botó d'editar.",
     "SELECCIONA_MARCA_TXT" => "Selecciona una marca",
+    "ALGO_ERROR_TXT" => "Alguna cosa ha anat malament!",
+    "REGISTRAT?_TXT" => "Ja estàs registrat?",
+    "REGISTRAR_TXT" => "Registrar",
+    "CONTRASENYA_TXT" => "Contrasenya",
+    "CONFIRM_CONTRASENYA_TXT" => "Confirmar Contrasenya",
+    "RECORDA_TXT" => "Recorda'm",
+    "OLVIDADA_CONTRA_TXT" => "Has oblidat la contrasenya?",
+    "NO_COMPTE_TXT" => "No tens compte?",
 
 
 

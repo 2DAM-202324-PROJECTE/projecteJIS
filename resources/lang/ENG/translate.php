@@ -1,7 +1,7 @@
 <?php
 return[
     "PRODUCTES_TXT" => "Products",
-    "LOGIN_TXT" => "Login",
+    "LOGIN_TXT" => "Log in",
     "REGISTRE_TXT" => "Register",
     "TRIA_IDIOMA_TXT" => "Language",
     "PERFIL_TXT" => "Profile",
@@ -99,6 +99,14 @@ return[
     "ARRASTRA_SOLTA_TXT" => "or drag and drop",
     "EXPLICACIO_DETALLS_TXT" => "Here you can see the details of the product, to modify them, go to the edit button.",
     "SELECCIONA_MARCA_TXT" => "Select a brand",
+    "ALGO_ERROR_TXT" => "Something went wrong!",
+    "REGISTRAT?_TXT" => "Already registered?",
+    "REGISTRAR_TXT" => "Register",
+    "CONTRASENYA_TXT" => "Password",
+    "CONFIRM_CONTRASENYA_TXT" => "Confirm Password",
+    "RECORDA_TXT" => "Remember me",
+    "OLVIDADA_CONTRA_TXT" => "Forgot your password?",
+    "NO_COMPTE_TXT" => "Don't have an account?"
 
 
 

@@ -99,5 +99,13 @@ return[
     "ARRASTRA_SOLTA_TXT" => "o arrastra y suelta",
     "EXPLICACIO_DETALLS_TXT" => "Aquí puedes ver los detalles del producto, para modificarlos, ve al botón de editar.",
     "SELECCIONA_MARCA_TXT" => "Selecciona una marca",
+    "ALGO_ERROR_TXT" => "Algo ha ido mal!",
+    "REGISTRAT?_TXT" => "Ya estás registrado?",
+    "REGISTRAR_TXT" => "Registrar",
+    "CONTRASENYA_TXT" => "Contraseña",
+    "CONFIRM_CONTRASENYA_TXT" => "Confirmar Contraseña",
+    "RECORDA_TXT" => "Recuérdame",
+    "OLVIDADA_CONTRA_TXT" => "Has olvidado la contraseña?",
+    "NO_COMPTE_TXT" => "No tienes cuenta?",
 
 ];
