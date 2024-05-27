@@ -61,42 +61,38 @@ class CheckoutComponent extends Component
 
     public function store()
     {
-        $user = Auth::user();
+        try {
+            $this->validate([
+                'name' => 'required',
+                'email' => 'required|email',
+                'address' => 'required',
+                'city' => 'required',
+                'state' => 'required',
+                'postal_code' => 'required',
+                'country' => 'required',
+            ]);
 
-        $shipmentData = ShipmentData::updateOrCreate(
-            ['user_id' => $user->id],
-            [
-                'name' => $this->name,
-                'email' => $this->email,
-                'address' => $this->address,
-                'city' => $this->city,
-                'state' => $this->state,
-                'postal_code' => $this->postal_code,
-                'country' => $this->country,
-            ]
-        );
+            $user = Auth::user();
 
-        return redirect()->route('payment');
+            $shipmentData = ShipmentData::updateOrCreate(
+                ['user_id' => $user->id],
+                [
+                    'name' => $this->name,
+                    'email' => $this->email,
+                    'address' => $this->address,
+                    'city' => $this->city,
+                    'state' => $this->state,
+                    'postal_code' => $this->postal_code,
+                    'country' => $this->country,
+                ]
+            );
+            return redirect()->route('payment');
+
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            $this->dispatch('alert', ['message' => $e->validator->errors()->first()]);
+        }
 
     }
 
-//    public function fillShippingData()
-//    {
-//        $user = Auth::user();
-//
-//        $this->shipmentData = ShipmentData::where('user_id', $user->id)->first();
-//
-//        if ($this->shipmentData) {
-//            $this->name = $this->shipmentData->name;
-//            $this->email = $this->shipmentData->email;
-//            $this->address = $this->shipmentData->address;
-//            $this->city = $this->shipmentData->city;
-//            $this->state = $this->shipmentData->state;
-//            $this->postal_code = $this->shipmentData->postal_code;
-//            $this->country = $this->shipmentData->country;
-//        }
-//
-//        $this->render();
-//    }
 
 }

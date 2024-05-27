@@ -1,8 +1,8 @@
-<x-admin-layout>
+<x-admin-layout xmlns:wire="http://www.w3.org/1999/xhtml">
     <div class="bg-white mt-24">
         @if($categories)
 
-            <form class="m-10"  method="POST" action="/categories/{{ $categories->id }}">
+            <form class="m-10" wire:submit.prevent="updateCategory"  method="POST" action="/categories/{{ $categories->id }}" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="space-y-12">
@@ -39,24 +39,33 @@
                             </div>
 
 
-                            {{--                    <div class="col-span-full">--}}
-                            {{--                        <label for="cover-photo" class="block text-sm font-medium leading-6 text-gray-900">Cover photo</label>--}}
-                            {{--                        <div class="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">--}}
-                            {{--                            <div class="text-center">--}}
-                            {{--                                <svg class="mx-auto h-12 w-12 text-gray-300" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">--}}
-                            {{--                                    <path fill-rule="evenodd" d="M1.5 6a2.25 2.25 0 012.25-2.25h16.5A2.25 2.25 0 0122.5 6v12a2.25 2.25 0 01-2.25 2.25H3.75A2.25 2.25 0 011.5 18V6zM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0021 18v-1.94l-2.69-2.689a1.5 1.5 0 00-2.12 0l-.88.879.97.97a.75.75 0 11-1.06 1.06l-5.16-5.159a1.5 1.5 0 00-2.12 0L3 16.061zm10.125-7.81a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0z" clip-rule="evenodd" />--}}
-                            {{--                                </svg>--}}
-                            {{--                                <div class="mt-4 flex text-sm leading-6 text-gray-600">--}}
-                            {{--                                    <label for="file-upload" class="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500">--}}
-                            {{--                                        <span>Upload a file</span>--}}
-                            {{--                                        <input id="file-upload" name="file-upload" type="file" class="sr-only">--}}
-                            {{--                                    </label>--}}
-                            {{--                                    <p class="pl-1">or drag and drop</p>--}}
-                            {{--                                </div>--}}
-                            {{--                                <p class="text-xs leading-5 text-gray-600">PNG, JPG, GIF up to 10MB</p>--}}
-                            {{--                            </div>--}}
-                            {{--                        </div>--}}
-                            {{--                    </div>--}}
+                            <div class="col-span-full">
+                                <label for="cover-photo" class="block text-sm font-medium leading-6 text-gray-900">{{__("translate.FOTO_MARCA_TXT")}}</label>
+                                <div class="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
+                                    <div class="text-center">
+                                        <svg wire:loading wire:target="image" class="mx-auto h-12 w-12 text-gray-300" viewBox="0 0 24 24" fill="currentColor"
+                                             aria-hidden="true">
+                                            <!-- SVG de carga -->
+                                        </svg>
+                                        <div wire:loading.remove wire:target="image">
+
+                                            <img id="brand-image" src="{{ $categories->logo_ref}}" alt="Brand Image" class="mx-auto h-48 w-auto">
+
+                                        </div>
+
+                                        <div class="mt-10 flex text-sm leading-6 text-gray-600">
+                                            <label for="file-upload"
+                                                   class="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500">
+                                                <span>{{ __("translate.PUJA_FITXER_TXT") }}</span>
+                                                <input id="file-upload" name="image" type="file" class="sr-only"
+                                                       wire:model="image">
+                                            </label>
+                                            <p class="pl-1">{{ __("translate.ARRASTRA_SOLTA_TXT") }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
@@ -75,4 +84,15 @@
 
         @endif
     </div>
+
+    <script>
+        document.getElementById('file-upload').addEventListener('change', function(e) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById('brand-image').src = e.target.result;
+            }
+            reader.readAsDataURL(this.files[0]);
+        });
+    </script>
+
 </x-admin-layout>

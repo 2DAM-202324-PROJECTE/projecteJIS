@@ -1,68 +1,62 @@
 <div class="flex items-center justify-between">
 
     <header class="relative " xmlns:x-on="http://www.w3.org/1999/xhtml"
-        xmlns:wire="http://www.w3.org/1999/xhtml">
+            xmlns:wire="http://www.w3.org/1999/xhtml">
 
+        <div class="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
 
-    <div class="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
+            <div class="bg-indigo-900 relative">
 
-        <div class="bg-indigo-900 relative">
+                <p class="flex h-8 items-center justify-center px-4 text-xs font-medium text-white sm:px-6 lg:px-8 sm:h-10 sm:text-sm">
+                    {{ __('translate.ENVIO_GRATIS_HEADER_TXT') }}
+                </p>
+                @livewire('idioma-dropdown')
+            </div>
 
-            <p class="flex h-10 items-center justify-center px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
-                {{ __('translate.ENVIO_GRATIS_HEADER_TXT') }}
-            </p>
-            @livewire('idioma-dropdown')
-        </div>
+            <nav aria-label="Top" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="flex h-16 items-center sm:h-20">
 
+                    <div class="ml-2 sm:ml-4">
 
-        <nav aria-label="Top" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div class="flex h-20 items-center">
-
-
-                <div class="ml-4">
-
-                    <button id="navbar-toggle" type="button"
-                            class="inline-flex items-center justify-center p-2 w-10 h-10 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
-                            aria-controls="navbar-hamburger" aria-expanded="false">
-                        <span class="sr-only">Open main menu</span>
-                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                             viewBox="0 0 17 14">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M1 1h15M1 7h15M1 13h15"/>
-                        </svg>
-                    </button>
-
-                    {{--                    <a class=" pb-2 text-sm leading-6 text-gray-900">{{ __('translate.MOSTRAR_CATEGORIES_TXT') }}</a>--}}
-
-                </div>
-
-                <!-- Logo -->
-                <div class="flex-1  flex justify-center">
-                    <a href="{{ route('welcome') }}">
-                        <span class="sr-only">Pc Planet</span>
-                        <img class="h-14 w-auto" src="{{ asset('Img/logoSimple.png') }}" alt="Pc Planet">
-                    </a>
-                </div>
-
-                <!-- Search -->
-                <div class="flex lg:ml-6 input-wrapper mt-2">
-                    <form id="search-form" action="{{ route('search') }}" method="GET" class="flex">
-                        <div class="relative flex-grow">
-                            <input type="text" id="search-input" name="query" required autocomplete="off"
-                                   class="w-full py-1 px-2 border border-gray-300 focus:outline-none focus:border-gray-300 focus:ring-0">
-                            <label for="username"
-                                   class="absolute bottom-0 left-0 text-sm text-gray-500 pointer-events-none transition-all duration-300">{{ __("translate.BUSCAR_TXT") }}</label>
-                        </div>
-                        <button type="submit" class="p-2 text-gray-400 hover:text-gray-500 ml-2">
-                            <span class="sr-only">Search</span>
-                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                 stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                      d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/>
+                        <button id="navbar-toggle" type="button"
+                                class="inline-flex items-center justify-center p-2 w-8 h-8 text-xs text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 sm:w-10 sm:h-10 sm:text-sm">
+                            <span class="sr-only">Open main menu</span>
+                            <svg class="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                 viewBox="0 0 17 14">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M1 1h15M1 7h15M1 13h15"/>
                             </svg>
                         </button>
-                    </form>
-                </div>
+
+                    </div>
+
+                    <!-- Logo -->
+                    <div class="flex-1 flex justify-center">
+                        <a href="{{ route('welcome') }}">
+                            <span class="sr-only">Pc Planet</span>
+                            <img class="h-8 w-auto sm:h-10 lg:h-14" src="{{ asset('Img/logoSimple.png') }}" alt="Pc Planet">
+                        </a>
+                    </div>
+
+                    <!-- Search -->
+                    <div class="flex lg:ml-6 input-wrapper mt-2 lg:w-auto w-1/2">
+                        <form id="search-form" action="{{ route('search') }}" method="GET" class="flex">
+                            <div class="relative flex-grow">
+                                <input type="text" id="search-input" name="query" required autocomplete="off"
+                                       class="w-full py-1 px-2 border border-gray-300 focus:outline-none focus:border-gray-300 focus:ring-0">
+                                <label for="username"
+                                       class="absolute bottom-0 left-0 text-xs text-gray-500 pointer-events-none transition-all duration-300 sm:text-sm">{{ __("translate.BUSCAR_TXT") }}</label>
+                            </div>
+                            <button type="submit" class="p-2 text-gray-400 hover:text-gray-500 ml-2">
+                                <span class="sr-only">Search</span>
+                                <svg class="h-4 w-4 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                     stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                          d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
 
                 <!-- Flyout menus -->
                 <div class="pl-6" xmlns:wire="http://www.w3.org/1999/xhtml">
@@ -74,7 +68,7 @@
 
                     @if(\Illuminate\Support\Facades\Auth::check())
 
-                        <div class="hidden sm:flex sm:items-center sm:ms-6">
+                        <div class="sm:flex sm:items-center sm:ms-6">
                             <!-- Teams Dropdown -->
                             @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
                                 <div class="ms-3 relative">

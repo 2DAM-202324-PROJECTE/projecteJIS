@@ -1,6 +1,6 @@
 <div class="">
 
-    <div class=" mr-10">
+    <div class=" m-2 mb-10">
         @livewire('credit-card')
     </div>
 

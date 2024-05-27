@@ -143,7 +143,7 @@
                                 <label for="file-upload"
                                        class="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500">
                                     <span>{{ __("translate.PUJA_FITXER_TXT") }}</span>
-                                    <input id="file-upload" name="file-upload" type="file" class="sr-only"
+                                    <input id="file-upload" name="file-upload" required type="file" class="sr-only"
                                            wire:model="image">
                                 </label>
                                 <p class="pl-1">{{ __("translate.ARRASTRA_SOLTA_TXT") }}</p>

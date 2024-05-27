@@ -2,17 +2,18 @@
 
 namespace App\Livewire;
 use App\Models\Category;
-use App\Models\Products;
 use App\Models\State;
+use Illuminate\Support\Facades\File;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class FormAddCategories extends Component
 {
+    use WithFileUploads;
 
     public $category;
     public $categories;
     public $estat;
-    public $productsColumns;
 
     public $name;
     public $description;
@@ -20,11 +21,12 @@ class FormAddCategories extends Component
     public $stock;
 
     // valor per defecte, si no el canviem al formulari es quedarà aquest
-    public $image_url = 'https://mijnbuurtje.imgix.net/1906/578fad10-9675-11e9-9e2a-03c3674f56a6.jpeg?h=2614&w=2614&s=4a87e90cd71ab7cafbe8229ab40521b7';
+    public $image_url;
     public $category_id;
     public $state_id;
+    public $image;
 
-    public $selectedProductId;
+
 
 
 
@@ -67,12 +69,24 @@ class FormAddCategories extends Component
             $newCategoryId++;
         }
 
-        // Crear el producte amb la nova id (serà sempre la més petita disponible)
+        // Guardar la imagen en storage/app/Img
+        $imageName = $this->image->store('Img', 'public');
+
+        // Mover la imagen a public/Img
+        $imagePath = storage_path("app/public/$imageName");
+        $publicImagePath = public_path("Img/Categories/{$this->image->getClientOriginalName()}");
+        File::move($imagePath, $publicImagePath);
+
+        $imageUrl = asset("Img/Categories/{$this->image->getClientOriginalName()}");
+        $imageUrl = str_replace(url('/'), '', $imageUrl);
+
+
+        // Crear la categoria amb la nova id (serà sempre la més petita disponible)
         Category::create([
             'id' => $newCategoryId,
             'name_category' => $this->name,
             'category_description' => $this->description,
-            'category_image' => $this->image_url,
+            'category_image' => $imageUrl,
         ]);
 
         $this->loadCategory();
@@ -93,11 +107,5 @@ class FormAddCategories extends Component
     }
 
 
-//    private function resetForm()
-//    {
-//        $this->name = '';
-//        $this->description = '';
-//        $this->price = '';
-//        $this->selectedProductId = null;
-//    }
+
 }

@@ -9,6 +9,7 @@ return [
     'failed' => 'These credentials do not match our records.',
     'unique' => 'The user field has already been taken.',
     'confirmed' => ':attribute confirmation does not match.',
+    'required' => 'The ":attribute" field is required.',
 
 
 
