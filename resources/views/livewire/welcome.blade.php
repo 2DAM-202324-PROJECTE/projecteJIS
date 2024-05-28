@@ -52,7 +52,7 @@
                                         <ul class="grid grid-cols-2 gap-4">
                                             @foreach ($category->products()->where('featured', 1)->take(2)->get() as $product)
                                                 <li>
-                                                    <a href="#" class="group block">
+                                                    <a href="{{ route('product.show', $product->id) }}" class="group block">
                                                         <div class="aspect-square w-full rounded overflow-hidden">
                                                             <div class="aspect-w-1 aspect-h-1">
                                                                 <img src="{{ $product->image_url }}" alt="" class="object-cover w-full h-full">
